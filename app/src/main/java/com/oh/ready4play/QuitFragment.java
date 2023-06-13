@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Näyttää kiitoksen lopussa ja poistuu sovelluksesta
+ * poistuu sovelluksesta
  */
 public class QuitFragment extends AppCompatActivity {
 
@@ -28,22 +28,6 @@ public class QuitFragment extends AppCompatActivity {
     }
 
     public void quit() {
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-        t1.start();
-        try {
-            t1.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
         finish();
     };
 }

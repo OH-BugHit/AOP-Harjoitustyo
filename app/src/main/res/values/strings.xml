@@ -10,6 +10,30 @@
     <string name="text_quit">Quit</string>
 
     <!-- Asetukset -->
+    <string name="text_tasksInGame">Tasks in game</string>
+    <string name="text_diceAdd">Add to dice</string>
+
+    <string name="text_dice0">Normal dice</string>
+    <string name="text_dice2">Add 2 to dice</string>
+    <string name="text_dice3">Add 3 to dice</string>
+    <string name="text_dice5">Add 5 to dice</string>
+
+    <string name="text_task1_settings">1. Hitler</string>
+    <string name="text_task2_settings">2. Hoe</string>
+    <string name="text_task3_settings">3. Girls vs. Boys</string>
+    <string name="text_task4_settings">4. Truth or Dare</string>
+    <string name="text_task5_settings">5. Would You Rather</string>
+    <string name="text_task6_settings">6. 3 Shots</string>
+    <string name="text_task7_settings">7. 2 Truths 1 Lie</string>
+    <string name="text_task8_settings">8. Dictionary</string>
+    <string name="text_task9_settings">9. Fuck the Dealer</string>
+    <string name="text_task10_settings">10. Horse Race</string>
+    <string name="text_task11_settings">11. Bus driver</string>
+    <string name="text_task12_settings">Stack</string>
+
+    <string name="text_Return">Return</string>
+    <string name="text_Confirm">Confirm</string>
+
 
 
     <!-- Lopetus -->

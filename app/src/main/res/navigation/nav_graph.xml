@@ -13,10 +13,22 @@
         <action
             android:id="@+id/action_alkuvalikko_to_quitFragment"
             app:destination="@id/quitFragment" />
+        <action
+            android:id="@+id/action_alkuvalikko_to_asetukset"
+            app:destination="@id/asetukset" />
     </fragment>
     <activity
         android:id="@+id/quitFragment"
         android:name="com.oh.ready4play.QuitFragment"
         android:label="fragment_quit"
         tools:layout="@layout/fragment_quit" />
+    <fragment
+        android:id="@+id/asetukset"
+        android:name="com.oh.ready4play.Asetukset"
+        android:label="fragment_asetukset"
+        tools:layout="@layout/fragment_asetukset" >
+        <action
+            android:id="@+id/action_asetukset_to_alkuvalikko"
+            app:destination="@id/alkuvalikko" />
+    </fragment>
 </navigation>
