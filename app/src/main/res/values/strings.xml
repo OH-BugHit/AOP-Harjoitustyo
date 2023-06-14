@@ -31,9 +31,14 @@
     <string name="text_task11_settings">11. Bus driver</string>
     <string name="text_task12_settings">Stack</string>
 
-    <string name="text_Return">Return</string>
-    <string name="text_Confirm">Confirm</string>
+    <string name="text_return">Return</string>
+    <string name="text_confirm">Confirm</string>
 
+    <!-- Uusi Peli -->
+    <string name="text_addPlayers">Add players</string>
+    <string name="text_typePlayerName">Type name here</string>
+    <string name="text_addedPlayers">Players:</string>
+    <string name="text_add">✓</string>
 
 
     <!-- Lopetus -->

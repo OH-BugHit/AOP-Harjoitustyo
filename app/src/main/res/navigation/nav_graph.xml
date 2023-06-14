@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_alkuvalikko_to_asetukset"
             app:destination="@id/asetukset" />
+        <action
+            android:id="@+id/action_alkuvalikko_to_uusiPeli"
+            app:destination="@id/uusiPeli" />
     </fragment>
     <activity
         android:id="@+id/quitFragment"
@@ -31,4 +34,9 @@
             android:id="@+id/action_asetukset_to_alkuvalikko"
             app:destination="@id/alkuvalikko" />
     </fragment>
+    <fragment
+        android:id="@+id/uusiPeli"
+        android:name="com.oh.ready4play.UusiPeli"
+        android:label="fragment_uusi_peli"
+        tools:layout="@layout/fragment_uusi_peli" />
 </navigation>

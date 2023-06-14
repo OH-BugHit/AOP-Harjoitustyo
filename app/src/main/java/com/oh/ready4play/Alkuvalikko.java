@@ -31,6 +31,10 @@ public class Alkuvalikko extends Fragment {
         Button btAsetukset = view.findViewById(R.id.btAsetukset_alkuvalikko);
         Button btQuit = view.findViewById(R.id.btLopeta_alkuvalikko);
 
+        btAloitaPeli.setOnClickListener(e -> {
+            Navigation.findNavController(view).navigate(R.id.action_alkuvalikko_to_uusiPeli);
+        });
+
         btAsetukset.setOnClickListener(e -> {
             Navigation.findNavController(view).navigate(R.id.action_alkuvalikko_to_asetukset);
         });
