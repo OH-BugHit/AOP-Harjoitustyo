@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Peli" >
+
+    <TextView
+        android:id="@+id/tvVuorossa_Peli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/text_inTurn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi_Peli" />
+
+    <TextView
+        android:id="@+id/tvPelaajaNimi_Peli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNappulaVuorossa"
+        app:layout_constraintStart_toEndOf="@+id/tvVuorossa_Peli"
+        app:layout_constraintTop_toTopOf="@+id/ivNappulaVuorossa" />
+
+    <ImageView
+        android:id="@+id/ivNappulaVuorossa"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi_Peli"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/nappula1" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivNappulaVuorossa" />
+
+    <Button
+        android:id="@+id/btOhita_Peli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/btHeita_Peli"
+        app:layout_constraintEnd_toStartOf="@+id/ivHampuri_peli"
+        app:layout_constraintTop_toTopOf="@+id/btHeita_Peli" />
+
+    <Button
+        android:id="@+id/btHeita_Peli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/ivNappulaVuorossa"
+        app:layout_constraintEnd_toStartOf="@+id/btOhita_Peli"
+        app:layout_constraintTop_toTopOf="@+id/ivNappulaVuorossa" />
+
+    <ImageView
+        android:id="@+id/ivHampuri_peli"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/hampurilainen"
+        app:layout_constraintBottom_toTopOf="@+id/divider6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOhitaJatkossa"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/ivHampuri_peli"
+        app:layout_constraintTop_toBottomOf="@+id/ivHampuri_peli" />
+
+    <TextView
+        android:id="@+id/tvPaavalikko"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="@string/text_mainMenu"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvOhitaJatkossa"
+        app:layout_constraintTop_toBottomOf="@+id/tvOhitaJatkossa" />
+
+    <TextView
+        android:id="@+id/tvLopeta"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:text="@string/text_quit"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tvPaavalikko"
+        app:layout_constraintTop_toBottomOf="@+id/tvPaavalikko" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView3"
+        android:name="com.oh.ready4play.Noppa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.oh.ready4play.PeliNakyma"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

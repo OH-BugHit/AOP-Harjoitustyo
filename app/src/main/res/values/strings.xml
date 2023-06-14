@@ -40,6 +40,9 @@
     <string name="text_addedPlayers">Players:</string>
     <string name="text_add">✓</string>
 
+    <!-- Peli -->
+    <string name="text_mainMenu">Main Menu</string>
+    <string name="text_inTurn">Turn: </string>
 
     <!-- Lopetus -->
     <string name="text_thanks4Playing">Thanks 4-playing!</string>
