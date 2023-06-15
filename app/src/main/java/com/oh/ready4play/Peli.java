@@ -3,6 +3,7 @@ package com.oh.ready4play;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
@@ -21,22 +22,23 @@ import java.util.ArrayList;
 public class Peli extends Fragment {
     public static volatile boolean seuraavaVuoro = false;
     View view;
+    public static ImageView[] ivNappulat = new ImageView[10];
     public static ArrayList<Pelaaja> pelaajat;
     private static ArrayList<Ruutu> peliRuudut = new ArrayList<>();;
     public static int vuorossaPelaaja = 0;
     public static int pelaajamaara;
     private int toiminto;
     private boolean hampuriKlikattu = false;
-    static Button btHeitaNoppa;
-    static Button btOhita;
+    Button btHeitaNoppa;
+    Button btOhita;
     ImageView ivNappula;
     TextView tvVuorossaPelaaja;
-    static TextView tvOhitaPelaajanimi;
+    TextView tvOhitaPelaajanimi;
     public static FragmentManager fragmentManager;
     public Peli() {
         // Required empty public constructor
     }
-    public static void naytaNapit() {
+    public void naytaNapit() {
         btOhita.setVisibility(View.VISIBLE);
         btHeitaNoppa.setVisibility(View.VISIBLE);
         tvOhitaPelaajanimi.setEnabled(true);
@@ -47,6 +49,20 @@ public class Peli extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_peli, container, false);
+
+        ivNappulat[0] = view.findViewById(R.id.ivNappula0);
+        ivNappulat[1] = view.findViewById(R.id.ivNappula1);
+        ivNappulat[2] = view.findViewById(R.id.ivNappula2);
+        ivNappulat[3] = view.findViewById(R.id.ivNappula3);
+        ivNappulat[4] = view.findViewById(R.id.ivNappula4);
+        ivNappulat[5] = view.findViewById(R.id.ivNappula5);
+        ivNappulat[6] = view.findViewById(R.id.ivNappula6);
+        ivNappulat[7] = view.findViewById(R.id.ivNappula7);
+        ivNappulat[8] = view.findViewById(R.id.ivNappula8);
+        ivNappulat[9] = view.findViewById(R.id.ivNappula9);
+        for (int i = 0; i < 10; i++) {
+            ivNappulat[i].setVisibility(View.INVISIBLE);
+        }
 
         fragmentManager = getParentFragmentManager();
 
@@ -84,7 +100,7 @@ public class Peli extends Fragment {
                 @Override
                 public void run() {
                     seuraavanPelaajanVuoro();
-                    MainActivity.INSTANCE.runOnUiThread(Peli::naytaNapit);
+                    MainActivity.INSTANCE.runOnUiThread(Peli.this::naytaNapit);
                 }
             });
             t1.start();
@@ -177,6 +193,29 @@ public class Peli extends Fragment {
         return peliRuudut.get(uusiruutu).tehtava;
     }
 
+
+
+    /**
+     * Pelaajien ja pelin alustus
+     */
+    private void alustaPeli() {
+
+        vuorossaPelaaja = 0;
+        pelaajamaara = pelaajat.size();
+        int i = 0;
+        for (Pelaaja pelaaja : pelaajat) {
+            pelaaja.imageView = ivNappulat[i];
+            pelaaja.imageView.setImageDrawable(pelaaja.pelaajakuva);
+            pelaaja.imageView.setVisibility(View.VISIBLE);
+            Pelaaja.liikutaPelaajaRuutuun(pelaaja, peliRuudut.get(0));
+            i++;
+        }
+        ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
+        tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
+    }
+
+    private void aloitaPeli() {
+    }
     /**
      * Asetetaan pelilaudan ruuduille ominaisuudet
      */
@@ -187,15 +226,15 @@ public class Peli extends Fragment {
             Sijainti sijainti = new Sijainti();
             switch (i) {
                 case 0 -> {
-                    sijainti.x = 100;
-                    sijainti.y = 100;
+                    sijainti.x = 100f;
+                    sijainti.y = 100f;
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 0;
                     ruutu.ruudunNumero = 0;
                 }
                 case 1 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = 20f;
+                    sijainti.y = 30f;
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 1;
@@ -631,24 +670,5 @@ public class Peli extends Fragment {
             }
             peliRuudut.add(ruutu);
         }
-    }
-
-    /**
-     * Pelaajien ja pelin alustus
-     */
-    private void alustaPeli() {
-        vuorossaPelaaja = 0;
-        pelaajamaara = pelaajat.size();
-        for (Pelaaja pelaaja : pelaajat) {
-            pelaaja.imageView = new ImageView(getContext());
-            pelaaja.imageView.setClipToOutline(true);
-            pelaaja.imageView.setImageDrawable(pelaaja.pelaajakuva);
-            Pelaaja.liikutaPelaajaRuutuun(pelaaja, peliRuudut.get(0));
-        }
-        ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
-        tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
-    }
-
-    private void aloitaPeli() {
     }
 }

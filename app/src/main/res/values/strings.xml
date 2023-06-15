@@ -2,6 +2,7 @@
     <string name="app_name">Ready4Play</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_blank">blank</string>
 
     <!-- Alkuvalikko -->
     <string name="text_gametitle">Ready4Play</string>
@@ -39,8 +40,10 @@
     <string name="text_typePlayerName">Type name here</string>
     <string name="text_addedPlayers">Players:</string>
     <string name="text_add">✓</string>
+    <string name="text_startGame">Start Game!</string>
 
     <!-- Peli -->
+    <string name="text_X">X</string>
     <string name="text_mainMenu">Main Menu</string>
     <string name="text_inTurn">Turn: </string>
     <string name="text_throwDice">Throw the Dice!</string>
@@ -95,4 +98,8 @@
     <!-- Lopetus -->
     <string name="text_thanks4Playing">Thanks 4-playing!</string>
 
+
+    <!-- Content description -->
+    <string name="contentDesc_piece">Piece</string>
+    <string name="contentDesc_GameBoard">Gameboard</string>
 </resources>

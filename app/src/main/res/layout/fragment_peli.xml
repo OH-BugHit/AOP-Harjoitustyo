@@ -42,7 +42,7 @@
         android:id="@+id/tvPelaajaNimi_Peli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="@string/text_blank"
         app:layout_constraintBottom_toBottomOf="@+id/ivNappulaVuorossa"
         app:layout_constraintStart_toEndOf="@+id/tvVuorossa_Peli"
         app:layout_constraintTop_toTopOf="@+id/ivNappulaVuorossa" />
@@ -53,6 +53,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="4dp"
+        android:contentDescription="@string/contentDesc_piece"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi_Peli"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@drawable/nappula1" />
@@ -101,6 +102,7 @@
         android:id="@+id/tvLopeta"
         android:layout_width="100dp"
         android:layout_height="48dp"
+        android:background="#FFFFFF"
         android:gravity="center_vertical"
         android:text="@string/text_quit"
         android:textSize="16sp"
@@ -111,6 +113,7 @@
         android:id="@+id/tvPaavalikko"
         android:layout_width="100dp"
         android:layout_height="48dp"
+        android:background="#FFFFFF"
         android:gravity="center_vertical"
         android:text="@string/text_mainMenu"
         android:textSize="16sp"
@@ -122,8 +125,9 @@
         android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
+        android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="TextView"
+        android:text="@string/text_blank"
         app:layout_constraintEnd_toEndOf="@+id/ivHampuri_peli"
         app:layout_constraintTop_toBottomOf="@+id/ivHampuri_peli" />
 
@@ -133,7 +137,119 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/ivNappula0"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="432dp"
+        android:layout_marginTop="120dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula1"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="148dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula2"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="196dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula3"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="116dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula4"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginTop="244dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula5"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="300dp"
+        android:layout_marginTop="68dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula6"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="352dp"
+        android:layout_marginTop="100dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula7"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginTop="156dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula8"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="524dp"
+        android:layout_marginTop="80dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+
+    <ImageView
+        android:id="@+id/ivNappula9"
+        android:layout_width="25dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="136dp"
+        android:contentDescription="@string/contentDesc_piece"
+        android:src="@drawable/nappula1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider6" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
