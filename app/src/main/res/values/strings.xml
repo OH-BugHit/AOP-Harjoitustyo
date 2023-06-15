@@ -43,6 +43,54 @@
     <!-- Peli -->
     <string name="text_mainMenu">Main Menu</string>
     <string name="text_inTurn">Turn: </string>
+    <string name="text_throwDice">Throw the Dice!</string>
+    <string name="text_skipTurn">Skip turn</string>
+
+    <!-- Hitler
+     Ässä, Vesiputous. 2, Anna 2 huikkaa. 3, Juo 3 huikkaa. 4, Hitler. 5, 123. 6, Naiset juovat 3 huikkaa. 7, Kategoria. 8, Sääntö. 9, Kaikki juovat 3 huikkaa. 10, Miehet juovat 3 huikkaa. 11, Tauko-kortti. TEE TÄHÄN SKIPPIKORTTI? 12, Huora. 13, Kuningashörppy.
+    Hitler:
+    Kaikkien on noustava seisomaan ja huudettava hitler. Viimeisenä tämän tehnyt joutuu juomaan 3 huikkaa.
+    123:
+    Kortin nostaja juo yhden huikan, seuraava pelaaja juo 2 huikkaan, sitä seuraava 3 huikkaa jne. kunnes kaikki pelaajat ovat joutuneet kerran juomaan.
+    Sääntö:
+    Saat keksiä peliin yhden uuden säännön.
+    Huora:
+    Kortin nostanut valitsee jonkun pelaajan huoraksi ja antaa hänellä kortin. Aina kun joku juo, hän joutuu juomaan saman verran.
+    Kuningashörppy:
+    Kortin nostanut pelaaja kaataa omasta kaljastaan tuoppiin. Se kuka nostaa viimeisen kuninkaan kaataa myös siihen kaljaa ja sitten juo tuopin tyhjäksi.
+     -->
+    <string name="text_hitlerTitle">Hitler</string>
+    <string name="text_tapToDraw">Tap card to draw!</string>
+    <string name="text_taskDescriptionHitler">Ässä, Vesiputous.
+2, Anna 2 huikkaa.
+3, Juo 3 huikkaa.
+4, Hitler.
+5, 123.
+6, Naiset juovat 3 huikkaa.
+7, Kategoria.
+8, Sääntö.
+9, Kaikki juovat 3 huikkaa.
+10, Miehet juovat 3 huikkaa.
+11, Tauko-kortti.
+12, Huora.
+13, Kuningashörppy.</string>
+    <string name="text_continueGame">Continue game</string>
+
+    <string name="text_waterfallDesc">All players start to drink…</string>
+    <string name="text_give2">Give 2 sips to someone!</string>
+    <string name="text_drink3">Drink 3 sips!</string>
+    <string name="text_hitler">Last one to stand up and shout "Hitler!", drinks 3 sips.
+        Probably you since you are still reading this!</string>
+    <string name="text_123">The one that draw card drinks 1, next one 2, next one 3 etc…</string>
+    <string name="text_womenDrink">All the women drink 3 sips!</string>
+    <string name="text_category">Player who drew card tells category and first example. All players in turn must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
+    <string name="text_rule">Make new rule for the game! Rule stays in place until next role (or you decide, it\'s your game anyway)</string>
+    <string name="text_everybodyDrink">Everybody takes 3 sips</string>
+    <string name="text_menDrink">All the men drink 3 sips</string>
+    <string name="text_skip">Wohoo! This is the "Skip-Task"-card! Unfortunately it doesn\'t allow you to skip actual tasks, but feel free to skip next few sips you should otherwise take!</string>
+    <string name="text_hoe">Make a hoe out of friend! Person you choose, has to drink always when you drink. To seal the deal, both of you take 3 sips now! (That makes it 6 to your hoe ;) )</string>
+    <string name="text_kingdrink">THE Drink! \nPour few sips of your drink to glass. The player mentioned at the screen does the same and drinks it!</string>
+
 
     <!-- Lopetus -->
     <string name="text_thanks4Playing">Thanks 4-playing!</string>

@@ -7,58 +7,49 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Noppa#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.Random;
+
 public class Noppa extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static Random random = new Random();
+    private static ImageView noppaKuva;
 
     public Noppa() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Noppa.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Noppa newInstance(String param1, String param2) {
-        Noppa fragment = new Noppa();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_noppa, container, false);
+        View view = inflater.inflate(R.layout.fragment_noppa, container, false);
+        noppaKuva = view.findViewById(R.id.ivNoppa);
+        noppaKuva.setVisibility(View.INVISIBLE);
+        return view;
+    }
+
+    /**
+     * Heittää nopan ja asettaa nopan kuvan näkyviin
+     * @return Palauttaa heiton arvon (mukaan laskettu asetuksissa määritelty asetus)
+     */
+    public static int heitaNoppaa() {
+        noppaKuva.setVisibility(View.VISIBLE);
+        // TOTEUTA TÄÄ RIVI KUN ON TALLENNUS JA LATAUS! int heitto = random.nextInt(6) + 1 + UusiPeli.asetukset.noppaPlus;
+        int heitto = random.nextInt(6) + 1;
+        switch (heitto) {
+            case 1 -> noppaKuva.setImageResource(R.drawable.noppa1);
+            case 2 -> noppaKuva.setImageResource(R.drawable.noppa2);
+            case 3 -> noppaKuva.setImageResource(R.drawable.noppa3);
+            case 4 -> noppaKuva.setImageResource(R.drawable.noppa4);
+            case 5 -> noppaKuva.setImageResource(R.drawable.noppa5);
+            case 6 -> noppaKuva.setImageResource(R.drawable.noppa6);
+            case 7 -> noppaKuva.setImageResource(R.drawable.noppa7);
+            case 8 -> noppaKuva.setImageResource(R.drawable.noppa8);
+            case 9 -> noppaKuva.setImageResource(R.drawable.noppa9);
+            case 10 -> noppaKuva.setImageResource(R.drawable.noppa10);
+            case 11 -> noppaKuva.setImageResource(R.drawable.noppa11);
+        }
+        return heitto ;
     }
 }

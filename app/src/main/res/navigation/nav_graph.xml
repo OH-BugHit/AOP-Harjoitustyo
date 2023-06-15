@@ -38,5 +38,21 @@
         android:id="@+id/uusiPeli"
         android:name="com.oh.ready4play.UusiPeli"
         android:label="fragment_uusi_peli"
-        tools:layout="@layout/fragment_uusi_peli" />
+        tools:layout="@layout/fragment_uusi_peli" >
+        <action
+            android:id="@+id/action_uusiPeli_to_peli"
+            app:destination="@id/peli" />
+    </fragment>
+    <fragment
+        android:id="@+id/peli"
+        android:name="com.oh.ready4play.Peli"
+        android:label="fragment_peli"
+        tools:layout="@layout/fragment_peli" >
+        <action
+            android:id="@+id/action_peli_to_alkuvalikko"
+            app:destination="@id/alkuvalikko" />
+        <action
+            android:id="@+id/action_peli_to_quitFragment"
+            app:destination="@id/quitFragment" />
+    </fragment>
 </navigation>

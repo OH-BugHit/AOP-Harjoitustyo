@@ -19,7 +19,6 @@ public class PeliNakyma extends Fragment {
         View view = inflater.inflate(R.layout.fragment_peli_nakyma, container, false);
 
 
-
         return view;
     }
 }

@@ -4,6 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 
 //TODO: Jäänyt bugi. Jos poistaa viimeisen, sen nappula tulee uusiksi. Muuten toimii
 public class UusiPeli extends Fragment {
+    public static Tallennus asetukset;
     public static ArrayList<Pelaaja> itemArrayList = new ArrayList<>();
     public static Boolean[] nappulaKuva = new Boolean[10];
     public static ImageView ivNappulanKuva;
@@ -53,7 +55,7 @@ public class UusiPeli extends Fragment {
 
 
         btAloitaPeli.setOnClickListener(e -> {
-            //TODO: tee tänne navigaatio peliin Pelaajasetillä
+            Navigation.findNavController(view).navigate(R.id.action_uusiPeli_to_peli);
         });
 
         btLisaaPelaaja.setOnClickListener(e -> {
