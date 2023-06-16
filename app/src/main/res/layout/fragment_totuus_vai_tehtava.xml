@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/totuusVaiTehtavaLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".minipelit.TotuusVaiTehtava">
+
+    <Button
+        android:id="@+id/btJatkaPelia_TotuusVaiTehtava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/text_continueGame"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle_TotuusVaiTehtava"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle_TotuusVaiTehtava" />
+
+    <TextView
+        android:id="@+id/tvTitle_TotuusVaiTehtava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_TruthOrDareTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider9"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_TotuusVaiTehtava" />
+
+    <TextView
+        android:id="@+id/tvPelaajaNimi1_TotuusVaiTehtava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_blank"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus_TotuusVaiTehtava2"
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_TotuusVaiTehtava1" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus_TotuusVaiTehtava1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_taskDescriptionTruthOrDarePt1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi1_TotuusVaiTehtava" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus_TotuusVaiTehtava3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_taskDescriptionTruthOrDarePt3"
+        app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi2_TotuusVaiTehtava"
+        app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi2_TotuusVaiTehtava" />
+
+    <TextView
+        android:id="@+id/tvPelaajaNimi2_TotuusVaiTehtava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_blank"
+        app:layout_constraintStart_toEndOf="@+id/tvOhjeistus_TotuusVaiTehtava2"
+        app:layout_constraintTop_toTopOf="@+id/tvOhjeistus_TotuusVaiTehtava2" />
+
+    <TextView
+        android:id="@+id/tvPelaajaNimi3_TotuusVaiTehtava"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_blank"
+        app:layout_constraintStart_toEndOf="@+id/tvOhjeistus_TotuusVaiTehtava4"
+        app:layout_constraintTop_toTopOf="@+id/tvOhjeistus_TotuusVaiTehtava4" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus_TotuusVaiTehtava2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_taskDescriptionTruthOrDarePt2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvPelaajaNimi1_TotuusVaiTehtava"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus_TotuusVaiTehtava4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_taskDescriptionTruthOrDarePt4"
+        app:layout_constraintStart_toStartOf="@+id/tvOhjeistus_TotuusVaiTehtava2"
+        app:layout_constraintTop_toBottomOf="@+id/tvPelaajaNimi2_TotuusVaiTehtava" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus_TotuusVaiTehtava5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_taskDescriptionTruthOrDarePt5"
+        app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi3_TotuusVaiTehtava"
+        app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi3_TotuusVaiTehtava" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

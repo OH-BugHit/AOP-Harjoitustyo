@@ -91,15 +91,35 @@
     <string name="text_everybodyDrink">Everybody takes 3 sips</string>
     <string name="text_menDrink">All the men drink 3 sips</string>
     <string name="text_skip">Wohoo! This is the "Skip-Task"-card! Unfortunately it doesn\'t allow you to skip actual tasks, but feel free to skip next few sips you should otherwise take!</string>
-    <string name="text_hoe">Make a hoe out of friend! Person you choose, has to drink always when you drink. To seal the deal, both of you take 3 sips now! (That makes it 6 to your hoe ;) )</string>
+    <string name="text_hoe">Make a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 3 sips now! (That makes it 6 to your hoe ;) )</string>
     <string name="text_kingdrink">THE Drink! \nPour few sips of your drink to glass. The player mentioned at the screen does the same and drinks it!</string>
 
+    <!-- Huora -->
+    <string name="text_huoraTitle">Hoe</string>
+    <string name="text_taskDescriptionHoe">Make a hoe out of friend!\n\nPerson you choose, has to drink always when you drink (related to game).\n\nTo seal the deal, both of you take 3 sips now! (That makes it 6 to your hoe ;) )</string>
 
-    <!-- Lopetus -->
-    <string name="text_thanks4Playing">Thanks 4-playing!</string>
+    <!-- TytotVsPojat -->
+    <string name="text_tytotVsPojatTitle">Girls VS Boys!</string>
+    <string name="text_taskDescriptiontytotVsPojat">Together as group, come up with a challenge and create an epic battle against sexes!\n\nYou may choose if whole team has to participate or just one on one or something else.\n\nLosers take shots!\n(Thirsty winners may also take ones)</string>
 
+    <!-- Totuus vai tehtävä -->
+    <string name="text_TruthOrDareTitle">Thruth or Dare!</string>
+    <string name="text_taskDescriptionTruthOrDarePt1"> chooses truth or dare.</string>
+    <string name="text_taskDescriptionTruthOrDarePt2">Truth: Other players asks something and </string>
+    <string name="text_taskDescriptionTruthOrDarePt3"> has to answer thrutfully.</string>
+    <string name="text_taskDescriptionTruthOrDarePt4">Dare: Other players dare </string>
+    <string name="text_taskDescriptionTruthOrDarePt5"> to do task.</string>
+
+    <!-- Would You Rather -->
+    <string name="text_WouldYouRatherTitle">Would You Rather?</string>
+    <string name="text_taskDescriptionWouldYouRather">Other players ask would you rather question from </string>
+    <string name="text_taskDescriptionWouldYouRather2">Also take 2 sips.</string>
 
     <!-- Content description -->
     <string name="contentDesc_piece">Piece</string>
     <string name="contentDesc_GameBoard">Gameboard</string>
+
+    <!-- Lopetus -->
+    <string name="text_thanks4Playing">Thanks 4-playing!</string>
+
 </resources>
