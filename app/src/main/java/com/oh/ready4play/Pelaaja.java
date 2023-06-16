@@ -29,8 +29,10 @@ public class Pelaaja {
      */
     public int sijainti;
 
-
     public ImageView imageView;
+
+    public boolean kaksiTotuutta = false;
+    public boolean bonusAskeleet = false;
 
     /**
      * Alustaja pelaajalle

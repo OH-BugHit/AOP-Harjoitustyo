@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    static MainActivity INSTANCE;
+    public static MainActivity INSTANCE;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

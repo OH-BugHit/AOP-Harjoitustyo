@@ -3,7 +3,6 @@ package com.oh.ready4play.minipelit;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.oh.ready4play.Kortti;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
@@ -46,7 +46,7 @@ public class Hitler extends Fragment {
         btJatkaPelia.setVisibility(View.INVISIBLE);
 
         ivKortti.setOnClickListener(e -> {
-            int kortti = arvoKortti();
+            Kortti kortti = arvoKortti();
             kortinTapahtuma(kortti);
             btJatkaPelia.setVisibility(View.VISIBLE);
         });
@@ -64,59 +64,45 @@ public class Hitler extends Fragment {
     }
 
     //TODO: TEE KUVAT KORTEISTA JA ASETA NE TÄNNE!
-    private void kortinTapahtuma(int kortti) {
-        switch (kortti) {
+    private void kortinTapahtuma(Kortti kortti) {
+        switch (kortti.arvo-1) {
             case 0 -> {
-                //Laita tänne kuvat korteista
-               ivKortti.setImageResource(R.drawable.noppa1);
                tvOhjeet.setText(R.string.text_waterfallDesc);
             }
             case 1 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_give2);
             }
             case 3 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_drink3);
             }
             case 4 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_hitler);
             }
             case 5 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_123);
             }
             case 6 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_womenDrink);
             }
             case 7 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_category);
             }
             case 8 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_rule);
             }
             case 9 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_everybodyDrink);
             }
             case 10 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_menDrink);
             }
             case 11 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_skip);
             }
             case 12 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_hoe);
             }
             case 13 -> {
-                ivKortti.setImageResource(R.drawable.noppa1);
                 tvOhjeet.setText(R.string.text_kingdrink);
                 int arvottu = pelaajaVuorossa;
                 while (arvottu == pelaajaVuorossa) {
@@ -125,9 +111,12 @@ public class Hitler extends Fragment {
                 tvArvottu.setText(Peli.pelaajat.get(arvottu).pelaajanimi);
             }
         }
+        ivKortti.setImageDrawable(kortti.kuva.getDrawable());
     }
 
-    private int arvoKortti() {
-        return random.nextInt(14);
+    private Kortti arvoKortti() {
+        Peli.pakka.size();
+        return Peli.pakka.get(random.nextInt(Peli.pakka.size()));
+        //TÄÄLLÄ TOIMI SIIS JO AIEMMIN JOS ARVOTTIIN 0-12 ja sitten asetettiin se ivKortti kuva
     }
 }

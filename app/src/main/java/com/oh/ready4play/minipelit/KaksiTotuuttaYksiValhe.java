@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.oh.ready4play.Pelaaja;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
@@ -24,6 +25,7 @@ public class KaksiTotuuttaYksiValhe extends Fragment {
         Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_2Totuutta1Valhe);
 
         btJatkaPelia.setOnClickListener(e -> {
+            Peli.pelaajat.get(Peli.vuorossaPelaaja).kaksiTotuutta = true;
             Peli.seuraavaVuoro = true;
             Peli.fragmentManager.beginTransaction()
                     .remove(this)

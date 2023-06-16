@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fuckTheDealerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".minipelit.FuckTheDealer">
+
+    <TextView
+        android:id="@+id/tvTitle_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_fTheDealerTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider16"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_FtheDealer" />
+
+    <Button
+        android:id="@+id/btJatkaPelia_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:minHeight="48dp"
+        android:text="@string/text_continueGame"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle_FtheDealer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle_FtheDealer" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_taskDescriptionFTheDealer"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintStart_toEndOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintTop_toTopOf="@+id/tvPelaajaVuorossa_FtheDealer" />
+
+    <TextView
+        android:id="@+id/tvPelaajaVuorossa_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_blank"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus2_FtheDealer"
+        app:layout_constraintStart_toStartOf="@+id/tvOhjeistus4_FtheDealer"
+        app:layout_constraintTop_toBottomOf="@+id/divider16"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus2_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_taskDescriptionFTheDealer2"
+        app:layout_constraintBottom_toTopOf="@+id/tvSeuraavaPelaaja_FtheDealer"
+        app:layout_constraintStart_toStartOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintTop_toBottomOf="@+id/tvPelaajaVuorossa_FtheDealer" />
+
+    <TextView
+        android:id="@+id/tvSeuraavaPelaaja_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_blank"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus4_FtheDealer"
+        app:layout_constraintStart_toStartOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus2_FtheDealer" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus3_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_taskDescriptionFTheDealer3"
+        app:layout_constraintStart_toEndOf="@+id/tvSeuraavaPelaaja_FtheDealer"
+        app:layout_constraintTop_toTopOf="@+id/tvSeuraavaPelaaja_FtheDealer" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus4_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_taskDescriptionFTheDealer4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSeuraavaPelaaja_FtheDealer" />
+
+    <Button
+        android:id="@+id/btAloita_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/text_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivKortti_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/korttiK"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/k" />
+
+    <Button
+        android:id="@+id/btNextCard_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_btNextCard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btPeek_FtheDealer"
+        app:layout_constraintTop_toBottomOf="@+id/ivKortti_FtheDealer" />
+
+    <Button
+        android:id="@+id/btPeek_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_btPeek"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btNextCard_FtheDealer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivKortti_FtheDealer" />
+</androidx.constraintlayout.widget.ConstraintLayout>

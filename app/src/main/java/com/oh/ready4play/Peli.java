@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 
+import android.text.method.TextKeyListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +15,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.oh.ready4play.minipelit.FuckTheDealer;
 import com.oh.ready4play.minipelit.Hitler;
 import com.oh.ready4play.minipelit.Huora;
 import com.oh.ready4play.minipelit.KaksiTotuuttaYksiValhe;
 import com.oh.ready4play.minipelit.KolmeShottia;
+import com.oh.ready4play.minipelit.Ravit;
 import com.oh.ready4play.minipelit.Sanaselitys;
 import com.oh.ready4play.minipelit.TotuusVaiTehtava;
 import com.oh.ready4play.minipelit.TytotVsPojat;
@@ -27,6 +30,7 @@ import java.util.ArrayList;
 
 public class Peli extends Fragment {
     public static volatile boolean seuraavaVuoro = false;
+    public static ArrayList<Kortti> pakka = new ArrayList<>();
     View view;
     public static ImageView[] ivNappulat = new ImageView[10];
     public static ArrayList<Pelaaja> pelaajat;
@@ -37,6 +41,8 @@ public class Peli extends Fragment {
     private boolean hampuriKlikattu = false;
     Button btHeitaNoppa;
     Button btOhita;
+    Button btFail;
+    Button bt3;
     ImageView ivNappula;
     TextView tvVuorossaPelaaja;
     TextView tvOhitaPelaajanimi;
@@ -48,12 +54,20 @@ public class Peli extends Fragment {
         btOhita.setVisibility(View.VISIBLE);
         btHeitaNoppa.setVisibility(View.VISIBLE);
         tvOhitaPelaajanimi.setEnabled(true);
+        if (pelaajat.get(vuorossaPelaaja).kaksiTotuutta) {
+            bt3.setVisibility(View.VISIBLE);
+            btFail.setVisibility(View.VISIBLE);
+        } else {
+            bt3.setVisibility(View.INVISIBLE);
+            btFail.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        alustaKorttipakka();
+
         view = inflater.inflate(R.layout.fragment_peli, container, false);
 
         ivNappulat[0] = view.findViewById(R.id.ivNappula0);
@@ -86,10 +100,25 @@ public class Peli extends Fragment {
 
         tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
 
+        btFail = view.findViewById(R.id.btFail_Peli);
+        btFail.setVisibility(View.INVISIBLE);
+        bt3 = view.findViewById(R.id.bt3_Peli);
+        bt3.setVisibility(View.INVISIBLE);
+
         btHeitaNoppa = view.findViewById(R.id.btHeita_Peli);
         btOhita = view.findViewById(R.id.btOhita_Peli);
 
         ImageView ivHampuri = view.findViewById(R.id.ivHampuri_peli);
+
+        bt3.setOnClickListener(e -> {
+            pelaajat.get(vuorossaPelaaja).bonusAskeleet = true;
+            pelaajat.get(vuorossaPelaaja).kaksiTotuutta = false;
+        });
+
+        btFail.setOnClickListener(e -> {
+            pelaajat.get(vuorossaPelaaja).kaksiTotuutta = false;
+        });
+
         btHeitaNoppa.setOnClickListener(e -> {
 
             btOhita.setVisibility(View.INVISIBLE);
@@ -101,6 +130,7 @@ public class Peli extends Fragment {
             if (toiminto != 13) {
                 suoritaVuoro(toiminto);
             } else {//TODO: GAME OVER! Voittaja on vuorossaoleva
+                System.out.println("Pelissä edettiin maaliin!!\nVoittaja on: " + vuorossaPelaaja);
             }
             Thread t1 = new Thread(new Runnable() {
                 @Override
@@ -152,6 +182,35 @@ public class Peli extends Fragment {
         return view;
         }
 
+        //TODO: TEE KORTTIPAKKA LOPPUUN JA TESTAA HITLER
+    private void alustaKorttipakka() {
+        for (int i = 0; i < 52; i++) {
+            Kortti kortti = new Kortti();
+            if (i < 13) {
+                kortti.arvo = i+1;
+                kortti.maa = "Hertta";
+            } else if (i < 26) {
+                kortti.arvo = i-12;
+                kortti.maa = "Ruutu";
+            } else if (i < 39) {
+                kortti.arvo = i-25;
+                kortti.maa = "Pata";
+            } else {
+                kortti.arvo = i-38;
+                kortti.maa = "Risti";
+            }
+            switch (i) {
+                case 0 -> kortti.kuva.setImageResource(R.drawable.k);
+                case 1 -> kortti.kuva.setImageResource(R.drawable.k);
+                case 2 -> kortti.kuva.setImageResource(R.drawable.k);
+                case 3 -> kortti.kuva.setImageResource(R.drawable.k);
+                case 4 -> kortti.kuva.setImageResource(R.drawable.k);
+                //ETC. TEE OIKEILLA KORTEILLA
+            }
+            pakka.add(kortti);
+        }
+    }
+
     private void seuraavanPelaajanVuoro() {
         while (!seuraavaVuoro) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -201,16 +260,28 @@ public class Peli extends Fragment {
                     .setReorderingAllowed(true)
                     .addToBackStack(null)
                     .commit();
-            case 7 -> {
+            case 7 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, KaksiTotuuttaYksiValhe.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 8 -> {
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, KaksiTotuuttaYksiValhe.class,null)
+                        .replace(R.id.fcvMinipeliNakyma, Sanaselitys.class,null)
                         .setReorderingAllowed(true)
                         .addToBackStack(null)
                         .commit();
             }
-            case 8 -> {
+            case 9 -> {
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, Sanaselitys.class,null)
+                        .replace(R.id.fcvMinipeliNakyma, FuckTheDealer.class,null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit();
+            }
+            case 10 -> {
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fcvMinipeliNakyma, Ravit.class,null)
                         .setReorderingAllowed(true)
                         .addToBackStack(null)
                         .commit();

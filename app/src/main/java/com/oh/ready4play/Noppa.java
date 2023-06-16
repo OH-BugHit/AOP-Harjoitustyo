@@ -50,6 +50,10 @@ public class Noppa extends Fragment {
             case 10 -> noppaKuva.setImageResource(R.drawable.noppa10);
             case 11 -> noppaKuva.setImageResource(R.drawable.noppa11);
         }
+        if (Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet) {
+            heitto += 3;
+            Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet = false;
+        }
         return heitto ;
     }
 }
