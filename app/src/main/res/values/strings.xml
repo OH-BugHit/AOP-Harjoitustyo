@@ -115,6 +115,25 @@
     <string name="text_taskDescriptionWouldYouRather">Other players ask would you rather question from </string>
     <string name="text_taskDescriptionWouldYouRather2">Also take 2 sips.</string>
 
+    <!-- 3 shottia -->
+    <string name="text_3ShotsTitle">Three shots!</string>
+    <string name="text_taskDescription3Shots">Pour three shots. One contains alcohol, other two doesn\'t.\nExample: 1 shot of vodka, two shots of water.</string>
+    <string name="text_taskDescriprion3Shots2"> chooses one blindfolded and drinks it. No smelling it! Just drink ;)</string>
+
+    <!-- 2 Totuutta 1 Valhe -->
+    <string name="text_2Truths1LieTitle">Two Truths One Lie!</string>
+    <string name="text_taskDescription2Truths1Lie">Think of two true events from your life or things about you and one lie.\n\nOther players may ask questions about those claims.\n\nFinally everybody tries to guess which one is the lie.\n\nWrong guess gets rewarded with 5 sips!\n\nSucceeding to fool everybody results +3 steps to your next dice!\nYou will be presented "Failure" and "+3" buttons at board view visible at your turns to click before throwing the dice when completed this task.
+
+    Game can continue until you are ready with claims,\nbut there is 5 sips penalty every round to you until you complete this task.</string>
+
+    <!-- Sanaselitys -->
+    <string name="text_dictionaryTitle">Dictionary!</string>
+    <string name="text_taskDescriptionDictionary">Choose partner for this task\n\nExplain words presented here before timer runs out\n\nYou have 1 minute\n\nDon\'t use any part of the word itself\n\nYou may skip words with skip button (penalty 0,5)\n\nGood luck!</string>
+    <string name="text_btSkip">Skip!</string>
+    <string name="text_btCorrect">Correct!</string>
+    <string name="text_start">Start!</string>
+
+
     <!-- Content description -->
     <string name="contentDesc_piece">Piece</string>
     <string name="contentDesc_GameBoard">Gameboard</string>

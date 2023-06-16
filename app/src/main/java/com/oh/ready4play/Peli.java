@@ -3,7 +3,6 @@ package com.oh.ready4play;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
@@ -17,6 +16,9 @@ import android.widget.TextView;
 
 import com.oh.ready4play.minipelit.Hitler;
 import com.oh.ready4play.minipelit.Huora;
+import com.oh.ready4play.minipelit.KaksiTotuuttaYksiValhe;
+import com.oh.ready4play.minipelit.KolmeShottia;
+import com.oh.ready4play.minipelit.Sanaselitys;
 import com.oh.ready4play.minipelit.TotuusVaiTehtava;
 import com.oh.ready4play.minipelit.TytotVsPojat;
 import com.oh.ready4play.minipelit.WouldYouRather;
@@ -28,7 +30,7 @@ public class Peli extends Fragment {
     View view;
     public static ImageView[] ivNappulat = new ImageView[10];
     public static ArrayList<Pelaaja> pelaajat;
-    private static ArrayList<Ruutu> peliRuudut = new ArrayList<>();;
+    private static final ArrayList<Ruutu> peliRuudut = new ArrayList<>();
     public static int vuorossaPelaaja = 0;
     public static int pelaajamaara;
     private int toiminto;
@@ -169,43 +171,49 @@ public class Peli extends Fragment {
     private void suoritaVuoro(int toiminto) {
 
         switch (toiminto) {
-            case 1 -> {
+            case 1 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 2 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, Huora.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 3 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, TytotVsPojat.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 4 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, TotuusVaiTehtava.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 5 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, WouldYouRather.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 6 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, KolmeShottia.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 7 -> {
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)
+                        .replace(R.id.fcvMinipeliNakyma, KaksiTotuuttaYksiValhe.class,null)
                         .setReorderingAllowed(true)
                         .addToBackStack(null)
                         .commit();
             }
-            case 2 -> {
+            case 8 -> {
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, Huora.class,null)
+                        .replace(R.id.fcvMinipeliNakyma, Sanaselitys.class,null)
                         .setReorderingAllowed(true)
                         .addToBackStack(null)
                         .commit();
-            }
-            case 3 -> {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, TytotVsPojat.class,null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
-            case 4 -> {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, TotuusVaiTehtava.class,null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
-            case 5 -> {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, WouldYouRather.class,null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
-            case 6 -> {
-
             }
         }
     }
