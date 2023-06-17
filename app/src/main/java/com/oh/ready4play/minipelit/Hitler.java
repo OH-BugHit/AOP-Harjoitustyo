@@ -111,7 +111,7 @@ public class Hitler extends Fragment {
                 tvArvottu.setText(Peli.pelaajat.get(arvottu).pelaajanimi);
             }
         }
-        ivKortti.setImageDrawable(kortti.kuva.getDrawable());
+        ivKortti.setImageDrawable(kortti.kuva);
     }
 
     private Kortti arvoKortti() {

@@ -3,6 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_blank">blank</string>
+    <string name="text_score">Score</string>
 
     <!-- Alkuvalikko -->
     <string name="text_gametitle">Ready4Play</string>
@@ -114,7 +115,7 @@
 
     <!-- Would You Rather -->
     <string name="text_WouldYouRatherTitle">Would You Rather?</string>
-    <string name="text_taskDescriptionWouldYouRather">Other players ask would you rather question from </string>
+    <string name="text_taskDescriptionWouldYouRather">Other players ask would you rather question from</string>
     <string name="text_taskDescriptionWouldYouRather2">Also take 2 sips.</string>
 
     <!-- 3 shottia -->
@@ -134,7 +135,7 @@
     <string name="text_btSkip">Skip!</string>
     <string name="text_btCorrect">Correct!</string>
     <string name="text_start">Start!</string>
-    <string name="text_lopputekstiDictionary">Time\'s up!\n\nGive sips same amount as your score: </string>
+    <string name="text_lopputekstiDictionary">Time\'s up!\n\nGive sips same amount as your score at top of the screen!</string>
 
     <!-- Fuck The Dealer -->
     <string name="text_fTheDealerTitle">Fuck The Dealer!</string>

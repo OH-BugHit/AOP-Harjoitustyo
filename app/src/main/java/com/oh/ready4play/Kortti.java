@@ -6,5 +6,5 @@ import android.widget.ImageView;
 public class Kortti {
     public int arvo;
     public String maa;
-    public ImageView kuva;
+    public Drawable kuva;
 }

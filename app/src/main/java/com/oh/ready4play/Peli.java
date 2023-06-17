@@ -1,5 +1,7 @@
 package com.oh.ready4play;
 
+import android.annotation.SuppressLint;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -113,10 +115,14 @@ public class Peli extends Fragment {
         bt3.setOnClickListener(e -> {
             pelaajat.get(vuorossaPelaaja).bonusAskeleet = true;
             pelaajat.get(vuorossaPelaaja).kaksiTotuutta = false;
+            bt3.setVisibility(View.INVISIBLE);
+            btFail.setVisibility(View.INVISIBLE);
         });
 
         btFail.setOnClickListener(e -> {
             pelaajat.get(vuorossaPelaaja).kaksiTotuutta = false;
+            bt3.setVisibility(View.INVISIBLE);
+            btFail.setVisibility(View.INVISIBLE);
         });
 
         btHeitaNoppa.setOnClickListener(e -> {
@@ -174,15 +180,14 @@ public class Peli extends Fragment {
 
         tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
 
-        //TODO: Mieti kannattaako toteuttaa erillisen threadiin peli pyörimään vai ei. Jos toteutat niin tee onDestroy ja threadien tappamiset jne...
         alustaPelilauta();
         alustaPeli();
-        //aloita peliin toteutetaan sitten se thread homma jos toteutetaan. Nyt toimii suoraan Heita noppaa napilla vaan.
-        aloitaPeli();
+
         return view;
         }
 
         //TODO: TEE KORTTIPAKKA LOPPUUN JA TESTAA HITLER
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void alustaKorttipakka() {
         for (int i = 0; i < 52; i++) {
             Kortti kortti = new Kortti();
@@ -200,11 +205,11 @@ public class Peli extends Fragment {
                 kortti.maa = "Risti";
             }
             switch (i) {
-                case 0 -> kortti.kuva.setImageResource(R.drawable.k);
-                case 1 -> kortti.kuva.setImageResource(R.drawable.k);
-                case 2 -> kortti.kuva.setImageResource(R.drawable.k);
-                case 3 -> kortti.kuva.setImageResource(R.drawable.k);
-                case 4 -> kortti.kuva.setImageResource(R.drawable.k);
+                case 0 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
+                case 1 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
+                case 2 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
+                case 3 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
+                case 4 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
                 //ETC. TEE OIKEILLA KORTEILLA
             }
             pakka.add(kortti);
@@ -223,12 +228,16 @@ public class Peli extends Fragment {
         } else {
             vuorossaPelaaja ++;
         }
+        MainActivity.INSTANCE.runOnUiThread(Peli.this::asetaSeuraava);
+    }
+
+    private void asetaSeuraava() {
         tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
         ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
     }
 
     private void suoritaVuoro(int toiminto) {
-
+        toiminto = 9;
         switch (toiminto) {
             case 1 -> fragmentManager.beginTransaction()
                     .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)
@@ -321,8 +330,6 @@ public class Peli extends Fragment {
         tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
     }
 
-    private void aloitaPeli() {
-    }
     /**
      * Asetetaan pelilaudan ruuduille ominaisuudet
      */
