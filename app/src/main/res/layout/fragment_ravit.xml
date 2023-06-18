@@ -1,14 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".minipelit.Ravit">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <Button
+        android:id="@+id/btJatkaPelia_ravit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/text_continueGame"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle_Ravit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle_Ravit" />
 
-</FrameLayout>
+    <View
+        android:id="@+id/divider15"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_Ravit" />
+
+    <TextView
+        android:id="@+id/tvTitle_Ravit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_horseRaceTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivPataAssa_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintBottom_toTopOf="@+id/ivRuutuAssa_Ravit"
+        app:layout_constraintStart_toStartOf="@+id/ivArvottuKortti_Ravit"
+        app:layout_constraintTop_toBottomOf="@+id/divider15" />
+
+    <ImageView
+        android:id="@+id/ivRuutuAssa_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintBottom_toTopOf="@+id/ivRistiAssa_Ravit"
+        app:layout_constraintStart_toStartOf="@+id/ivArvottuKortti_Ravit"
+        app:layout_constraintTop_toBottomOf="@+id/ivPataAssa_Ravit" />
+
+    <ImageView
+        android:id="@+id/ivRistiAssa_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintBottom_toTopOf="@+id/ivHerttaAssa_Ravit"
+        app:layout_constraintStart_toStartOf="@+id/ivArvottuKortti_Ravit"
+        app:layout_constraintTop_toBottomOf="@+id/ivRuutuAssa_Ravit" />
+
+    <ImageView
+        android:id="@+id/ivHerttaAssa_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintBottom_toTopOf="@+id/ivArvottuKortti_Ravit"
+        app:layout_constraintStart_toStartOf="@+id/ivArvottuKortti_Ravit"
+        app:layout_constraintTop_toBottomOf="@+id/ivRistiAssa_Ravit" />
+
+    <ImageView
+        android:id="@+id/ivEkaTaso_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintEnd_toStartOf="@+id/ivTokaTaso_Ravit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivArvottuKortti_Ravit"
+        app:layout_constraintTop_toTopOf="@+id/ivArvottuKortti_Ravit"
+        tools:src="@drawable/hertta11" />
+
+    <ImageView
+        android:id="@+id/ivArvottuKortti_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:rotation="-8"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivEkaTaso_Ravit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivHerttaAssa_Ravit"
+        tools:src="@drawable/jokeri2" />
+
+    <ImageView
+        android:id="@+id/ivTokaTaso_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintEnd_toStartOf="@+id/ivKolmasTaso_Ravit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivEkaTaso_Ravit"
+        app:layout_constraintTop_toTopOf="@+id/ivEkaTaso_Ravit"
+        tools:src="@drawable/pata5" />
+
+    <ImageView
+        android:id="@+id/ivKolmasTaso_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintEnd_toStartOf="@+id/ivNeljasTaso_Ravit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivTokaTaso_Ravit"
+        app:layout_constraintTop_toTopOf="@+id/ivTokaTaso_Ravit"
+        tools:src="@drawable/ruutu8" />
+
+    <ImageView
+        android:id="@+id/ivNeljasTaso_Ravit"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:src="@drawable/jokeri1"
+        app:layout_constraintEnd_toStartOf="@+id/ivMaali_Ravit"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivKolmasTaso_Ravit"
+        app:layout_constraintTop_toTopOf="@+id/ivKolmasTaso_Ravit"
+        tools:src="@drawable/risti9" />
+
+    <ImageView
+        android:id="@+id/ivMaali_Ravit"
+        android:layout_width="40dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/hampurilainen"
+        app:layout_constraintBottom_toTopOf="@+id/ivArvottuKortti_Ravit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/divider15" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus_Ravit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="@string/text_taskDescriptionHorseRace"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btAloita_Ravit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_Ravit" />
+
+    <Button
+        android:id="@+id/btAloita_Ravit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/text_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

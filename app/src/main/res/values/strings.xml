@@ -134,6 +134,10 @@
     <string name="text_btPeek">Peek</string>
     <string name="text_btNextCard">Next card</string>
 
+    <!-- Ravit -->
+    <string name="text_horseRaceTitle">Horse Race!</string>
+    <string name="text_taskDescriptionHorseRace">Welcome to THE Track!\n\nPlace your bets everybody and get ready for some track fun!\n\nEveryone places some sips bet to one Ace of their choose respectively.\n\nWhen next card is drawn the ace with same suit as drawn proceeds.\n\nAll players whose horse is behind leader has to drink their bet at every turn.\n\nWhen last coming horse reaches step. The card at side is turn and ace with same suit as turn card has to go back one step.\n\nThose whose horse (Ace) crosses the finish line first gets to give their bet x 10 to others!\n\nTap Joker for first card after starting the race and declaring your bet to draw a card and drawn card to proceed after turns!</string>
+
     <!-- Content description -->
     <string name="contentDesc_piece">Piece</string>
     <string name="contentDesc_GameBoard">Gameboard</string>
