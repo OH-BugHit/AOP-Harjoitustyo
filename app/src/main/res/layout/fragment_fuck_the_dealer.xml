@@ -113,28 +113,38 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/k" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivKorttiPeitto_FtheDealer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/k"
+        app:layout_constraintBottom_toBottomOf="@+id/ivKortti_FtheDealer"
+        app:layout_constraintEnd_toEndOf="@+id/ivKortti_FtheDealer"
+        app:layout_constraintStart_toStartOf="@+id/ivKortti_FtheDealer"
+        app:layout_constraintTop_toTopOf="@+id/ivKortti_FtheDealer"
+        tools:src="@drawable/jokeri1" />
 
     <Button
         android:id="@+id/btNextCard_FtheDealer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/text_btNextCard"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btPeek_FtheDealer"
-        app:layout_constraintTop_toBottomOf="@+id/ivKortti_FtheDealer" />
+        app:layout_constraintStart_toEndOf="@+id/btPeek_FtheDealer" />
 
     <Button
         android:id="@+id/btPeek_FtheDealer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/text_btPeek"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btNextCard_FtheDealer"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivKortti_FtheDealer" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

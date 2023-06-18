@@ -8,7 +8,7 @@
     tools:context=".minipelit.Hitler">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivTausta_Hitler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
@@ -49,39 +49,35 @@
 
     <ImageView
         android:id="@+id/ivKortti_Hitler"
-        android:layout_width="0dp"
+        android:layout_width="531dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
         android:src="@drawable/hampurilainen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_Hitler"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvOhjeistus_Hitler"
-        app:layout_constraintTop_toBottomOf="@+id/divider7" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_tapToDraw"
-        android:textColor="#FF0000"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/ivKortti_Hitler"
-        app:layout_constraintEnd_toEndOf="@+id/ivKortti_Hitler"
-        app:layout_constraintStart_toStartOf="@+id/ivKortti_Hitler"
-        app:layout_constraintTop_toTopOf="@+id/ivKortti_Hitler" />
+        app:layout_constraintTop_toBottomOf="@+id/divider7"
+        app:layout_constraintVertical_bias="0.476"
+        tools:src="@drawable/jokeri1" />
 
     <TextView
         android:id="@+id/tvOhjeistus_Hitler"
-        android:layout_width="wrap_content"
+        android:layout_width="162dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/text_taskDescriptionHitler"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivKortti_Hitler"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/ivTausta_Hitler"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider7" />
 

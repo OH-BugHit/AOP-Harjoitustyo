@@ -186,36 +186,6 @@ public class Peli extends Fragment {
         return view;
         }
 
-        //TODO: TEE KORTTIPAKKA LOPPUUN JA TESTAA HITLER
-    @SuppressLint("UseCompatLoadingForDrawables")
-    private void alustaKorttipakka() {
-        for (int i = 0; i < 52; i++) {
-            Kortti kortti = new Kortti();
-            if (i < 13) {
-                kortti.arvo = i+1;
-                kortti.maa = "Hertta";
-            } else if (i < 26) {
-                kortti.arvo = i-12;
-                kortti.maa = "Ruutu";
-            } else if (i < 39) {
-                kortti.arvo = i-25;
-                kortti.maa = "Pata";
-            } else {
-                kortti.arvo = i-38;
-                kortti.maa = "Risti";
-            }
-            switch (i) {
-                case 0 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
-                case 1 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
-                case 2 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
-                case 3 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
-                case 4 -> kortti.kuva = getResources().getDrawable(R.drawable.k,MainActivity.INSTANCE.getTheme());
-                //ETC. TEE OIKEILLA KORTEILLA
-            }
-            pakka.add(kortti);
-        }
-    }
-
     private void seuraavanPelaajanVuoro() {
         while (!seuraavaVuoro) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -328,6 +298,82 @@ public class Peli extends Fragment {
         }
         ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
         tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private void alustaKorttipakka() {
+        for (int i = 0; i < 52; i++) {
+            Kortti kortti = new Kortti();
+            if (i < 13) {
+                kortti.arvo = i+1;
+                kortti.maa = "Hertta";
+            } else if (i < 26) {
+                kortti.arvo = i-12;
+                kortti.maa = "Ruutu";
+            } else if (i < 39) {
+                kortti.arvo = i-25;
+                kortti.maa = "Pata";
+            } else {
+                kortti.arvo = i-38;
+                kortti.maa = "Risti";
+            }
+            switch (i) {
+                case 0 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 1 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 2 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 3 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta4,MainActivity.INSTANCE.getTheme());
+                case 4 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta5,MainActivity.INSTANCE.getTheme());
+                case 5 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 6 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 7 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta8,MainActivity.INSTANCE.getTheme());
+                case 8 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta9,MainActivity.INSTANCE.getTheme());
+                case 9 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta10,MainActivity.INSTANCE.getTheme());
+                case 10 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta11,MainActivity.INSTANCE.getTheme());
+                case 11 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta12,MainActivity.INSTANCE.getTheme());
+                case 12 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 13 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 14 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu2,MainActivity.INSTANCE.getTheme());
+                case 15 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu3,MainActivity.INSTANCE.getTheme());
+                case 16 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu4,MainActivity.INSTANCE.getTheme());
+                case 17 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu5,MainActivity.INSTANCE.getTheme());
+                case 18 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu6,MainActivity.INSTANCE.getTheme());
+                case 19 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu7,MainActivity.INSTANCE.getTheme());
+                case 20 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu8,MainActivity.INSTANCE.getTheme());
+                case 21 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu9,MainActivity.INSTANCE.getTheme());
+                case 22 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu10,MainActivity.INSTANCE.getTheme());
+                case 23 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu11,MainActivity.INSTANCE.getTheme());
+                case 24 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu12,MainActivity.INSTANCE.getTheme());
+                case 25 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 26 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 27 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 28 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 29 -> kortti.kuva = getResources().getDrawable(R.drawable.pata4,MainActivity.INSTANCE.getTheme());
+                case 30 -> kortti.kuva = getResources().getDrawable(R.drawable.pata5,MainActivity.INSTANCE.getTheme());
+                case 31 -> kortti.kuva = getResources().getDrawable(R.drawable.pata6,MainActivity.INSTANCE.getTheme());
+                case 32 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 33 -> kortti.kuva = getResources().getDrawable(R.drawable.pata8,MainActivity.INSTANCE.getTheme());
+                case 34 -> kortti.kuva = getResources().getDrawable(R.drawable.pata9,MainActivity.INSTANCE.getTheme());
+                case 35 -> kortti.kuva = getResources().getDrawable(R.drawable.pata10,MainActivity.INSTANCE.getTheme());
+                case 36 -> kortti.kuva = getResources().getDrawable(R.drawable.pata11,MainActivity.INSTANCE.getTheme());
+                case 37 -> kortti.kuva = getResources().getDrawable(R.drawable.pata12,MainActivity.INSTANCE.getTheme());
+                case 38 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
+                case 39 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
+                case 40 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
+                case 41 -> kortti.kuva = getResources().getDrawable(R.drawable.risti3,MainActivity.INSTANCE.getTheme());
+                case 42 -> kortti.kuva = getResources().getDrawable(R.drawable.risti4,MainActivity.INSTANCE.getTheme());
+                case 43 -> kortti.kuva = getResources().getDrawable(R.drawable.risti5,MainActivity.INSTANCE.getTheme());
+                case 44 -> kortti.kuva = getResources().getDrawable(R.drawable.risti6,MainActivity.INSTANCE.getTheme());
+                case 45 -> kortti.kuva = getResources().getDrawable(R.drawable.risti7,MainActivity.INSTANCE.getTheme());
+                case 46 -> kortti.kuva = getResources().getDrawable(R.drawable.risti8,MainActivity.INSTANCE.getTheme());
+                case 47 -> kortti.kuva = getResources().getDrawable(R.drawable.risti9,MainActivity.INSTANCE.getTheme());
+                case 48 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu10,MainActivity.INSTANCE.getTheme());
+                case 49 -> kortti.kuva = getResources().getDrawable(R.drawable.risti11,MainActivity.INSTANCE.getTheme());
+                case 50 -> kortti.kuva = getResources().getDrawable(R.drawable.risti12,MainActivity.INSTANCE.getTheme());
+                case 51 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
+                //ETC. TEE OIKEILLA KORTEILLA
+            }
+            pakka.add(kortti);
+        }
     }
 
     /**

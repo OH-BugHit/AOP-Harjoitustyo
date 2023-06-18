@@ -39,7 +39,7 @@ public class Hitler extends Fragment {
         tvArvottu = view.findViewById(R.id.tvArvottuPelaaja_Hitler);
 
         ivKortti = view.findViewById(R.id.ivKortti_Hitler);
-        ivKortti.setImageResource(R.drawable.hampurilainen);
+        ivKortti.setImageResource(R.drawable.jokeri1);
         tvOhjeet = view.findViewById(R.id.tvOhjeistus_Hitler);
 
         Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_Hitler);

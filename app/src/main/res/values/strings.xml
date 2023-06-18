@@ -67,19 +67,7 @@
      -->
     <string name="text_hitlerTitle">Hitler</string>
     <string name="text_tapToDraw">Tap card to draw!</string>
-    <string name="text_taskDescriptionHitler">Ace, Waterfall
-2, Give 2 sips
-3, Drink 3 sips
-4, Hitler
-5, 123
-6, Women drink 3 sips
-7, Category
-8, Rule
-9, Everybody drinks 3 sips
-10, Men drink 3 sips
-11, Skip-card
-12, Hoe
-13, Kingdrink!</string>
+    <string name="text_taskDescriptionHitler">Ace, Waterfall\n2, Give 2 sips\n3, Drink 3 sips\n4, Hitler\n5, 123\n6, Women drink 3 sips\n7, Category\n8, Rule\n9, Everybody drinks 3 sips\n10, Men drink 3 sips\n11, Skip-card\n12, Hoe\n13, Kingdrink!\n\nTap card to draw!</string>
     <string name="text_continueGame">Continue game</string>
 
     <string name="text_waterfallDesc">All players start to drink…</string>
@@ -94,12 +82,12 @@
     <string name="text_everybodyDrink">Everybody takes 3 sips</string>
     <string name="text_menDrink">All the men drink 3 sips</string>
     <string name="text_skip">Wohoo! This is the "Skip-Task"-card! Unfortunately it doesn\'t allow you to skip actual tasks, but feel free to skip next few sips you should otherwise take!</string>
-    <string name="text_hoe">Make a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 3 sips now! (That makes it 6 to your hoe ;) )</string>
+    <string name="text_hoe">Make a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 2 sips now! (That makes it 4 to your hoe ;) )</string>
     <string name="text_kingdrink">THE Drink! \nPour few sips of your drink to glass. The player mentioned at the screen does the same and drinks it!</string>
 
     <!-- Huora -->
     <string name="text_huoraTitle">Hoe</string>
-    <string name="text_taskDescriptionHoe">Make a hoe out of friend!\n\nPerson you choose, has to drink always when you drink (related to game).\n\nTo seal the deal, both of you take 3 sips now! (That makes it 6 to your hoe ;) )</string>
+    <string name="text_taskDescriptionHoe">Make a hoe out of friend!\n\nPerson you choose, has to drink always when you drink (related to game).\n\nTo seal the deal, both of you take 2 sips now! (That makes it 4 to your hoe ;) )</string>
 
     <!-- TytotVsPojat -->
     <string name="text_tytotVsPojatTitle">Girls VS Boys!</string>
