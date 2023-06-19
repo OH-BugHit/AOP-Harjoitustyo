@@ -46,7 +46,7 @@ public class FuckTheDealer extends Fragment {
 
         ivKortti.setVisibility(View.INVISIBLE);
         ivPeitto.setVisibility(View.INVISIBLE);
-        ivPeitto.setImageResource(R.drawable.jokeri1);
+        ivPeitto.setImageResource(R.drawable.tausta);
 
         Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_FtheDealer);
         Button btKurkista = view.findViewById(R.id.btPeek_FtheDealer);

@@ -207,7 +207,7 @@ public class Peli extends Fragment {
     }
 
     private void suoritaVuoro(int toiminto) {
-        toiminto = 9;
+        toiminto = 10;
         switch (toiminto) {
             case 1 -> fragmentManager.beginTransaction()
                     .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)
@@ -318,20 +318,20 @@ public class Peli extends Fragment {
                 kortti.maa = "Risti";
             }
             switch (i) {
-                case 0 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
-                case 1 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
-                case 2 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 0 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta1,MainActivity.INSTANCE.getTheme());
+                case 1 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta2,MainActivity.INSTANCE.getTheme());
+                case 2 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta3,MainActivity.INSTANCE.getTheme());
                 case 3 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta4,MainActivity.INSTANCE.getTheme());
                 case 4 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta5,MainActivity.INSTANCE.getTheme());
-                case 5 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
-                case 6 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 5 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta6,MainActivity.INSTANCE.getTheme());
+                case 6 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta7,MainActivity.INSTANCE.getTheme());
                 case 7 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta8,MainActivity.INSTANCE.getTheme());
                 case 8 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta9,MainActivity.INSTANCE.getTheme());
                 case 9 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta10,MainActivity.INSTANCE.getTheme());
                 case 10 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta11,MainActivity.INSTANCE.getTheme());
                 case 11 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta12,MainActivity.INSTANCE.getTheme());
-                case 12 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
-                case 13 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 12 -> kortti.kuva = getResources().getDrawable(R.drawable.hertta13,MainActivity.INSTANCE.getTheme());
+                case 13 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu1,MainActivity.INSTANCE.getTheme());
                 case 14 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu2,MainActivity.INSTANCE.getTheme());
                 case 15 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu3,MainActivity.INSTANCE.getTheme());
                 case 16 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu4,MainActivity.INSTANCE.getTheme());
@@ -343,21 +343,21 @@ public class Peli extends Fragment {
                 case 22 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu10,MainActivity.INSTANCE.getTheme());
                 case 23 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu11,MainActivity.INSTANCE.getTheme());
                 case 24 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu12,MainActivity.INSTANCE.getTheme());
-                case 25 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
-                case 26 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
-                case 27 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
-                case 28 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 25 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu13,MainActivity.INSTANCE.getTheme());
+                case 26 -> kortti.kuva = getResources().getDrawable(R.drawable.pata1,MainActivity.INSTANCE.getTheme());
+                case 27 -> kortti.kuva = getResources().getDrawable(R.drawable.pata2,MainActivity.INSTANCE.getTheme());
+                case 28 -> kortti.kuva = getResources().getDrawable(R.drawable.pata3,MainActivity.INSTANCE.getTheme());
                 case 29 -> kortti.kuva = getResources().getDrawable(R.drawable.pata4,MainActivity.INSTANCE.getTheme());
                 case 30 -> kortti.kuva = getResources().getDrawable(R.drawable.pata5,MainActivity.INSTANCE.getTheme());
                 case 31 -> kortti.kuva = getResources().getDrawable(R.drawable.pata6,MainActivity.INSTANCE.getTheme());
-                case 32 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri1,MainActivity.INSTANCE.getTheme());
+                case 32 -> kortti.kuva = getResources().getDrawable(R.drawable.pata7,MainActivity.INSTANCE.getTheme());
                 case 33 -> kortti.kuva = getResources().getDrawable(R.drawable.pata8,MainActivity.INSTANCE.getTheme());
                 case 34 -> kortti.kuva = getResources().getDrawable(R.drawable.pata9,MainActivity.INSTANCE.getTheme());
                 case 35 -> kortti.kuva = getResources().getDrawable(R.drawable.pata10,MainActivity.INSTANCE.getTheme());
                 case 36 -> kortti.kuva = getResources().getDrawable(R.drawable.pata11,MainActivity.INSTANCE.getTheme());
                 case 37 -> kortti.kuva = getResources().getDrawable(R.drawable.pata12,MainActivity.INSTANCE.getTheme());
-                case 38 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
-                case 39 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
+                case 38 -> kortti.kuva = getResources().getDrawable(R.drawable.pata13,MainActivity.INSTANCE.getTheme());
+                case 39 -> kortti.kuva = getResources().getDrawable(R.drawable.risti1,MainActivity.INSTANCE.getTheme());
                 case 40 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
                 case 41 -> kortti.kuva = getResources().getDrawable(R.drawable.risti3,MainActivity.INSTANCE.getTheme());
                 case 42 -> kortti.kuva = getResources().getDrawable(R.drawable.risti4,MainActivity.INSTANCE.getTheme());
@@ -369,7 +369,7 @@ public class Peli extends Fragment {
                 case 48 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu10,MainActivity.INSTANCE.getTheme());
                 case 49 -> kortti.kuva = getResources().getDrawable(R.drawable.risti11,MainActivity.INSTANCE.getTheme());
                 case 50 -> kortti.kuva = getResources().getDrawable(R.drawable.risti12,MainActivity.INSTANCE.getTheme());
-                case 51 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
+                case 51 -> kortti.kuva = getResources().getDrawable(R.drawable.risti13,MainActivity.INSTANCE.getTheme());
                 //ETC. TEE OIKEILLA KORTEILLA
             }
             pakka.add(kortti);
