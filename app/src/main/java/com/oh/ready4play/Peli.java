@@ -208,7 +208,7 @@ public class Peli extends Fragment {
     }
 
     private void suoritaVuoro(int toiminto) {
-        toiminto = 10;
+        toiminto = 11;
         switch (toiminto) {
             case 1 -> fragmentManager.beginTransaction()
                     .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)

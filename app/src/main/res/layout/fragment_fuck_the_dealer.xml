@@ -113,7 +113,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/hertta1" />
 
     <ImageView
         android:id="@+id/ivKorttiPeitto_FtheDealer"
@@ -124,7 +125,7 @@
         app:layout_constraintEnd_toEndOf="@+id/ivKortti_FtheDealer"
         app:layout_constraintStart_toStartOf="@+id/ivKortti_FtheDealer"
         app:layout_constraintTop_toTopOf="@+id/ivKortti_FtheDealer"
-        tools:src="@drawable/jokeri1" />
+        tools:src="@drawable/tausta" />
 
     <Button
         android:id="@+id/btNextCard_FtheDealer"

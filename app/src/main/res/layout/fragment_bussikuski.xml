@@ -5,7 +5,8 @@
     android:id="@+id/bussikuskiLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".minipelit.Bussikuski" >
+    android:background="#00BCD4"
+    tools:context=".minipelit.Bussikuski">
 
     <TextView
         android:id="@+id/tvOhjeistus_Bussikuski"
@@ -15,8 +16,9 @@
         android:paddingEnd="20dp"
         android:text="@string/text_taskDescriptionBusDriver"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btAloita_Bussikuski"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider17" />
 
@@ -49,4 +51,153 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivKortti1_Bussikuski"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="52dp"
+        android:rotation="90"
+        android:src="@drawable/tausta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivKortti2_Bussikuski"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivAloituskortti_Bussikuski" />
+
+    <ImageView
+        android:id="@+id/ivKortti2_Bussikuski"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:rotation="90"
+        android:src="@drawable/tausta"
+        app:layout_constraintBottom_toBottomOf="@+id/ivKortti1_Bussikuski"
+        app:layout_constraintEnd_toStartOf="@+id/ivKortti3_Bussikuski"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivKortti1_Bussikuski"
+        tools:src="@drawable/risti6" />
+
+    <ImageView
+        android:id="@+id/ivKortti3_Bussikuski"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:rotation="90"
+        android:src="@drawable/tausta"
+        app:layout_constraintBottom_toBottomOf="@+id/ivKortti2_Bussikuski"
+        app:layout_constraintEnd_toStartOf="@+id/ivKortti4_Bussikuski"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivKortti2_Bussikuski"
+        tools:src="@drawable/hertta7" />
+
+    <ImageView
+        android:id="@+id/ivKortti4_Bussikuski"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:rotation="90"
+        android:src="@drawable/tausta"
+        app:layout_constraintBottom_toBottomOf="@+id/ivKortti3_Bussikuski"
+        app:layout_constraintEnd_toStartOf="@+id/ivKortti5_Bussikuski"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivKortti3_Bussikuski" />
+
+    <ImageView
+        android:id="@+id/ivAloituskortti_Bussikuski"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:rotation="90"
+        android:src="@drawable/tausta"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivKortti1_Bussikuski"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider17"
+        tools:src="@drawable/hertta12" />
+
+    <ImageView
+        android:id="@+id/ivKortti5_Bussikuski"
+        android:layout_width="83dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:rotation="90"
+        android:src="@drawable/tausta"
+        app:layout_constraintBottom_toBottomOf="@+id/ivKortti4_Bussikuski"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivKortti4_Bussikuski" />
+
+    <Button
+        android:id="@+id/btSuurempi_Bussikuski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_higher"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btPienempi_Bussikuski"
+        app:layout_constraintTop_toBottomOf="@+id/divider17" />
+
+    <Button
+        android:id="@+id/btPienempi_Bussikuski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_lower"
+        app:layout_constraintEnd_toStartOf="@+id/btSuurempi_Bussikuski"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider17" />
+
+    <ImageView
+        android:id="@+id/ivOsoitin_Bussikuski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/hampurilainen"
+        app:layout_constraintBottom_toBottomOf="@+id/ivKortti1_Bussikuski"
+        app:layout_constraintEnd_toEndOf="@+id/ivKortti1_Bussikuski"
+        app:layout_constraintStart_toStartOf="@+id/ivKortti1_Bussikuski"
+        app:layout_constraintTop_toTopOf="@+id/ivKortti1_Bussikuski"
+        tools:src="@android:drawable/arrow_down_float" />
+
+    <Button
+        android:id="@+id/btAloita_Bussikuski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/text_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAloituskortti_Bussikuski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/text_startCard"
+        app:layout_constraintEnd_toEndOf="@+id/ivAloituskortti_Bussikuski"
+        app:layout_constraintStart_toStartOf="@+id/ivAloituskortti_Bussikuski"
+        app:layout_constraintTop_toBottomOf="@+id/ivAloituskortti_Bussikuski" />
+
+    <TextView
+        android:id="@+id/tvSakko_Bussikuski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus_Bussikuski"
+        app:layout_constraintEnd_toStartOf="@+id/tvSakkoMaara_Bussikuski"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider17" />
+
+    <TextView
+        android:id="@+id/tvSakkoMaara_Bussikuski"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSakko_Bussikuski"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSakko_Bussikuski"
+        app:layout_constraintTop_toTopOf="@+id/tvSakko_Bussikuski" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
