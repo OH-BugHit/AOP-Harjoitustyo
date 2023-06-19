@@ -139,8 +139,15 @@
     <string name="text_taskDescriptionHorseRace">Welcome to THE Track!\n\nPlace your bets everybody and get ready for some track fun!\n\nEveryone places some sips bet to one Ace of their choose respectively.\n\nWhen next card is drawn the ace with same suit as drawn proceeds.\n\nAll players whose horse is behind leader has to drink their bet at every turn.\n\nWhen last coming horse reaches step. The card at side is turn and ace with same suit as turn card has to go back one step.\n\nThose whose horse (Ace) crosses the finish line first gets to give their bet x 10 to others!\n\nTap Joker for first card after starting the race and declaring your bet to draw a card and drawn card to proceed after turns!</string>
     <string name="text_heartsWinner">The Ace of Hearts Wins!\n\nGive your bet x 10!</string>
     <string name="text_spadesWinner">The Ace of Spades Wins!\n\nGive your bet x 10!</string>
-    <string name="text_DiamondsWinner">The Ace of Diamonds Wins!\n\nGive your bet x 10!</string>
+    <string name="text_diamondsWinner">The Ace of Diamonds Wins!\n\nGive your bet x 10!</string>
     <string name="text_clubsWinner">The Ace of Clubs Wins!\n\nGive your bet x 10!</string>
+
+    <!-- Bussikuski -->
+    <string name="text_busDriverTitle">Bus Driver!</string>
+    <string name="text_taskDescriptionBusDriver">There is no getting out of this bus until the end of line!\n\nSelect card and guess if it\'s higher or lower!\n\nIf you make wrong guess: drink your progress and start again!\n\nGood Luck!</string>
+    <string name="text_higher">Higher!</string>
+    <string name="text_lower">Lower!</string>
+    <string name="text_busDriverEnd">Nice riding!</string>
 
     <!-- Content description -->
     <string name="contentDesc_piece">Piece</string>

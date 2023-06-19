@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.oh.ready4play.Kortti;
-import com.oh.ready4play.MainActivity;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
@@ -21,34 +20,107 @@ import java.util.Objects;
 import java.util.Random;
 
 public class Ravit extends Fragment {
+    /**
+     * Ravit-peli käyttää normaalia 52 kortin korttipakkaa joka koostuu korteista.
+     */
     private ArrayList<Kortti> ravipakka;
-    private Random random = new Random();
+    private final Random random = new Random();
+    /**
+     * Nappula pelin jatkamiseksi
+     */
+    private Button btJatkaPelia;
+    /**
+     * Pataässän ImageView
+     */
     private ImageView ivPataAssa;
+    /**
+     * Ristiässän ImageView
+     */
     private ImageView ivRistiAssa;
+    /**
+     * Ruutuässän ImageView
+     */
     private ImageView ivRuutuAssa;
+    /**
+     * Herttaässän ImageView
+     */
     private ImageView ivHerttaAssa;
+    /**
+     * Ensimmäisen tason sivukortin ImageView
+     */
     private ImageView ivEkaTaso;
+    /**
+     * Toisen tason sivukortin ImageView
+     */
     private ImageView ivTokaTaso;
+    /**
+     * Kolmannen tason sivukortin ImageView
+     */
     private ImageView ivKolmasTaso;
+    /**
+     * Neljännen tason sivukortin ImageView
+     */
     private ImageView ivNeljasTaso;
+    /**
+     * Maaliviivan ImageView
+     */
     private ImageView ivMaali;
+    /**
+     * Arvotun kortin ImageView
+     */
     private ImageView ivArvottuKortti;
+    /**
+     * Ohjeiden ja lopputekstin TextView
+     */
     private TextView tvOheistus;
-
+    /**
+     * Käytetään määrittämään onko taso 1 saavutettu kaikilla ässillä
+     */
     private boolean taso1 = false;
+    /**
+     * Käytetään määrittämään onko taso 2 saavutettu kaikilla ässillä
+     */
     private boolean taso2 = false;
+    /**
+     * Käytetään määrittämään onko taso 3 saavutettu kaikilla ässillä
+     */
     private boolean taso3 = false;
+    /**
+     * Käytetään määrittämään onko taso 4 saavutettu kaikilla ässillä
+     */
     private boolean taso4 = false;
+    /**
+     * Käytetään määrittämään onko tason 1 kortti käännetty
+     */
     private boolean taso1Avattu = false;
+    /**
+     * Käytetään määrittämään onko tason 2 kortti käännetty
+     */
     private boolean taso2Avattu = false;
+    /**
+     * Käytetään määrittämään onko tason 3 kortti käännetty
+     */
     private boolean taso3Avattu = false;
+    /**
+     * Käytetään määrittämään onko tason 4 kortti käännetty
+     */
     private boolean taso4Avattu = false;
+    /**
+     * Hertta ässän taso
+     */
     private int herttaSijainti = 0;
+    /**
+     * Pataässän taso
+     */
     private int pataSijainti = 0;
+    /**
+     * Ristiässän taso
+     */
     private int ristiSijainti = 0;
+    /**
+     * Ruutuässän taso
+     */
     private int ruutuSijainti = 0;
-
-
 
     public Ravit() {super(R.layout.fragment_ravit);}
 
@@ -59,7 +131,9 @@ public class Ravit extends Fragment {
 
         tvOheistus = view.findViewById(R.id.tvOhjeistus_Ravit);
 
-        Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_ravit);
+        btJatkaPelia = view.findViewById(R.id.btJatkaPelia_ravit);
+        //Piilotetaan pelin jatkamisnäppäin pelin ajaksi. Se tulee takaisin nähtäville kun peli ohitse
+        btJatkaPelia.setVisibility(View.INVISIBLE);
         Button btAloita = view.findViewById(R.id.btAloita_Ravit);
         ivArvottuKortti = view.findViewById(R.id.ivArvottuKortti_Ravit);
 
@@ -74,6 +148,7 @@ public class Ravit extends Fragment {
         ivNeljasTaso = view.findViewById(R.id.ivNeljasTaso_Ravit);
 
         ivMaali = view.findViewById(R.id.ivMaali_Ravit);
+        ivMaali.setImageResource(R.drawable.maali);
 
         //Asetetaan piiloon kortit.
         ivArvottuKortti.setVisibility(View.INVISIBLE);
@@ -88,9 +163,9 @@ public class Ravit extends Fragment {
         ivTokaTaso.setVisibility(View.INVISIBLE);
         ivNeljasTaso.setVisibility(View.INVISIBLE);
 
+        //Myös maali piiloon
         ivMaali.setVisibility(View.INVISIBLE);
 
-        //TODO: ASETA OIKEAT KUVAT ÄSSIIN
         btAloita.setOnClickListener(e -> {
             alustaPeli();
             ivHerttaAssa.setImageDrawable(ravipakka.remove(0).kuva);
@@ -164,30 +239,43 @@ public class Ravit extends Fragment {
         return view;
     }
 
+    /**
+     * Tarkistetaan onko kukaan ylittänyt maaliviivaa
+     */
     private void voittajaTarkistus() {
         if (herttaSijainti == 5) {
             ivArvottuKortti.setEnabled(false);
             tvOheistus.setText(R.string.text_heartsWinner);
             tvOheistus.setVisibility(View.VISIBLE);
+            btJatkaPelia.setVisibility(View.VISIBLE);
         } else if (ruutuSijainti == 5) {
             ivArvottuKortti.setEnabled(false);
-            tvOheistus.setText(R.string.text_DiamondsWinner);
+            tvOheistus.setText(R.string.text_diamondsWinner);
             tvOheistus.setVisibility(View.VISIBLE);
+            btJatkaPelia.setVisibility(View.VISIBLE);
         } else if (ristiSijainti == 5) {
             ivArvottuKortti.setEnabled(false);
             tvOheistus.setText(R.string.text_clubsWinner);
             tvOheistus.setVisibility(View.VISIBLE);
+            btJatkaPelia.setVisibility(View.VISIBLE);
         } else if (pataSijainti == 5) {
             ivArvottuKortti.setEnabled(false);
             tvOheistus.setText(R.string.text_spadesWinner);
             tvOheistus.setVisibility(View.VISIBLE);
+            btJatkaPelia.setVisibility(View.VISIBLE);
         }
     }
 
+    /**
+     * Kopiodaan Peli-luokasta korttipakka
+     */
     private void alustaPeli() {
         ravipakka = (ArrayList<Kortti>) Peli.pakka.clone();
     }
 
+    /**
+     * Tarkistetaan ovatko kaikki ässät ohittaneet jonkin tason
+     */
     private void tasojenTilanne() {
         if (herttaSijainti > 0 && ruutuSijainti > 0 && pataSijainti > 0 && ristiSijainti > 0 && !taso1Avattu) {
             taso1 = true;
@@ -393,6 +481,10 @@ public class Ravit extends Fragment {
         }
     }
 
+    /**
+     * Arvotaan kortti ja poistetaan se pakasta (Eli nostetaan)
+     * @return Palauttaa nostetun kortin
+     */
     private Kortti nostaKortti() {
         return ravipakka.remove(random.nextInt(ravipakka.size()));
     }

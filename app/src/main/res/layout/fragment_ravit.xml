@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFC9C9"
     tools:context=".minipelit.Ravit">
 
     <Button
@@ -138,7 +139,8 @@
         android:src="@drawable/hampurilainen"
         app:layout_constraintBottom_toTopOf="@+id/ivArvottuKortti_Ravit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divider15" />
+        app:layout_constraintTop_toTopOf="@+id/divider15"
+        tools:src="@drawable/maali" />
 
     <TextView
         android:id="@+id/tvOhjeistus_Ravit"

@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.oh.ready4play.minipelit.Bussikuski;
 import com.oh.ready4play.minipelit.FuckTheDealer;
 import com.oh.ready4play.minipelit.Hitler;
 import com.oh.ready4play.minipelit.Huora;
@@ -265,6 +266,13 @@ public class Peli extends Fragment {
                         .addToBackStack(null)
                         .commit();
             }
+            case 11 -> {
+                fragmentManager.beginTransaction()
+                        .replace(R.id.fcvMinipeliNakyma, Bussikuski.class,null)
+                        .setReorderingAllowed(true)
+                        .addToBackStack(null)
+                        .commit();
+            }
         }
     }
 
@@ -300,6 +308,9 @@ public class Peli extends Fragment {
         tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
     }
 
+    /**
+     * Luodaan korttipakka (tavallinen, 52 korttia, ei jokereita)
+     */
     @SuppressLint("UseCompatLoadingForDrawables")
     private void alustaKorttipakka() {
         for (int i = 0; i < 52; i++) {
@@ -370,14 +381,13 @@ public class Peli extends Fragment {
                 case 49 -> kortti.kuva = getResources().getDrawable(R.drawable.risti11,MainActivity.INSTANCE.getTheme());
                 case 50 -> kortti.kuva = getResources().getDrawable(R.drawable.risti12,MainActivity.INSTANCE.getTheme());
                 case 51 -> kortti.kuva = getResources().getDrawable(R.drawable.risti13,MainActivity.INSTANCE.getTheme());
-                //ETC. TEE OIKEILLA KORTEILLA
             }
             pakka.add(kortti);
         }
     }
 
     /**
-     * Asetetaan pelilaudan ruuduille ominaisuudet
+     * Asetetaan pelilaudan ruudut ja niiden ominaisuudet
      */
     private void alustaPelilauta() {
         int pelilaudanKoko = 62;

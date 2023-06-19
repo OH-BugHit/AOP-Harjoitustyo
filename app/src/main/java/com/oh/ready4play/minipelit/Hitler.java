@@ -19,10 +19,10 @@ import java.util.Random;
 
 
 public class Hitler extends Fragment {
-    ImageView ivKortti;
-    TextView tvOhjeet;
+    private ImageView ivKortti;
+    private TextView tvOhjeet;
     private TextView tvArvottu;
-    private Random random = new Random();
+    private final Random random = new Random();
     private int pelaajaVuorossa;
     public Hitler() {
         super(R.layout.fragment_hitler);
@@ -115,8 +115,6 @@ public class Hitler extends Fragment {
     }
 
     private Kortti arvoKortti() {
-        Peli.pakka.size();
         return Peli.pakka.get(random.nextInt(Peli.pakka.size()));
-        //TÄÄLLÄ TOIMI SIIS JO AIEMMIN JOS ARVOTTIIN 0-12 ja sitten asetettiin se ivKortti kuva
     }
 }
