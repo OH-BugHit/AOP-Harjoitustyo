@@ -54,6 +54,9 @@ public class Noppa extends Fragment {
             heitto += 3;
             Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet = false;
         }
+        if (Peli.pelaajat.get(Peli.vuorossaPelaaja).sijainti + heitto > 61) {
+            heitto = 61 - Peli.pelaajat.get(Peli.vuorossaPelaaja).sijainti;
+        }
         return heitto ;
     }
 }

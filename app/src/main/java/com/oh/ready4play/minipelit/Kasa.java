@@ -27,6 +27,8 @@ public class Kasa extends Fragment {
 
         Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_Kasa);
 
+        Peli.tehtavaFail = true;
+
         btJatkaPelia.setOnClickListener(e -> {
             Peli.seuraavaVuoro = true;
             Peli.fragmentManager.beginTransaction()

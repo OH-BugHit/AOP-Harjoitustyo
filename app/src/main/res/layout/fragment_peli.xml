@@ -59,7 +59,7 @@
         tools:src="@drawable/nappula1" />
 
     <View
-        android:id="@+id/divider6"
+        android:id="@+id/divider_Peli"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
@@ -74,7 +74,7 @@
         android:layout_height="48dp"
         android:layout_marginEnd="4dp"
         android:src="@drawable/hampurilainen"
-        app:layout_constraintBottom_toTopOf="@+id/divider6"
+        app:layout_constraintBottom_toTopOf="@+id/divider_Peli"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvNoppa"
@@ -96,7 +96,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <TextView
         android:id="@+id/tvLopeta"
@@ -140,7 +140,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula1"
@@ -151,7 +151,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula2"
@@ -162,7 +162,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula3"
@@ -173,7 +173,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula4"
@@ -184,7 +184,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula5"
@@ -195,7 +195,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula6"
@@ -206,7 +206,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula7"
@@ -217,7 +217,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula8"
@@ -228,7 +228,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <ImageView
         android:id="@+id/ivNappula9"
@@ -239,7 +239,7 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider6" />
+        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
 
     <Button
         android:id="@+id/bt3_Peli"
@@ -270,6 +270,16 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btAloita_Peli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

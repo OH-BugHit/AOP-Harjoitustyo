@@ -37,8 +37,8 @@ public class Bussikuski extends Fragment {
     private TextView tvAloituskortti;
     private TextView tvSakko;
     private TextView tvSakkoMaara;
-    Button btYlempi;
-    Button btAlempi;
+    private Button btYlempi;
+    private Button btAlempi;
 
 
     public Bussikuski() {super(R.layout.fragment_bussikuski);}
@@ -130,6 +130,7 @@ public class Bussikuski extends Fragment {
             tvOheistus.setVisibility(View.VISIBLE);
             if (sakko > 2) {
                 tvOheistus.setText(R.string.text_busDriverFailEnd);
+                Peli.tehtavaFail = true;
             } else {
                 tvOheistus.setText(R.string.text_busDriverEnd);
             }

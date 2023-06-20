@@ -1,15 +1,14 @@
 package com.oh.ready4play;
 
 import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentContainerView;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.Navigation;
 
-import android.text.method.TextKeyListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,27 +32,95 @@ import com.oh.ready4play.minipelit.WouldYouRather;
 import java.util.ArrayList;
 
 public class Peli extends Fragment {
+    /**
+     * Seuraava vuoro asetetaan true-tilaan minipelissä sen päättyessä.
+     */
     public static volatile boolean seuraavaVuoro = false;
+    /**
+     *
+     */
+    public static volatile boolean tehtavaFail = false;
+    /**
+     * Korttipakka, 52 korttia, ei jokereita. Tästä pakasta tehdään kopiota minipeleissä joissa vaaditaan kortin poisto pakasta.
+     */
     public static ArrayList<Kortti> pakka = new ArrayList<>();
+    /**
+     * Tämän fragmentin näkymä
+     */
     View view;
+    /**
+     * Pelinappulat pelilaudalla
+     */
     public static ImageView[] ivNappulat = new ImageView[10];
+    /**
+     * Pelaajat
+     */
     public static ArrayList<Pelaaja> pelaajat;
+    /**
+     * Peliruudut pelilaudalla
+     */
     private static final ArrayList<Ruutu> peliRuudut = new ArrayList<>();
+    /**
+     * Vuorossa olevan pelaajan indeksinumero
+     */
     public static int vuorossaPelaaja = 0;
+    /**
+     * Pelissä olevien pelaajien lukumäärä
+     */
     public static int pelaajamaara;
+    /**
+     * Peliruudun "toiminto"
+     */
     private int toiminto;
+    private int pelilautaX;
+    private int pelilautaY;
+    private float nappulaLeveys;
+    private float nappulaKorkeus;
+    /**
+     * Onko hampurilaisvalikkoa klikattu vai ei
+     */
     private boolean hampuriKlikattu = false;
+    /**
+     * Painike nopan heittämiseen
+     */
     Button btHeitaNoppa;
+    /**
+     * Painike vuoron ohittamiseen
+     */
     Button btOhita;
+    /**
+     * Painike tehtävän "Kaksi totuutta yksi valhe", epäonnistumiseen
+     */
     Button btFail;
+    /**
+     * Painike tehtävän "Kaksi totuutta yksi valhe", onnistumiseen
+     */
     Button bt3;
+    /**
+     * Vuorossa olevan pelaajan nappulan kuva
+     */
     ImageView ivNappula;
+    /**
+     * Vuorossa olevan pelaajan niminäkymä
+     */
     TextView tvVuorossaPelaaja;
+    /**
+     * Pelaajan ohitukseen tekstinäkymä
+     */
     TextView tvOhitaPelaajanimi;
+    /**
+     * Fragment Manager minipelien asettamiseen ja vaihtamiseen
+     */
     public static FragmentManager fragmentManager;
+    private FragmentContainerView fcvPelilauta;
+    private FragmentContainerView fcvMinipeliNakyma;
     public Peli() {
         // Required empty public constructor
     }
+
+    /**
+     * Metodi "Kaksi totuutta, Yksi valhe" -pelin jälkeisten näppäinten näyttämiseen
+     */
     public void naytaNapit() {
         btOhita.setVisibility(View.VISIBLE);
         btHeitaNoppa.setVisibility(View.VISIBLE);
@@ -74,6 +141,9 @@ public class Peli extends Fragment {
 
         view = inflater.inflate(R.layout.fragment_peli, container, false);
 
+        fcvMinipeliNakyma = view.findViewById(R.id.fcvMinipeliNakyma);
+        fcvPelilauta = view.findViewById(R.id.fcvPelilauta);
+
         ivNappulat[0] = view.findViewById(R.id.ivNappula0);
         ivNappulat[1] = view.findViewById(R.id.ivNappula1);
         ivNappulat[2] = view.findViewById(R.id.ivNappula2);
@@ -90,6 +160,7 @@ public class Peli extends Fragment {
 
         fragmentManager = getParentFragmentManager();
 
+        //Haetaan pelaajat muuttujaan uuden pelin luonnissa lisätyt pelaatat
         pelaajat = UusiPeli.itemArrayList;
 
         tvOhitaPelaajanimi = view.findViewById(R.id.tvOhitaJatkossa);
@@ -182,12 +253,31 @@ public class Peli extends Fragment {
 
         tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
 
-        alustaPelilauta();
-        alustaPeli();
+        Button btAloita = view.findViewById(R.id.btAloita_Peli);
+
+        btAloita.setOnClickListener(e -> {
+            pelilautaX = fcvPelilauta.getWidth();
+            pelilautaY = fcvPelilauta.getHeight();
+            /*
+            Ei toimi vielä
+            nappulaLeveys = ivNappulat[0].getWidth();
+            nappulaKorkeus = ivNappulat[0].getHeight();
+            */
+            alustaPelilauta();
+            alustaPeli();
+            btAloita.setVisibility(View.INVISIBLE);
+        });
 
         return view;
         }
 
+    private void resetoiPeli() {
+        vuorossaPelaaja = 0;
+    }
+
+    /**
+     * Seuraavan pelaajan vuoron odotus ja asetus kun vuoro voidaan siirtää
+     */
     private void seuraavanPelaajanVuoro() {
         while (!seuraavaVuoro) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -195,6 +285,12 @@ public class Peli extends Fragment {
             }
         }
         seuraavaVuoro = false;
+        if (toiminto == 11) {
+            if (tehtavaFail){
+                liikutaPelaajaa(peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).lisaSiirrot);
+                tehtavaFail = false;
+            }
+        }
         if (vuorossaPelaaja == pelaajat.size()-1) {
             vuorossaPelaaja = 0;
         } else {
@@ -203,13 +299,19 @@ public class Peli extends Fragment {
         MainActivity.INSTANCE.runOnUiThread(Peli.this::asetaSeuraava);
     }
 
+    /**
+     * Seuraavan pelivuorossa olevan pelaajan tiedot näkyville
+     */
     private void asetaSeuraava() {
         tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
         ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
     }
 
+    /**
+     * Vuoron toiminnon suorittaminen (minipelin käynnistys)
+     * @param toiminto Suoritettava toiminto (vastaa pelilaudan ruudun toimintonumeroa)
+     */
     private void suoritaVuoro(int toiminto) {
-        toiminto = 12;
         switch (toiminto) {
             case 1 -> fragmentManager.beginTransaction()
                     .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)
@@ -266,23 +368,24 @@ public class Peli extends Fragment {
                     .setReorderingAllowed(true)
                     .addToBackStack(null)
                     .commit();
-            case 12 -> {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, Kasa.class,null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
+            case 12 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, Kasa.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
         }
     }
 
     /**
      * Liikuttaa pelaajaa pelilaudalla
+     * Päivittää ruudussa olevien pelaajien lukumäärän. Tätä lukumäärää käytetään sijoittelemaan useampi pelaaja samaan ruutuun.
      * @param nopanHeitto Saa arvokseen nopanheiton tuloksen
      * @return Palauttaa saavutun ruudun tehtävän
      */
     private int liikutaPelaajaa(int nopanHeitto) {
+        peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).pelaajiaRuudussa --;
         int uusiruutu = pelaajat.get(vuorossaPelaaja).sijainti + nopanHeitto;
+        peliRuudut.get(uusiruutu).pelaajiaRuudussa ++;
         Pelaaja.liikutaPelaajaRuutuun(pelaajat.get(vuorossaPelaaja),peliRuudut.get(uusiruutu));
         return peliRuudut.get(uusiruutu).tehtava;
     }
@@ -293,7 +396,6 @@ public class Peli extends Fragment {
      * Pelaajien ja pelin alustus
      */
     private void alustaPeli() {
-
         vuorossaPelaaja = 0;
         pelaajamaara = pelaajat.size();
         int i = 0;
@@ -396,443 +498,444 @@ public class Peli extends Fragment {
             Sijainti sijainti = new Sijainti();
             switch (i) {
                 case 0 -> {
-                    sijainti.x = 100f;
-                    sijainti.y = 100f;
+                    sijainti.x = laskeX(0.9221);
+                    sijainti.y = laskeY(0.7846);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 0;
                     ruutu.ruudunNumero = 0;
                 }
                 case 1 -> {
-                    sijainti.x = 20f;
-                    sijainti.y = 30f;
+                    sijainti.x = laskeX(0.8701);
+                    sijainti.y = laskeY(0.8042);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 1;
                 }
                 case 2 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.8136);
+                    sijainti.y = laskeY(0.8163);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 8;
                     ruutu.ruudunNumero = 2;
                 }
                 case 3 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.7586);
+                    sijainti.y = laskeY(0.8283);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 1;
                     ruutu.ruudunNumero = 3;
                 }
                 case 4 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6990);
+                    sijainti.y = laskeY(0.8343);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 6;
                     ruutu.ruudunNumero = 4;
                 }
                 case 5 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6448);
+                    sijainti.y = laskeY(0.8434);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 3;
                     ruutu.ruudunNumero = 5;
                 }
                 case 6 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5913);
+                    sijainti.y = laskeY(0.8434);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 9;
                     ruutu.ruudunNumero = 6;
                 }
                 case 7 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5371);
+                    sijainti.y = laskeY(0.8404);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 7;
                 }
                 case 8 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4828);
+                    sijainti.y = laskeY(0.8554);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 10;
                     ruutu.ruudunNumero = 8;
                 }
                 case 9 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4316);
+                    sijainti.y = laskeY(0.8645);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 8;
                     ruutu.ruudunNumero = 9;
                 }
                 case 10 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3797);
+                    sijainti.y = laskeY(0.8705);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 2;
                     ruutu.ruudunNumero = 10;
                 }
                 case 11 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3285);
+                    sijainti.y = laskeY(0.8630);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 11;
                     ruutu.ruudunNumero = 11;
                     ruutu.lisaSiirrot = -5;
                 }
                 case 12 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.2804);
+                    sijainti.y = laskeY(0.8419);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 5;
                     ruutu.ruudunNumero = 12;
                 }
                 case 13 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.2261);
+                    sijainti.y = laskeY(0.8208);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 6;
                     ruutu.ruudunNumero = 13;
                 }
                 case 14 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.1833);
+                    sijainti.y = laskeY(0.7741);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 3;
                     ruutu.ruudunNumero = 14;
                 }
                 case 15 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.1383);
+                    sijainti.y = laskeY(0.7199);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 7;
                     ruutu.ruudunNumero = 15;
                     ruutu.lisaSiirrot = 3;
                 }
                 case 16 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.1115);
+                    sijainti.y = laskeY(0.6280);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 16;
                 }
                 case 17 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.1062);
+                    sijainti.y = laskeY(0.5211);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 6;
                     ruutu.ruudunNumero = 17;
                 }
                 case 18 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.1192);
+                    sijainti.y = laskeY(0.4232);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 1;
                     ruutu.ruudunNumero = 18;
                 }
                 case 19 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.1421);
+                    sijainti.y = laskeY(0.3298);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 8;
                     ruutu.ruudunNumero = 19;
                 }
                 case 20 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.1772);
+                    sijainti.y = laskeY(0.2440);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 5;
                     ruutu.ruudunNumero = 20;
                 }
                 case 21 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.2223);
+                    sijainti.y = laskeY(0.1792);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 10;
                     ruutu.ruudunNumero = 21;
                 }
+                //EI VIELÄ
                 case 22 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.2712);
+                    sijainti.y = laskeY(0.1355);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 6;
                     ruutu.ruudunNumero = 22;
                 }
                 case 23 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3231);
+                    sijainti.y = laskeY(0.1039);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 9;
                     ruutu.ruudunNumero = 23;
                 }
                 case 24 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3759);
+                    sijainti.y = laskeY(0.0889);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 3;
                     ruutu.ruudunNumero = 24;
                 }
                 case 25 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4270);
+                    sijainti.y = laskeY(0.0878);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 7;
                     ruutu.ruudunNumero = 25;
                     ruutu.lisaSiirrot = 3;
                 }
                 case 26 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4798);
+                    sijainti.y = laskeY(0.0873);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 8;
                     ruutu.ruudunNumero = 26;
                 }
                 case 27 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5317);
+                    sijainti.y = laskeY(0.0904);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 1;
                     ruutu.ruudunNumero = 27;
                 }
                 case 28 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5867);
+                    sijainti.y = laskeY(0.0919);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 5;
                     ruutu.ruudunNumero = 28;
                 }
                 case 29 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6425);
+                    sijainti.y = laskeY(0.1054);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 10;
                     ruutu.ruudunNumero = 29;
                 }
                 case 30 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6952);
+                    sijainti.y = laskeY(0.1146);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 2;
                     ruutu.ruudunNumero = 30;
                 }
                 case 31 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.7479);
+                    sijainti.y = laskeY(0.1988);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 9;
                     ruutu.ruudunNumero = 31;
                 }
                 case 32 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.7991);
+                    sijainti.y = laskeY(0.2696);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 3;
                     ruutu.ruudunNumero = 32;
                 }
                 case 33 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.8434);
+                    sijainti.y = laskeY(0.3584);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 10;
                     ruutu.ruudunNumero = 33;
                 }
                 case 34 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.8564);
+                    sijainti.y = laskeY(0.4578);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 1;
                     ruutu.ruudunNumero = 34;
                 }
                 case 35 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.8457);
+                    sijainti.y = laskeY(0.5572);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 6;
                     ruutu.ruudunNumero = 35;
                 }
                 case 36 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.8037);
+                    sijainti.y = laskeY(0.6265);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 36;
                 }
                 case 37 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.7464);
+                    sijainti.y = laskeY(0.6476);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 5;
                     ruutu.ruudunNumero = 37;
                 }
                 case 38 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6960);
+                    sijainti.y = laskeY(0.6777);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 3;
                     ruutu.ruudunNumero = 38;
                 }
                 case 39 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6425);
+                    sijainti.y = laskeY(0.6913);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 11;
                     ruutu.ruudunNumero = 39;
                     ruutu.lisaSiirrot = -4;
                 }
                 case 40 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5882);
+                    sijainti.y = laskeY(0.6943);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 9;
                     ruutu.ruudunNumero = 40;
                 }
                 case 41 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5317);
+                    sijainti.y = laskeY(0.6792);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 6;
                     ruutu.ruudunNumero = 41;
                 }
                 case 42 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4736);
+                    sijainti.y = laskeY(0.6566);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 10;
                     ruutu.ruudunNumero = 42;
                 }
                 case 43 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3186);
+                    sijainti.y = laskeY(0.6280);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 1;
                     ruutu.ruudunNumero = 43;
                 }
                 case 44 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3583);
+                    sijainti.y = laskeY(0.6024);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 44;
                 }
                 case 45 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3102);
+                    sijainti.y = laskeY(0.5663);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 9;
                     ruutu.ruudunNumero = 45;
                 }
                 case 46 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.2735);
+                    sijainti.y = laskeY(0.5151);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 8;
                     ruutu.ruudunNumero = 46;
                 }
                 case 47 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.2636);
+                    sijainti.y = laskeY(0.4232);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 47;
                 }
                 case 48 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3040);
+                    sijainti.y = laskeY(0.3569);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 11;
                     ruutu.ruudunNumero = 48;
                     ruutu.lisaSiirrot = -5;
                 }
                 case 49 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3461);
+                    sijainti.y = laskeY(0.3087);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 3;
                     ruutu.ruudunNumero = 49;
                 }
                 case 50 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.3858);
+                    sijainti.y = laskeY(0.2711);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 9;
                     ruutu.ruudunNumero = 50;
                 }
                 case 51 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4408);
+                    sijainti.y = laskeY(0.2756);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 2;
                     ruutu.ruudunNumero = 51;
                 }
                 case 52 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4923);
+                    sijainti.y = laskeY(0.2771);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 11;
                     ruutu.ruudunNumero = 52;
                     ruutu.lisaSiirrot = -5;
                 }
                 case 53 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5439);
+                    sijainti.y = laskeY(0.2711);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 5;
                     ruutu.ruudunNumero = 53;
                 }
                 case 54 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5959);
+                    sijainti.y = laskeY(0.2726);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 8;
                     ruutu.ruudunNumero = 54;
                 }
                 case 55 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6440);
+                    sijainti.y = laskeY(0.2997);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 4;
                     ruutu.ruudunNumero = 55;
                 }
                 case 56 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6700);
+                    sijainti.y = laskeY(0.3961);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 12;
                     ruutu.ruudunNumero = 56;
                     ruutu.lisaSiirrot = -18;
                 }
                 case 57 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.6241);
+                    sijainti.y = laskeY(0.4488);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 7;
                     ruutu.ruudunNumero = 57;
                     ruutu.lisaSiirrot = 3;
                 }
                 case 58 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5699);
+                    sijainti.y = laskeY(0.4488);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 5;
                     ruutu.ruudunNumero = 58;
                 }
                 case 59 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.5149);
+                    sijainti.y = laskeY(0.4608);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 1;
                     ruutu.ruudunNumero = 59;
                 }
                 case 60 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4645);
+                    sijainti.y = laskeY(0.4654);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 3;
                     ruutu.ruudunNumero = 60;
                 }
                 case 61 -> {
-                    sijainti.x = 0;
-                    sijainti.y = 0;
+                    sijainti.x = laskeX(0.4018);
+                    sijainti.y = laskeY(0.4578);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 13;
                     ruutu.ruudunNumero = 61;
@@ -840,5 +943,12 @@ public class Peli extends Fragment {
             }
             peliRuudut.add(ruutu);
         }
+    }
+
+    private float laskeY(double suhdeKerroin) {
+        return Float.parseFloat(String.valueOf(pelilautaY * suhdeKerroin)) + fcvMinipeliNakyma.getHeight() - fcvPelilauta.getHeight();
+    }
+    private float laskeX(double suhdeKerroin) {
+        return Float.parseFloat(String.valueOf(pelilautaX * suhdeKerroin));
     }
 }

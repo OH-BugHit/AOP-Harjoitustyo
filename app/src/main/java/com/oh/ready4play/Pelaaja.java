@@ -7,6 +7,8 @@ import android.widget.LinearLayout;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import java.util.Random;
+
 /**
  * Pelaaja -olio sisältää pelaajan tiedot ja tilanteen
  */
@@ -33,6 +35,7 @@ public class Pelaaja {
 
     public boolean kaksiTotuutta = false;
     public boolean bonusAskeleet = false;
+    private static Random random = new Random();
 
     /**
      * Alustaja pelaajalle
@@ -53,7 +56,29 @@ public class Pelaaja {
         pelaaja.imageView.setLayoutParams(lp);
         pelaaja.imageView.setX(uusiRuutu.sijainti.x);
         pelaaja.imageView.setY(uusiRuutu.sijainti.y);
-        //uusiRuutu.sijainti.x);
-        //pelaaja.imageView.setY(uusiRuutu.sijainti.y);
+        if (uusiRuutu.pelaajiaRuudussa == 1) {
+            pelaaja.imageView.setX(uusiRuutu.sijainti.x);
+            pelaaja.imageView.setY(uusiRuutu.sijainti.y);
+        } else {
+            int arpa = random.nextInt(4);
+            switch (arpa) {
+                case 0 -> {
+                    pelaaja.imageView.setX(uusiRuutu.sijainti.x - random.nextInt(18) - 6);
+                    pelaaja.imageView.setY(uusiRuutu.sijainti.y - random.nextInt(18) - 6);
+                }
+                case 1 -> {
+                    pelaaja.imageView.setX(uusiRuutu.sijainti.x - random.nextInt(18) - 6);
+                    pelaaja.imageView.setY(uusiRuutu.sijainti.y + random.nextInt(18) + 6);
+                }
+                case 2 -> {
+                    pelaaja.imageView.setX(uusiRuutu.sijainti.x + random.nextInt(18) + 6);
+                    pelaaja.imageView.setY(uusiRuutu.sijainti.y - random.nextInt(18) - 6);
+                }
+                case 3 -> {
+                    pelaaja.imageView.setX(uusiRuutu.sijainti.x + random.nextInt(18) + 6);
+                    pelaaja.imageView.setY(uusiRuutu.sijainti.y + random.nextInt(18) + 6);
+                }
+            }
+        }
     }
 }
