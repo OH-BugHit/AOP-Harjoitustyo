@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/totuusVaiTehtavaLayout"
+    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".minipelit.TotuusVaiTehtava">
@@ -45,7 +46,10 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_blank"
         app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus_TotuusVaiTehtava2"
-        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_TotuusVaiTehtava1" />
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_TotuusVaiTehtava1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvOhjeistus_TotuusVaiTehtava1"
@@ -54,8 +58,8 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_taskDescriptionTruthOrDarePt1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi1_TotuusVaiTehtava"
         app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi1_TotuusVaiTehtava" />
 
     <TextView
@@ -64,6 +68,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_taskDescriptionTruthOrDarePt3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi2_TotuusVaiTehtava"
         app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi2_TotuusVaiTehtava" />
 
@@ -73,6 +79,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_blank"
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_TotuusVaiTehtava3"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvOhjeistus_TotuusVaiTehtava2"
         app:layout_constraintTop_toTopOf="@+id/tvOhjeistus_TotuusVaiTehtava2" />
 
@@ -82,6 +90,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_blank"
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_TotuusVaiTehtava5"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvOhjeistus_TotuusVaiTehtava4"
         app:layout_constraintTop_toTopOf="@+id/tvOhjeistus_TotuusVaiTehtava4" />
 
@@ -92,7 +102,10 @@
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_taskDescriptionTruthOrDarePt2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvPelaajaNimi1_TotuusVaiTehtava"
+        app:layout_constraintEnd_toStartOf="@+id/tvPelaajaNimi2_TotuusVaiTehtava"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -102,7 +115,10 @@
         android:layout_marginTop="32dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_taskDescriptionTruthOrDarePt4"
-        app:layout_constraintStart_toStartOf="@+id/tvOhjeistus_TotuusVaiTehtava2"
+        app:layout_constraintEnd_toStartOf="@+id/tvPelaajaNimi3_TotuusVaiTehtava"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPelaajaNimi2_TotuusVaiTehtava" />
 
     <TextView
@@ -111,6 +127,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_taskDescriptionTruthOrDarePt5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi3_TotuusVaiTehtava"
         app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi3_TotuusVaiTehtava" />
 

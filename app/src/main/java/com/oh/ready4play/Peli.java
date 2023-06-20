@@ -83,27 +83,27 @@ public class Peli extends Fragment {
     /**
      * Painike nopan heittämiseen
      */
-    Button btHeitaNoppa;
+    private Button btHeitaNoppa;
     /**
      * Painike vuoron ohittamiseen
      */
-    Button btOhita;
+    private Button btOhita;
     /**
      * Painike tehtävän "Kaksi totuutta yksi valhe", epäonnistumiseen
      */
-    Button btFail;
+    private Button btFail;
     /**
      * Painike tehtävän "Kaksi totuutta yksi valhe", onnistumiseen
      */
-    Button bt3;
+    private Button bt3;
     /**
      * Vuorossa olevan pelaajan nappulan kuva
      */
-    ImageView ivNappula;
+    private ImageView ivNappula;
     /**
      * Vuorossa olevan pelaajan niminäkymä
      */
-    TextView tvVuorossaPelaaja;
+    private TextView tvVuorossaPelaaja;
     /**
      * Pelaajan ohitukseen tekstinäkymä
      */
@@ -287,7 +287,8 @@ public class Peli extends Fragment {
         seuraavaVuoro = false;
         if (toiminto == 11) {
             if (tehtavaFail){
-                liikutaPelaajaa(peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).lisaSiirrot);
+                //liikutaPelaajaa(peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).lisaSiirrot);
+                MainActivity.INSTANCE.runOnUiThread(() -> Peli.this.liikutaPelaajaa(peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).lisaSiirrot));
                 tehtavaFail = false;
             }
         }
@@ -303,7 +304,8 @@ public class Peli extends Fragment {
      * Seuraavan pelivuorossa olevan pelaajan tiedot näkyville
      */
     private void asetaSeuraava() {
-        tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
+        String asetettava = " " + pelaajat.get(vuorossaPelaaja).pelaajanimi;
+        tvVuorossaPelaaja.setText(asetettava);
         ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
     }
 
@@ -312,6 +314,8 @@ public class Peli extends Fragment {
      * @param toiminto Suoritettava toiminto (vastaa pelilaudan ruudun toimintonumeroa)
      */
     private void suoritaVuoro(int toiminto) {
+        bt3.setVisibility(View.INVISIBLE);
+        btFail.setVisibility(View.INVISIBLE);
         switch (toiminto) {
             case 1 -> fragmentManager.beginTransaction()
                     .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)
@@ -407,7 +411,8 @@ public class Peli extends Fragment {
             i++;
         }
         ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
-        tvVuorossaPelaaja.setText(pelaajat.get(vuorossaPelaaja).pelaajanimi);
+        String asetettava = " " + pelaajat.get(vuorossaPelaaja).pelaajanimi;
+        tvVuorossaPelaaja.setText(asetettava);
     }
 
     /**

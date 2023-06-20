@@ -42,7 +42,6 @@
         android:id="@+id/tvPelaajaNimi_Peli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_blank"
         app:layout_constraintBottom_toBottomOf="@+id/ivNappulaVuorossa"
         app:layout_constraintStart_toEndOf="@+id/tvVuorossa_Peli"
         app:layout_constraintTop_toTopOf="@+id/ivNappulaVuorossa" />
@@ -135,111 +134,91 @@
         android:id="@+id/ivNappula0"
         android:layout_width="26dp"
         android:layout_height="26dp"
-        android:layout_marginStart="432dp"
-        android:layout_marginTop="120dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="153dp" />
 
     <ImageView
         android:id="@+id/ivNappula1"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginTop="148dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="160dp" />
 
     <ImageView
         android:id="@+id/ivNappula2"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="196dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="171dp" />
 
     <ImageView
         android:id="@+id/ivNappula3"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="116dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="182dp" />
 
     <ImageView
         android:id="@+id/ivNappula4"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="244dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="64dp"
+        tools:layout_editor_absoluteY="190dp" />
 
     <ImageView
         android:id="@+id/ivNappula5"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="300dp"
-        android:layout_marginTop="68dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="203dp" />
 
     <ImageView
         android:id="@+id/ivNappula6"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="352dp"
-        android:layout_marginTop="100dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="219dp" />
 
     <ImageView
         android:id="@+id/ivNappula7"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="324dp"
-        android:layout_marginTop="156dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="230dp" />
 
     <ImageView
         android:id="@+id/ivNappula8"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="524dp"
-        android:layout_marginTop="80dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="246dp" />
 
     <ImageView
         android:id="@+id/ivNappula9"
         android:layout_width="25dp"
         android:layout_height="30dp"
-        android:layout_marginStart="268dp"
-        android:layout_marginTop="136dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_Peli" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="259dp" />
 
     <Button
         android:id="@+id/bt3_Peli"

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/fuckTheDealerLayout"
+    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".minipelit.FuckTheDealer">
@@ -45,6 +46,8 @@
         android:text="@string/text_taskDescriptionFTheDealer"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaVuorossa_FtheDealer"
         app:layout_constraintTop_toTopOf="@+id/tvPelaajaVuorossa_FtheDealer" />
 
@@ -54,7 +57,10 @@
         android:layout_height="wrap_content"
         android:text="@string/text_blank"
         app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus2_FtheDealer"
-        app:layout_constraintStart_toStartOf="@+id/tvOhjeistus4_FtheDealer"
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_FtheDealer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider16"
         app:layout_constraintVertical_bias="0.19999999" />
 
@@ -64,7 +70,8 @@
         android:layout_height="wrap_content"
         android:text="@string/text_taskDescriptionFTheDealer2"
         app:layout_constraintBottom_toTopOf="@+id/tvSeuraavaPelaaja_FtheDealer"
-        app:layout_constraintStart_toStartOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPelaajaVuorossa_FtheDealer" />
 
     <TextView
@@ -73,7 +80,10 @@
         android:layout_height="wrap_content"
         android:text="@string/text_blank"
         app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus4_FtheDealer"
-        app:layout_constraintStart_toStartOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus3_FtheDealer"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus2_FtheDealer" />
 
     <TextView
@@ -81,6 +91,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_taskDescriptionFTheDealer3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvSeuraavaPelaaja_FtheDealer"
         app:layout_constraintTop_toTopOf="@+id/tvSeuraavaPelaaja_FtheDealer" />
 
@@ -89,6 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_taskDescriptionFTheDealer4"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

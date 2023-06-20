@@ -3,12 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/hitlerLayout"
+    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".minipelit.Hitler">
 
     <ImageView
         android:id="@+id/ivTausta_Hitler"
+        style="@style/taustavari"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"

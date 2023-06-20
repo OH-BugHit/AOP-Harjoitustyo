@@ -24,7 +24,7 @@ public class KolmeShottia extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_kolme_shottia, container, false);
 
-        String pelaajaVuorossa = Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi;
+        String pelaajaVuorossa = Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi + " ";
 
         TextView tvPelaaja = view.findViewById(R.id.tvPelaajaVuorossa_3Shottia);
 

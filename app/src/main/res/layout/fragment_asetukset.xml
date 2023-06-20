@@ -5,6 +5,7 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#6100BCD4"
     tools:context=".Asetukset">
 
     <!-- TODO: Update blank fragment layout -->
@@ -31,6 +32,7 @@
 
     <TextView
         android:id="@+id/tvNoppa_Asetukset"
+        style="@style/tekstiAliotsikko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_diceAdd"
@@ -85,7 +87,8 @@
         android:text="@string/text_tasksInGame"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-        app:layout_constraintTop_toTopOf="@+id/tvNoppa_Asetukset" />
+        app:layout_constraintTop_toTopOf="@+id/tvNoppa_Asetukset"
+        style="@style/tekstiAliotsikko" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"

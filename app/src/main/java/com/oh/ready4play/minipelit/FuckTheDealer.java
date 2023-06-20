@@ -49,6 +49,7 @@ public class FuckTheDealer extends Fragment {
         ivPeitto.setImageResource(R.drawable.tausta);
 
         Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_FtheDealer);
+        btJatkaPelia.setVisibility(View.INVISIBLE);
         Button btKurkista = view.findViewById(R.id.btPeek_FtheDealer);
         Button btSeuraavaKortti = view.findViewById(R.id.btNextCard_FtheDealer);
         Button btAloita = view.findViewById(R.id.btAloita_FtheDealer);
@@ -61,7 +62,16 @@ public class FuckTheDealer extends Fragment {
         tvOhje3 = view.findViewById(R.id.tvOhjeistus3_FtheDealer);
         tvOhje4 = view.findViewById(R.id.tvOhjeistus4_FtheDealer);
         tvPelaaja = view.findViewById(R.id.tvPelaajaVuorossa_FtheDealer);
+        tvPelaaja.setText(Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi);
         tvSeuraavaPelaaja = view.findViewById(R.id.tvSeuraavaPelaaja_FtheDealer);
+        String asetettavaSeuraavaNimi;
+        if (Peli.vuorossaPelaaja == Peli.pelaajat.size()-1) {
+            asetettavaSeuraavaNimi = Peli.pelaajat.get(0).pelaajanimi + " ";
+            tvSeuraavaPelaaja.setText(asetettavaSeuraavaNimi);
+        } else {
+            asetettavaSeuraavaNimi = Peli.pelaajat.get(Peli.vuorossaPelaaja + 1).pelaajanimi + " ";
+            tvSeuraavaPelaaja.setText(asetettavaSeuraavaNimi);
+        }
 
 
         btAloita.setOnClickListener(e -> {
@@ -76,6 +86,7 @@ public class FuckTheDealer extends Fragment {
             ivPeitto.setVisibility(View.VISIBLE);
             ivKortti.setVisibility(View.VISIBLE);
             btAloita.setVisibility(View.INVISIBLE);
+            btJatkaPelia.setVisibility(View.VISIBLE);
             seuraavaKortti();
         });
 

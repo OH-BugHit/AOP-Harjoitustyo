@@ -29,11 +29,12 @@ public class TotuusVaiTehtava extends Fragment {
         TextView tvPelaaja2 = view.findViewById(R.id.tvPelaajaNimi2_TotuusVaiTehtava);
         TextView tvPelaaja3 = view.findViewById(R.id.tvPelaajaNimi3_TotuusVaiTehtava);
 
-        String pelaajaVuorossa = Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi;
+        String pelaajaVuorossa = Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi + " ";
+        String pelaajaVuorossa2 = " " + Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi + " ";
 
         tvPelaaja.setText(pelaajaVuorossa);
-        tvPelaaja2.setText(pelaajaVuorossa);
-        tvPelaaja3.setText(pelaajaVuorossa);
+        tvPelaaja2.setText(pelaajaVuorossa2);
+        tvPelaaja3.setText(pelaajaVuorossa2);
 
         Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_TotuusVaiTehtava);
 

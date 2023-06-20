@@ -67,67 +67,65 @@
      -->
     <string name="text_hitlerTitle">Hitler</string>
     <string name="text_tapToDraw">Tap card to draw!</string>
-    <string name="text_taskDescriptionHitler">Ace, Waterfall\n2, Give 2 sips\n3, Drink 3 sips\n4, Hitler\n5, 123\n6, Women drink 3 sips\n7, Category\n8, Rule\n9, Everybody drinks 3 sips\n10, Men drink 3 sips\n11, Skip-card\n12, Hoe\n13, Kingdrink!\n\nTap card to draw!</string>
+    <string name="text_taskDescriptionHitler">Rules:\n\nAce, Waterfall\n2, Give 2 sips\n3, Drink 3 sips\n4, Hitler\n5, 123\n6, Women drink 3 sips\n7, Category\n8, Rule\n9, Everybody drinks 3 sips\n10, Men drink 3 sips\n11, Skip-card\n12, Hoe\n13, Kingdrink!\n\nTap card to draw!</string>
     <string name="text_continueGame">Continue game</string>
 
-    <string name="text_waterfallDesc">All players start to drink…</string>
-    <string name="text_give2">Give 2 sips to someone!</string>
-    <string name="text_drink3">Drink 3 sips!</string>
-    <string name="text_hitler">Last one to stand up and shout "Hitler!", drinks 3 sips.
+    <string name="text_waterfallDesc">Waterfall!\n\nAll players start to drink…</string>
+    <string name="text_give2">Give two!\n\nGive 2 sips to someone!</string>
+    <string name="text_drink3">Drink three!\n\nDrink 3 sips!</string>
+    <string name="text_hitler">Hitler\n\nLast one to stand up and shout "Hitler!", drinks 3 sips.
         Probably you since you are still reading this!</string>
-    <string name="text_123">The one that draw card drinks 1, next one 2, next one 3 etc…</string>
-    <string name="text_womenDrink">All the women drink 3 sips!</string>
-    <string name="text_category">Player who drew card tells category and first example. All players in turn must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
-    <string name="text_rule">Make new rule for the game! Rule stays in place until next role (or you decide, it\'s your game anyway)</string>
-    <string name="text_everybodyDrink">Everybody takes 3 sips</string>
-    <string name="text_menDrink">All the men drink 3 sips</string>
-    <string name="text_skip">Wohoo! This is the "Skip-Task"-card! Unfortunately it doesn\'t allow you to skip actual tasks, but feel free to skip next few sips you should otherwise take!</string>
-    <string name="text_hoe">Make a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 2 sips now! (That makes it 4 to your hoe ;) )</string>
-    <string name="text_kingdrink">THE Drink! \nPour few sips of your drink to glass. The player mentioned at the screen does the same and drinks it!</string>
+    <string name="text_123">123!\n\nThe one that draw card drinks 1, next one 2, next one 3 etc…</string>
+    <string name="text_womenDrink">Women drink!\n\nAll the women drink 3 sips!</string>
+    <string name="text_category">Category\n\nPlayer who drew card tells category and first example. All players in turn must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
+    <string name="text_rule">Rule!\n\nMake new rule for the game! Rule stays in place until next role (or you decide, it\'s your rule anyway)</string>
+    <string name="text_everybodyDrink">Everyone drinks!\n\nEverybody takes 3 sips</string>
+    <string name="text_menDrink">Men drink!\n\nAll the men drink 3 sips</string>
+    <string name="text_skip">Skip-Task!\n\nWohoo! This is the "Skip-Task"-card! Unfortunately it doesn\'t allow you to skip actual tasks, but feel free to skip next few sips you should otherwise take!</string>
+    <string name="text_hoe">Hoe!\n\nMake a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 2 sips now! (That makes it 4 to your hoe ;) )</string>
+    <string name="text_kingdrink">KingDrink\n\nTHE Drink! \nPour few sips of your drink to glass. The player mentioned at the screen does the same and drinks it!</string>
 
     <!-- Huora -->
     <string name="text_huoraTitle">Hoe</string>
-    <string name="text_taskDescriptionHoe">Make a hoe out of friend!\n\nPerson you choose, has to drink always when you drink (related to game).\n\nTo seal the deal, both of you take 2 sips now! (That makes it 4 to your hoe ;) )</string>
+    <string name="text_taskDescriptionHoe">Make a hoe out of friend!\n\nPerson you choose, has to drink always when you drink (related to game).\n\nTo seal the deal, both of you take 2 sips now! (That makes it already 4 to your hoe ;) )</string>
 
     <!-- TytotVsPojat -->
     <string name="text_tytotVsPojatTitle">Girls VS Boys!</string>
-    <string name="text_taskDescriptiontytotVsPojat">Together as group, come up with a challenge and create an epic battle against sexes!\n\nYou may choose if whole team has to participate or just one on one or something else.\n\nLosers take shots!\n(Thirsty winners may also take ones)</string>
+    <string name="text_taskDescriptiontytotVsPojat">Together as group, come up with a challenge and create an epic battle against sexes!\n\nYou may choose if the whole team participates or just one on one or something else.\n\nLosers take shots!\n(Thirsty winners may also take ones)</string>
 
     <!-- Totuus vai tehtävä -->
     <string name="text_TruthOrDareTitle">Thruth or Dare!</string>
     <string name="text_taskDescriptionTruthOrDarePt1"> chooses truth or dare.</string>
     <string name="text_taskDescriptionTruthOrDarePt2">Truth: Other players asks something and </string>
-    <string name="text_taskDescriptionTruthOrDarePt3"> has to answer thrutfully.</string>
+    <string name="text_taskDescriptionTruthOrDarePt3"> has to answer truthfully.</string>
     <string name="text_taskDescriptionTruthOrDarePt4">Dare: Other players dare </string>
     <string name="text_taskDescriptionTruthOrDarePt5"> to do task.</string>
 
     <!-- Would You Rather -->
     <string name="text_WouldYouRatherTitle">Would You Rather?</string>
-    <string name="text_taskDescriptionWouldYouRather">Other players ask would you rather question from</string>
+    <string name="text_taskDescriptionWouldYouRather">Other players ask "would you rather" question from</string>
     <string name="text_taskDescriptionWouldYouRather2">Also take 2 sips.</string>
 
     <!-- 3 shottia -->
     <string name="text_3ShotsTitle">Three shots!</string>
-    <string name="text_taskDescription3Shots">Pour three shots. One contains alcohol, other two doesn\'t.\nExample: 1 shot of vodka, two shots of water.</string>
+    <string name="text_taskDescription3Shots">Pour three shots.\n\nOne contains alcohol, other two doesn\'t.\n\nExample: 1 shot of vodka, two shots of water.</string>
     <string name="text_taskDescriprion3Shots2"> chooses one blindfolded and drinks it. No smelling it! Just drink ;)</string>
 
     <!-- 2 Totuutta 1 Valhe -->
     <string name="text_2Truths1LieTitle">Two Truths One Lie!</string>
-    <string name="text_taskDescription2Truths1Lie">Think of two true events from your life or things about you and one lie.\n\nOther players may ask questions about those claims.\n\nFinally everybody tries to guess which one is the lie.\n\nWrong guess gets rewarded with 5 sips!\n\nSucceeding to fool everybody results +3 steps to your next dice!\nYou will be presented "Failure\" and "+3\" buttons at board view visible at your turns to click before throwing the dice when completed this task.
-
-    Game can continue until you are ready with claims,\nbut there is 5 sips penalty every round to you until you complete this task.</string>
+    <string name="text_taskDescription2Truths1Lie">Think of two true events from your life or things about you and one lie.\n\nOther players may ask questions about those claims.\n\nFinally everybody tries to guess which one is the lie.\n\nWrong guess gets rewarded with 5 sips!\n\nSucceeding to fool everybody results +3 steps to your next dice!\nYou will be presented "Failure\" and "+3\" buttons at board view visible at your turns to click before throwing the dice when completed this task.\n\nGame can continue until you are ready with claims,\nbut there is 5 sips penalty every round to you until you complete this task.</string>
 
     <!-- Sanaselitys -->
     <string name="text_dictionaryTitle">Dictionary!</string>
-    <string name="text_taskDescriptionDictionary">Choose partner for this task\n\nExplain words presented here before timer runs out\n\nYou have 1 minute\n\nYou may not use any part of the word itself\n\nYou may skip words with skip button (penalty 0,5)\n\nGood luck!</string>
+    <string name="text_taskDescriptionDictionary">Choose partner for this task\n\nExplain words presented here before timer runs out\n\nYou have 1 minute\n\nYou can explain the last word after the time has run out\n\nYou may not use any part of the word itself\n\nYou may skip words with the skip button (penalty 0,5)\n\nGood luck!</string>
     <string name="text_btSkip">Skip!</string>
     <string name="text_btCorrect">Correct!</string>
     <string name="text_start">Start!</string>
-    <string name="text_lopputekstiDictionary">Time\'s up!\n\nGive sips same amount as your score at top of the screen!</string>
+    <string name="text_lopputekstiDictionary">Time\'s up!\n\nGive sips same amount as your score!</string>
 
     <!-- Fuck The Dealer -->
     <string name="text_fTheDealerTitle">Fuck The Dealer!</string>
-    <string name="text_taskDescriptionFTheDealer">, take this device to your hands for this task!</string>
+    <string name="text_taskDescriptionFTheDealer">, take this device to your hands for the duration of this task!</string>
     <string name="text_taskDescriptionFTheDealer2">Touch the card to peek it</string>
     <string name="text_taskDescriptionFTheDealer3"> tries to guess the card</string>
     <string name="text_taskDescriptionFTheDealer4">After first guess, you have to tell if your card is higher or lower (or is it correct).\n\nIf the first guess is right you have to take 5 sips\n\nSame player takes a second guess\n\nYou show everybody the card\n\nIf the card is right, you take 3 sips, if wrong the one who guessed, takes 3 sips\n\nChange card and repeat to all players</string>
@@ -136,7 +134,7 @@
 
     <!-- Ravit -->
     <string name="text_horseRaceTitle">Horse Race!</string>
-    <string name="text_taskDescriptionHorseRace">Welcome to THE Track!\n\nPlace your bets everybody and get ready for some track fun!\n\nEveryone places some sips bet to one Ace of their choose respectively.\n\nWhen next card is drawn the ace with same suit as drawn proceeds.\n\nAll players whose horse is behind leader has to drink their bet at every turn.\n\nWhen last coming horse reaches step. The card at side is turn and ace with same suit as turn card has to go back one step.\n\nThose whose horse (Ace) crosses the finish line first gets to give their bet x 10 to others!\n\nTap Joker for first card after starting the race and declaring your bet to draw a card and drawn card to proceed after turns!</string>
+    <string name="text_taskDescriptionHorseRace">Welcome to THE Track!\n\nPlace your bets everybody and get ready for some track fun!\n\nEveryone places some sips bet to one Ace of their choose respectively.\n\nWhen next card is drawn the ace with same suit as drawn proceeds at track.\n\nAll players whose horse is behind leader has to drink their bet at every turn.\n\nWhen last coming horse reaches step. The card at side is turn and ace with same suit as turned card has to go back one step.\n\nThose whose horse (Ace) crosses the finish line first gets to give their bet x 10 to others!\n\nTap the deck for first card after starting the race and declaring your bet to draw a card and drawn card to proceed after turns!</string>
     <string name="text_heartsWinner">The Ace of Hearts Wins!\n\nGive your bet x 10!</string>
     <string name="text_spadesWinner">The Ace of Spades Wins!\n\nGive your bet x 10!</string>
     <string name="text_diamondsWinner">The Ace of Diamonds Wins!\n\nGive your bet x 10!</string>

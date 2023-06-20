@@ -28,6 +28,7 @@ public class Sanaselitys extends Fragment {
     private TextView tvAika;
     private TextView tvPistenaytto;
     private TextView tvSana;
+    private TextView tvSanaOhjeistus;
     private int aika = 5;
     private double pistemaara = 0;
     volatile boolean sanapeliOhi = false;
@@ -42,8 +43,10 @@ public class Sanaselitys extends Fragment {
 
         teeSanaluettelo();
 
+        tvSanaOhjeistus = view.findViewById(R.id.tvOhjeistus_Sanaselitys);
         tvSana = view.findViewById(R.id.tvSana_Sanaselitys);
         tvPistenaytto = view.findViewById(R.id.tvPisteNaytto_Sanaselitys);
+        tvPistenaytto.setVisibility(View.INVISIBLE);
         tvAika = view.findViewById(R.id.tvAika_Sanaselitys);
 
         Button btAloita = view.findViewById(R.id.btAloita_Sanaselitys);
@@ -69,6 +72,9 @@ public class Sanaselitys extends Fragment {
         });
 
         btAloita.setOnClickListener(e -> {
+            tvSanaOhjeistus.setVisibility(View.INVISIBLE);
+            tvPistenaytto.setVisibility(View.VISIBLE);
+            tvPistenaytto.setText("0");
             btAloita.setVisibility(View.INVISIBLE);
             btOhita.setVisibility(View.VISIBLE);
             btOikein.setVisibility(View.VISIBLE);
@@ -97,7 +103,9 @@ public class Sanaselitys extends Fragment {
             btOikein.setVisibility(View.INVISIBLE);
             btOhita.setVisibility(View.INVISIBLE);
             int loppupisteet = (int) Math.floor(pistemaara);
-            tvSana.setText(R.string.text_lopputekstiDictionary);
+            tvSana.setVisibility(View.INVISIBLE);
+            tvSanaOhjeistus.setVisibility(View.VISIBLE);
+            tvSanaOhjeistus.setText(R.string.text_lopputekstiDictionary);
             btJatkaPelia.setVisibility(View.VISIBLE);
         } else {
             seuraavaSana();

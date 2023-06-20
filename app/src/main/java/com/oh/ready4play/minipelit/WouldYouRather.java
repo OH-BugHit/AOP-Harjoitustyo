@@ -25,7 +25,7 @@ public class WouldYouRather extends Fragment {
         View view = inflater.inflate(R.layout.fragment_would_you_rather, container, false);
 
 
-        String pelaajaVuorossa = Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi;
+        String pelaajaVuorossa = " " + Peli.pelaajat.get(Peli.vuorossaPelaaja).pelaajanimi;
 
         TextView tvPelaaja = view.findViewById(R.id.tvPelaajaNimi_WouldYouRather);
 
