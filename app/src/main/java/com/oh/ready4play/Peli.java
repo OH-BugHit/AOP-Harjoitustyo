@@ -22,6 +22,7 @@ import com.oh.ready4play.minipelit.FuckTheDealer;
 import com.oh.ready4play.minipelit.Hitler;
 import com.oh.ready4play.minipelit.Huora;
 import com.oh.ready4play.minipelit.KaksiTotuuttaYksiValhe;
+import com.oh.ready4play.minipelit.Kasa;
 import com.oh.ready4play.minipelit.KolmeShottia;
 import com.oh.ready4play.minipelit.Ravit;
 import com.oh.ready4play.minipelit.Sanaselitys;
@@ -208,7 +209,7 @@ public class Peli extends Fragment {
     }
 
     private void suoritaVuoro(int toiminto) {
-        toiminto = 11;
+        toiminto = 12;
         switch (toiminto) {
             case 1 -> fragmentManager.beginTransaction()
                     .replace(R.id.fcvMinipeliNakyma,Hitler.class,null)
@@ -245,30 +246,29 @@ public class Peli extends Fragment {
                     .setReorderingAllowed(true)
                     .addToBackStack(null)
                     .commit();
-            case 8 -> {
+            case 8 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, Sanaselitys.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 9 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, FuckTheDealer.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 10 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, Ravit.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 11 -> fragmentManager.beginTransaction()
+                    .replace(R.id.fcvMinipeliNakyma, Bussikuski.class,null)
+                    .setReorderingAllowed(true)
+                    .addToBackStack(null)
+                    .commit();
+            case 12 -> {
                 fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, Sanaselitys.class,null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
-            case 9 -> {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, FuckTheDealer.class,null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
-            case 10 -> {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, Ravit.class,null)
-                        .setReorderingAllowed(true)
-                        .addToBackStack(null)
-                        .commit();
-            }
-            case 11 -> {
-                fragmentManager.beginTransaction()
-                        .replace(R.id.fcvMinipeliNakyma, Bussikuski.class,null)
+                        .replace(R.id.fcvMinipeliNakyma, Kasa.class,null)
                         .setReorderingAllowed(true)
                         .addToBackStack(null)
                         .commit();
@@ -369,7 +369,7 @@ public class Peli extends Fragment {
                 case 37 -> kortti.kuva = getResources().getDrawable(R.drawable.pata12,MainActivity.INSTANCE.getTheme());
                 case 38 -> kortti.kuva = getResources().getDrawable(R.drawable.pata13,MainActivity.INSTANCE.getTheme());
                 case 39 -> kortti.kuva = getResources().getDrawable(R.drawable.risti1,MainActivity.INSTANCE.getTheme());
-                case 40 -> kortti.kuva = getResources().getDrawable(R.drawable.jokeri2,MainActivity.INSTANCE.getTheme());
+                case 40 -> kortti.kuva = getResources().getDrawable(R.drawable.risti2,MainActivity.INSTANCE.getTheme());
                 case 41 -> kortti.kuva = getResources().getDrawable(R.drawable.risti3,MainActivity.INSTANCE.getTheme());
                 case 42 -> kortti.kuva = getResources().getDrawable(R.drawable.risti4,MainActivity.INSTANCE.getTheme());
                 case 43 -> kortti.kuva = getResources().getDrawable(R.drawable.risti5,MainActivity.INSTANCE.getTheme());

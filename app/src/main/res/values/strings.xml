@@ -153,6 +153,12 @@
     <string name="text_falseGuesses_Busdriver">Wrong guesses:</string>
     <string name="text_penaltyBusdriver">Your penalty sips:</string>
 
+    <!-- Kasa -->
+    <string name="text_stackTitle">Pile!</string>
+    <string name="text_taskDescriptionStack">Make a pile out of you!</string>
+    <string name="text_taskDescriptionStack2">goes to bottom</string>
+    <string name="text_taskDesctiptionStack3">In large games not everybody has to go to pile!\n\nBe safe and don\'t be stupid!</string>
+
     <!-- Content description -->
     <string name="contentDesc_piece">Piece</string>
     <string name="contentDesc_GameBoard">Gameboard</string>
