@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/frameLayout4"
+    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#6100BCD4"
     tools:context=".Asetukset">
 
     <!-- TODO: Update blank fragment layout -->
@@ -82,157 +82,187 @@
 
     <TextView
         android:id="@+id/textView3"
+        style="@style/tekstiAliotsikko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_tasksInGame"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-        app:layout_constraintTop_toTopOf="@+id/tvNoppa_Asetukset"
-        style="@style/tekstiAliotsikko" />
+        app:layout_constraintTop_toTopOf="@+id/tvNoppa_Asetukset" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/tekstiAliotsikko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="8dp"
+        android:text="@string/text_durationDictionary"
+        app:layout_constraintBottom_toBottomOf="@+id/etSanariKesto_Asetukset"
+        app:layout_constraintEnd_toStartOf="@+id/etSanariKesto_Asetukset"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/rgNoppa_Asetukset"
+        app:layout_constraintTop_toTopOf="@+id/etSanariKesto_Asetukset" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/divider4"
+        app:layout_constraintBottom_toTopOf="@+id/etSanariKesto_Asetukset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/rgNoppa_Asetukset"
-        app:layout_constraintTop_toBottomOf="@+id/divider3">
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-        <CheckBox
-            android:id="@+id/cbTeht1_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht1_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task1_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbTeht2_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbTeht2_Asetukset"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/swTeht2_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swTeht4_Asetukset"
+            app:layout_constraintVertical_chainStyle="spread" />
 
-        <CheckBox
-            android:id="@+id/cbTeht2_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht2_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task2_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbTeht3_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbTeht3_Asetukset"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht1_Asetukset" />
+            app:layout_constraintBottom_toTopOf="@+id/swTeht3_Asetukset"
+            app:layout_constraintStart_toStartOf="@+id/swTeht3_Asetukset"
+            app:layout_constraintTop_toBottomOf="@+id/swTeht1_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht3_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht3_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task3_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cbTeht6_Asetukset"
+            app:layout_constraintEnd_toStartOf="@+id/swTeht6_Asetukset"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht2_Asetukset" />
+            app:layout_constraintTop_toTopOf="@+id/swTeht6_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht4_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht4_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task4_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbTeht5_Asetukset"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht1_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbTeht5_Asetukset"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht1_Asetukset"
+            app:layout_constraintStart_toStartOf="@+id/swTeht5_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swTeht7_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht5_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht5_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task5_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbTeht6_Asetukset"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht2_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbTeht6_Asetukset"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht4_Asetukset" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht2_Asetukset"
+            app:layout_constraintStart_toStartOf="@+id/swTeht6_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swTeht2_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht6_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht6_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task6_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cbTeht9_Asetukset"
+            app:layout_constraintEnd_toStartOf="@+id/swTeht9_Asetukset"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht3_Asetukset"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht5_Asetukset" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht3_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swTeht9_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht7_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht7_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task7_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbTeht8_Asetukset"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht4_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbTeht8_Asetukset"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht4_Asetukset"
+            app:layout_constraintStart_toStartOf="@+id/swTeht8_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swTeht10_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht8_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht8_Asetukset"
             android:layout_width="135dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task8_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbTeht9_Asetukset"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht5_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbTeht9_Asetukset"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht7_Asetukset" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht5_Asetukset"
+            app:layout_constraintStart_toStartOf="@+id/swTeht9_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swTeht5_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht9_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht9_Asetukset"
             android:layout_width="140dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task9_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cbKasa_Asetukset"
+            app:layout_constraintEnd_toStartOf="@+id/swKasa_Asetukset"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht6_Asetukset"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht8_Asetukset" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht6_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swKasa_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbTeht10_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht10_Asetukset"
             android:layout_width="136dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task10_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbTeht11_Asetukset"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht7_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbTeht11_Asetukset"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/swTeht11_Asetukset"
+            app:layout_constraintStart_toEndOf="@+id/swTeht7_Asetukset"
+            app:layout_constraintStart_toStartOf="@+id/swTeht11_Asetukset"
+            app:layout_constraintVertical_chainStyle="spread" />
 
-        <CheckBox
-            android:id="@+id/cbTeht11_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swTeht11_Asetukset"
             android:layout_width="136dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task11_settings"
             android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/cbKasa_Asetukset"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht8_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/cbKasa_Asetukset"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht10_Asetukset" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht8_Asetukset"
+            app:layout_constraintStart_toStartOf="@+id/swKasa_Asetukset"
+            app:layout_constraintTop_toTopOf="@+id/swTeht8_Asetukset" />
 
-        <CheckBox
-            android:id="@+id/cbKasa_Asetukset"
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/swKasa_Asetukset"
             android:layout_width="136dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:checked="true"
+            android:padding="4dp"
             android:text="@string/text_task12_settings"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/cbTeht9_Asetukset"
-            app:layout_constraintTop_toBottomOf="@+id/cbTeht11_Asetukset" />
+            app:layout_constraintStart_toEndOf="@+id/swTeht9_Asetukset"
+            app:layout_constraintTop_toBottomOf="@+id/swTeht11_Asetukset" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -267,5 +297,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btPaluu_Asetukset" />
+
+    <EditText
+        android:id="@+id/etSanariKesto_Asetukset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/text_inSeconds"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/divider4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

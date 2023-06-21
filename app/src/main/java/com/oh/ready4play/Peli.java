@@ -33,11 +33,16 @@ import java.util.ArrayList;
 
 public class Peli extends Fragment {
     /**
+     * Käytettävät peliasetukset
+     */
+    protected static Peliasetukset peliasetukset = new Peliasetukset();
+    /**
      * Seuraava vuoro asetetaan true-tilaan minipelissä sen päättyessä.
      */
     public static volatile boolean seuraavaVuoro = false;
     /**
-     *
+     * Tehtävä 11 (epäonnistuessaan) ja 12 siirtävät pelaajaa taaksepäin.
+     * Tällä booleanilla toteutetaan taaksepäin siirtämisen pyytäminen, kun noppaa heitetään seuraavan kerran.
      */
     public static volatile boolean tehtavaFail = false;
     /**
@@ -118,26 +123,12 @@ public class Peli extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Metodi "Kaksi totuutta, Yksi valhe" -pelin jälkeisten näppäinten näyttämiseen
-     */
-    public void naytaNapit() {
-        btOhita.setVisibility(View.VISIBLE);
-        btHeitaNoppa.setVisibility(View.VISIBLE);
-        tvOhitaPelaajanimi.setEnabled(true);
-        if (pelaajat.get(vuorossaPelaaja).kaksiTotuutta) {
-            bt3.setVisibility(View.VISIBLE);
-            btFail.setVisibility(View.VISIBLE);
-        } else {
-            bt3.setVisibility(View.INVISIBLE);
-            btFail.setVisibility(View.INVISIBLE);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         alustaKorttipakka();
+        lataaAsetukset();
 
         view = inflater.inflate(R.layout.fragment_peli, container, false);
 
@@ -287,9 +278,7 @@ public class Peli extends Fragment {
         return view;
         }
 
-    private void resetoiPeli() {
-        vuorossaPelaaja = 0;
-    }
+
 
     /**
      * Seuraavan pelaajan vuoron odotus ja asetus kun vuoro voidaan siirtää
@@ -422,7 +411,25 @@ public class Peli extends Fragment {
         return peliRuudut.get(uusiruutu).tehtava;
     }
 
+    /**
+     * Metodi "Kaksi totuutta, Yksi valhe" -pelin jälkeisten näppäinten näyttämiseen
+     */
+    public void naytaNapit() {
+        btOhita.setVisibility(View.VISIBLE);
+        btHeitaNoppa.setVisibility(View.VISIBLE);
+        tvOhitaPelaajanimi.setEnabled(true);
+        if (pelaajat.get(vuorossaPelaaja).kaksiTotuutta) {
+            bt3.setVisibility(View.VISIBLE);
+            btFail.setVisibility(View.VISIBLE);
+        } else {
+            bt3.setVisibility(View.INVISIBLE);
+            btFail.setVisibility(View.INVISIBLE);
+        }
+    }
 
+    private void resetoiPeli() {
+        vuorossaPelaaja = 0;
+    }
 
     /**
      * Pelaajien ja pelin alustus
@@ -986,4 +993,29 @@ public class Peli extends Fragment {
     private float laskeX(double suhdeKerroin) {
         return Float.parseFloat(String.valueOf(pelilautaX * suhdeKerroin));
     }
+    private void lataaAsetukset() {
+        peliasetukset.hitler = lataaTehtavaKaytossa(getString(R.string.saved_task_hitler));
+        peliasetukset.huora = lataaTehtavaKaytossa(getString(R.string.saved_task_hoe));
+        peliasetukset.tytotVsPojat = lataaTehtavaKaytossa(getString(R.string.saved_task_girlsvsboys));
+        peliasetukset.totuusVaiTehtava = lataaTehtavaKaytossa(getString(R.string.saved_task_truthordare));
+        peliasetukset.wouldYouRather = lataaTehtavaKaytossa(getString(R.string.saved_task_wouldyourahter));
+        peliasetukset.kolmeShottia = lataaTehtavaKaytossa(getString(R.string.saved_task_3shots));
+        peliasetukset.kaksiTotuutta1Valhe = lataaTehtavaKaytossa(getString(R.string.saved_task_2truths1lie));
+        peliasetukset.sanaselitys = lataaTehtavaKaytossa(getString(R.string.saved_task_dictionary));
+        peliasetukset.fuckTheDealer = lataaTehtavaKaytossa(getString(R.string.saved_task_fthedealer));
+        peliasetukset.ravit = lataaTehtavaKaytossa(getString(R.string.saved_task_horserace));
+        peliasetukset.bussikuski = lataaTehtavaKaytossa(getString(R.string.saved_task_busdriver));
+        peliasetukset.kasa = lataaTehtavaKaytossa(getString(R.string.saved_task_stack));
+
+        peliasetukset.noppa = Alkuvalikko.sharedPref.getInt(getString(R.string.saved_dice), 0);
+        peliasetukset.sanaselitysKesto = Alkuvalikko.sharedPref.getInt(getString(R.string.saved_durationDictionary),60);
+    }
+
+    private boolean lataaTehtavaKaytossa(String avain) {
+        boolean taskKaytossa;
+        boolean defaultValue = true;
+        taskKaytossa = Alkuvalikko.sharedPref.getBoolean(avain,defaultValue);
+        return taskKaytossa;
+    }
+
 }

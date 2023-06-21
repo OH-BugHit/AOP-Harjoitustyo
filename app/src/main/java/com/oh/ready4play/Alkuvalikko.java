@@ -1,5 +1,7 @@
 package com.oh.ready4play;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 
@@ -10,12 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 /**
  * Alkuvalikko-fragment sisältää alkuvalikon
  * @version 0.1
  */
 public class Alkuvalikko extends Fragment {
+    protected static SharedPreferences sharedPref;
 
     public Alkuvalikko() {
         // Required empty public constructor
@@ -25,7 +30,11 @@ public class Alkuvalikko extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         lataaAsetukset();
+
         View view = inflater.inflate(R.layout.fragment_alkuvalikko, container, false);
+        Context context = getActivity();
+        sharedPref = context.getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
         Button btAloitaPeli = view.findViewById(R.id.btAloitaPeli_alkuvalikko);
         Button btAsetukset = view.findViewById(R.id.btAsetukset_alkuvalikko);

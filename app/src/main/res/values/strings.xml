@@ -5,6 +5,8 @@
     <string name="text_blank">blank</string>
     <string name="text_score">Score</string>
 
+    <string name="preference_file_key">com.oh.ready4play.PREFERENCE_FILE_KEY</string>
+
     <!-- Alkuvalikko -->
     <string name="text_gametitle">Ready4Play</string>
     <string name="text_newGame">New Game</string>
@@ -19,6 +21,25 @@
     <string name="text_dice2">Add 2 to dice</string>
     <string name="text_dice3">Add 3 to dice</string>
     <string name="text_dice5">Add 5 to dice</string>
+
+    <string name="text_durationDictionary">Duration of the Dictionary:</string>
+    <string name="text_inSeconds">seconds</string>
+
+    <string name="saved_task_hitler">task1</string>
+    <string name="saved_task_hoe">task2</string>
+    <string name="saved_task_girlsvsboys">task3</string>
+    <string name="saved_task_truthordare">task4</string>
+    <string name="saved_task_wouldyourahter">task5</string>
+    <string name="saved_task_3shots">task6</string>
+    <string name="saved_task_2truths1lie">task7</string>
+    <string name="saved_task_dictionary">task8</string>
+    <string name="saved_task_fthedealer">task9</string>
+    <string name="saved_task_horserace">task10</string>
+    <string name="saved_task_busdriver">task11</string>
+    <string name="saved_task_stack">task12</string>
+    <string name="saved_dice">diceValue</string>
+    <string name="saved_durationDictionary">durationDictionary</string>
+
 
     <string name="text_task1_settings">1. Hitler</string>
     <string name="text_task2_settings">2. Hoe</string>
