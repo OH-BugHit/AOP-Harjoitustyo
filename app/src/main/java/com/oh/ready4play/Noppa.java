@@ -35,8 +35,7 @@ public class Noppa extends Fragment {
      */
     public static int heitaNoppaa() {
         noppaKuva.setVisibility(View.VISIBLE);
-        // TOTEUTA TÄÄ RIVI KUN ON TALLENNUS JA LATAUS! int heitto = random.nextInt(6) + 1 + UusiPeli.asetukset.noppaPlus;
-        int heitto = random.nextInt(6) + 1;
+        int heitto = random.nextInt(6) + 1 + Peli.peliasetukset.noppa;
         switch (heitto) {
             case 1 -> noppaKuva.setImageResource(R.drawable.noppa1);
             case 2 -> noppaKuva.setImageResource(R.drawable.noppa2);

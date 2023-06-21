@@ -21,9 +21,9 @@ import java.util.ArrayList;
 
 //TODO: Jäänyt bugi. Jos poistaa viimeisen, sen nappula tulee uusiksi. Muuten toimii
 public class UusiPeli extends Fragment {
-    public static Tallennus asetukset;
     public static ArrayList<Pelaaja> itemArrayList = new ArrayList<>();
     public static Boolean[] nappulaKuva = new Boolean[10];
+    //Tarkastele tätä ongelmaa
     public static ImageView ivNappulanKuva;
     Button btLisaaPelaaja;
     public static boolean taynna = false;

@@ -92,7 +92,7 @@ public class Asetukset extends Fragment {
         kytkimet[11].setChecked(lataaKytkin(getString(R.string.saved_task_stack)));
 
         int defalutSanariKesto = 60;
-        etSanariKesto.setText(Alkuvalikko.sharedPref.getInt(getString(R.string.saved_durationDictionary),defalutSanariKesto));
+        etSanariKesto.setText(String.valueOf(Alkuvalikko.sharedPref.getInt(getString(R.string.saved_durationDictionary),defalutSanariKesto)));
     }
 
     private boolean lataaKytkin(String avain) {

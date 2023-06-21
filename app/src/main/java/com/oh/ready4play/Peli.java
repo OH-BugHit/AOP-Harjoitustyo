@@ -1,6 +1,7 @@
 package com.oh.ready4play;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -35,7 +36,7 @@ public class Peli extends Fragment {
     /**
      * Käytettävät peliasetukset
      */
-    protected static Peliasetukset peliasetukset = new Peliasetukset();
+    public static Peliasetukset peliasetukset;
     /**
      * Seuraava vuoro asetetaan true-tilaan minipelissä sen päättyessä.
      */
@@ -128,6 +129,7 @@ public class Peli extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         alustaKorttipakka();
+        peliasetukset = new Peliasetukset();
         lataaAsetukset();
 
         view = inflater.inflate(R.layout.fragment_peli, container, false);
@@ -406,6 +408,108 @@ public class Peli extends Fragment {
     private int liikutaPelaajaa(int nopanHeitto) {
         peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).pelaajiaRuudussa --;
         int uusiruutu = pelaajat.get(vuorossaPelaaja).sijainti + nopanHeitto;
+        //tästä
+        boolean ruutuOk = peliasetukset.kaikkitrue();
+        while (!ruutuOk) {
+            if (peliRuudut.get(uusiruutu).tehtava == 1) {
+                if (peliasetukset.hitler) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+            if (peliRuudut.get(uusiruutu).tehtava == 2) {
+                if (peliasetukset.huora) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 3) {
+                if (peliasetukset.tytotVsPojat) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 4) {
+                if (peliasetukset.totuusVaiTehtava) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+            if (peliRuudut.get(uusiruutu).tehtava == 5) {
+                if (peliasetukset.wouldYouRather) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 6) {
+                if (peliasetukset.kolmeShottia) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 7) {
+                if (peliasetukset.kaksiTotuutta1Valhe) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 8) {
+                if (peliasetukset.sanaselitys) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 9) {
+                if (peliasetukset.fuckTheDealer) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 10) {
+                if (peliasetukset.ravit) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 11) {
+                if (peliasetukset.bussikuski) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 12) {
+                if (peliasetukset.kasa) {
+                    ruutuOk = true;
+                } else {
+                    uusiruutu++;
+                }
+            }
+
+            if (peliRuudut.get(uusiruutu).tehtava == 13) {
+                ruutuOk = true;
+            }
+        }
+        //Tähän asti
         peliRuudut.get(uusiruutu).pelaajiaRuudussa ++;
         Pelaaja.liikutaPelaajaRuutuun(pelaajat.get(vuorossaPelaaja),peliRuudut.get(uusiruutu));
         return peliRuudut.get(uusiruutu).tehtava;
@@ -994,6 +1098,7 @@ public class Peli extends Fragment {
         return Float.parseFloat(String.valueOf(pelilautaX * suhdeKerroin));
     }
     private void lataaAsetukset() {
+        Alkuvalikko.sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         peliasetukset.hitler = lataaTehtavaKaytossa(getString(R.string.saved_task_hitler));
         peliasetukset.huora = lataaTehtavaKaytossa(getString(R.string.saved_task_hoe));
         peliasetukset.tytotVsPojat = lataaTehtavaKaytossa(getString(R.string.saved_task_girlsvsboys));

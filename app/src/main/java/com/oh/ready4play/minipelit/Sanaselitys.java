@@ -29,7 +29,7 @@ public class Sanaselitys extends Fragment {
     private TextView tvPistenaytto;
     private TextView tvSana;
     private TextView tvSanaOhjeistus;
-    private int aika = 2;
+    private int aika;
     private double pistemaara = 0;
     volatile boolean sanapeliOhi = false;
 
@@ -40,6 +40,7 @@ public class Sanaselitys extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sanaselitys, container, false);
+        aika = Peli.peliasetukset.sanaselitysKesto;
 
         teeSanaluettelo();
 

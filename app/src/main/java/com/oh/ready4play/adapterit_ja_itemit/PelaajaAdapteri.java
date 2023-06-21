@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.oh.ready4play.MainActivity;
 import com.oh.ready4play.Pelaaja;
 import com.oh.ready4play.R;
 import com.oh.ready4play.UusiPeli;
