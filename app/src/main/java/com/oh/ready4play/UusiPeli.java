@@ -21,11 +21,14 @@ import java.util.ArrayList;
 
 //TODO: Jäänyt bugi. Jos poistaa viimeisen, sen nappula tulee uusiksi. Muuten toimii
 public class UusiPeli extends Fragment {
+    public static UusiPeli INSTANCE;
     public static ArrayList<Pelaaja> itemArrayList = new ArrayList<>();
     public static Boolean[] nappulaKuva = new Boolean[10];
     //Tarkastele tätä ongelmaa
-    public static ImageView ivNappulanKuva;
-    Button btLisaaPelaaja;
+    public ImageView ivNappulanKuva;
+    public static int pelaajaMaara = 0;
+    public Button btLisaaPelaaja;
+    public Button btAloitaPeli;
     public static boolean taynna = false;
 
     public UusiPeli() {
@@ -37,11 +40,13 @@ public class UusiPeli extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_uusi_peli, container, false);
+        INSTANCE = this;
 
         //Asetetaan kaikki nappulat saataville
         alustaNappulaKuvaValitsin();
 
-        Button btAloitaPeli = view.findViewById(R.id.btAloitaPeli_UusiPeli);
+        btAloitaPeli = view.findViewById(R.id.btAloitaPeli_UusiPeli);
+        btAloitaPeli.setEnabled(false);
         btLisaaPelaaja = view.findViewById(R.id.btLisaaPelaaja_UusiPeli);
         EditText etLisattavaPelaajaNimi = view.findViewById(R.id.etLisattavaPelaaja_UusiPeli);
         ivNappulanKuva = view.findViewById(R.id.ivLisattavanKuva_UusiPeli);
@@ -59,8 +64,12 @@ public class UusiPeli extends Fragment {
         });
 
         btLisaaPelaaja.setOnClickListener(e -> {
+            pelaajaMaara ++;
+            if (pelaajaMaara >= 2) {
+                btAloitaPeli.setEnabled(true);
+            }
             if (!taynna) {
-                if (!etLisattavaPelaajaNimi.getText().toString().equals("")) {
+                if (!etLisattavaPelaajaNimi.getText().toString().equals("") && etLisattavaPelaajaNimi.getText().toString().length() < 15) {
                     Pelaaja pelaaja = new Pelaaja(vapaaNappula(), etLisattavaPelaajaNimi.getText().toString(), valitseNappula(vapaaNappula(), true));
                     itemArrayList.add(pelaaja);
                     etLisattavaPelaajaNimi.setText("");
@@ -69,7 +78,7 @@ public class UusiPeli extends Fragment {
                     //TODO: Tee ilmoitus nimen puuttumisesta jos aikaa
                 }
                 recyclerView.setAdapter(new PelaajaAdapteri(itemArrayList));
-            }
+            } else {btLisaaPelaaja.setEnabled(false);}
         });
 
         return view;
@@ -89,6 +98,7 @@ public class UusiPeli extends Fragment {
                 vapaaNappula++;
             } else {
                 taynna = false;
+                btLisaaPelaaja.setEnabled(true);
                 break;
             }
         }
@@ -117,6 +127,7 @@ public class UusiPeli extends Fragment {
         switch (vapaaNappula) {
             case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 -> {
                 if (varaa) nappulaKuva[vapaaNappula] = false;
+                btLisaaPelaaja.setEnabled(true);
             }
             case 10 -> {
                 ivNappulanKuva.setImageResource(R.drawable.einappulaa);

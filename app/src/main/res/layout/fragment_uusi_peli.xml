@@ -51,7 +51,7 @@
 
     <EditText
         android:id="@+id/etLisattavaPelaaja_UusiPeli"
-        android:layout_width="wrap_content"
+        android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -71,7 +71,7 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:text="@string/text_add"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/etLisattavaPelaaja_UusiPeli"
         app:layout_constraintStart_toEndOf="@+id/etLisattavaPelaaja_UusiPeli"
         app:layout_constraintTop_toTopOf="@+id/etLisattavaPelaaja_UusiPeli" />
@@ -80,8 +80,8 @@
         android:id="@+id/rvPelaajat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider5"
         tools:itemCount="3"
@@ -98,5 +98,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/tvTitle_UusiPeli"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvTitle_UusiPeli" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/text_minMax"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle_UusiPeli"
+        app:layout_constraintStart_toEndOf="@+id/tvTitle_UusiPeli" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

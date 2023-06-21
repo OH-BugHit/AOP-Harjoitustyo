@@ -59,10 +59,11 @@
 
     <!-- Uusi Peli -->
     <string name="text_addPlayers">Add players</string>
-    <string name="text_typePlayerName">Type name here</string>
+    <string name="text_typePlayerName">Type name here (max 15 char)</string>
     <string name="text_addedPlayers">Players:</string>
-    <string name="text_add">✓</string>
+    <string name="text_add">+</string>
     <string name="text_startGame">Start Game!</string>
+    <string name="text_minMax">(2-10 players)</string>
 
     <!-- Peli -->
     <string name="text_fail">Fail</string>

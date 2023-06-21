@@ -32,7 +32,13 @@ public class PelaajaAdapteri extends RecyclerView.Adapter<PelaajaAdapteri.ViewHo
             int position = (int) v.getTag();
             UusiPeli.nappulaKuva[pelaajaSetti.get(position).nappulaNumero] = true;
             UusiPeli.taynna = false;
-            UusiPeli.ivNappulanKuva.setImageDrawable(pelaajaSetti.get(position).pelaajakuva);
+            UusiPeli.INSTANCE.btLisaaPelaaja.setEnabled(true);
+            UusiPeli.pelaajaMaara --;
+            if (UusiPeli.pelaajaMaara < 2) {
+                UusiPeli.INSTANCE.btAloitaPeli.setEnabled(false);
+            } else {UusiPeli.INSTANCE.btAloitaPeli.setEnabled(true);}
+            UusiPeli.INSTANCE.ivNappulanKuva.setImageDrawable(pelaajaSetti.get(position).pelaajakuva);
+            // KORVATTU YLLÄ UusiPeli.ivNappulanKuva.setImageDrawable(pelaajaSetti.get(position).pelaajakuva);
             UusiPeli.itemArrayList.remove(position);
             notifyDataSetChanged();
         }
