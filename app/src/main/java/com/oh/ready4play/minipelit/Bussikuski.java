@@ -123,12 +123,12 @@ public class Bussikuski extends Fragment {
     private void vuoronJalkeen(Button btJatkaPelia, boolean onnistui) {
         edellinenArvo = uusiArvo;
         siirraOsoitinta(onnistui);
-        if (tasoMenossa > 5 || sakko > 2) {
+        if (tasoMenossa > 5 || sakko > 3) {
             btYlempi.setVisibility(View.INVISIBLE);
             btAlempi.setVisibility(View.INVISIBLE);
             btJatkaPelia.setVisibility(View.VISIBLE);
             tvOheistus.setVisibility(View.VISIBLE);
-            if (sakko > 2) {
+            if (sakko > 3) {
                 tvOheistus.setText(R.string.text_busDriverFailEnd);
                 Peli.tehtavaFail = true;
             } else {

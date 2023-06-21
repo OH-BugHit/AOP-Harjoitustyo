@@ -29,7 +29,7 @@ public class Sanaselitys extends Fragment {
     private TextView tvPistenaytto;
     private TextView tvSana;
     private TextView tvSanaOhjeistus;
-    private int aika = 5;
+    private int aika = 2;
     private double pistemaara = 0;
     volatile boolean sanapeliOhi = false;
 

@@ -181,7 +181,9 @@ public class Peli extends Fragment {
         bt3.setVisibility(View.INVISIBLE);
 
         btHeitaNoppa = view.findViewById(R.id.btHeita_Peli);
+        btHeitaNoppa.setVisibility(View.INVISIBLE);
         btOhita = view.findViewById(R.id.btOhita_Peli);
+        btOhita.setVisibility(View.INVISIBLE);
 
         ImageView ivHampuri = view.findViewById(R.id.ivHampuri_peli);
 
@@ -199,10 +201,16 @@ public class Peli extends Fragment {
         });
 
         btHeitaNoppa.setOnClickListener(e -> {
-
             btOhita.setVisibility(View.INVISIBLE);
             btHeitaNoppa.setVisibility(View.INVISIBLE);
             tvOhitaPelaajanimi.setEnabled(false);
+
+            if (toiminto == 11 || toiminto == 12) {
+                if (tehtavaFail){
+                    liikutaTakaisin();
+                    tehtavaFail = false;
+                }
+            }
 
             int nopanHeitto = Noppa.heitaNoppaa();
             toiminto = liikutaPelaajaa(nopanHeitto);
@@ -221,6 +229,17 @@ public class Peli extends Fragment {
             t1.start();
         });
 
+        btOhita.setOnClickListener(e -> {
+            seuraavaVuoro = true;
+            seuraavanPelaajanVuoro();
+            if (toiminto == 11 || toiminto == 12) {
+                if (tehtavaFail){
+                    liikutaTakaisin();
+                    tehtavaFail = false;
+                }
+            }
+        });
+
         ivHampuri.setOnClickListener(e -> {
             if (hampuriKlikattu) {
                 hampuriKlikattu = false;
@@ -236,6 +255,7 @@ public class Peli extends Fragment {
         });
 
 
+        tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
         tvOhitaPelaajanimi.setOnClickListener(e -> {
             //TODO: Tee tänne vuoron ohitus
         });
@@ -248,17 +268,13 @@ public class Peli extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_peli_to_quitFragment);
         });
 
-        btHeitaNoppa = view.findViewById(R.id.btHeita_Peli);
-        btOhita = view.findViewById(R.id.btOhita_Peli);
-
-        tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
 
         Button btAloita = view.findViewById(R.id.btAloita_Peli);
 
         btAloita.setOnClickListener(e -> {
             pelilautaX = fcvPelilauta.getWidth();
             pelilautaY = fcvPelilauta.getHeight();
-            /*
+            /* TODO: TÄÄ NAPPULAN LEVEYDEN HUOMIOIMINEN EI TOJI
             Ei toimi vielä
             nappulaLeveys = ivNappulat[0].getWidth();
             nappulaKorkeus = ivNappulat[0].getHeight();
@@ -285,13 +301,6 @@ public class Peli extends Fragment {
             }
         }
         seuraavaVuoro = false;
-        if (toiminto == 11) {
-            if (tehtavaFail){
-                //liikutaPelaajaa(peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).lisaSiirrot);
-                MainActivity.INSTANCE.runOnUiThread(() -> Peli.this.liikutaPelaajaa(peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).lisaSiirrot));
-                tehtavaFail = false;
-            }
-        }
         if (vuorossaPelaaja == pelaajat.size()-1) {
             vuorossaPelaaja = 0;
         } else {
@@ -299,6 +308,25 @@ public class Peli extends Fragment {
         }
         MainActivity.INSTANCE.runOnUiThread(Peli.this::asetaSeuraava);
     }
+
+    /**
+     * Jos tehtävä 11 tai 12 epäonnistuu. Palataan laudalla taaksepäin.
+     * liikutaTakaisin toteuttaa lisaSiirtojen määrän verran liikettä.
+     */
+    private void liikutaTakaisin() {
+        //Tarkastellaan edellinen pelaaja
+        int edellinenPelaaja;
+        if (vuorossaPelaaja == 0) {
+            edellinenPelaaja = pelaajamaara - 1;
+        } else {
+            edellinenPelaaja = vuorossaPelaaja - 1;
+        }
+        peliRuudut.get(pelaajat.get(edellinenPelaaja).sijainti).pelaajiaRuudussa --;
+        int uusiruutu = pelaajat.get(edellinenPelaaja).sijainti + peliRuudut.get(pelaajat.get(edellinenPelaaja).sijainti).lisaSiirrot;
+        peliRuudut.get(uusiruutu).pelaajiaRuudussa ++;
+        Pelaaja.liikutaPelaajaRuutuun(pelaajat.get(edellinenPelaaja),peliRuudut.get(uusiruutu));
+    }
+
 
     /**
      * Seuraavan pelivuorossa olevan pelaajan tiedot näkyville
@@ -400,6 +428,8 @@ public class Peli extends Fragment {
      * Pelaajien ja pelin alustus
      */
     private void alustaPeli() {
+        btHeitaNoppa.setVisibility(View.VISIBLE);
+        btOhita.setVisibility(View.VISIBLE);
         vuorossaPelaaja = 0;
         pelaajamaara = pelaajat.size();
         int i = 0;
