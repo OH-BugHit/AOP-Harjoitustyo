@@ -5,7 +5,8 @@
     android:id="@+id/peliLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Peli" >
+    android:background="#E6FFFF"
+    tools:context=".Peli">
 
     <Button
         android:id="@+id/btHeita_Peli"
@@ -35,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/text_inTurn"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tvPelaajaNimi_Peli" />
 
@@ -42,6 +44,7 @@
         android:id="@+id/tvPelaajaNimi_Peli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/ivNappulaVuorossa"
         app:layout_constraintStart_toEndOf="@+id/tvVuorossa_Peli"
         app:layout_constraintTop_toTopOf="@+id/ivNappulaVuorossa" />
@@ -103,7 +106,9 @@
         android:layout_height="48dp"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
+        android:padding="4dp"
         android:text="@string/text_quit"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/tvPaavalikko"
         app:layout_constraintTop_toBottomOf="@+id/tvPaavalikko" />
@@ -112,21 +117,13 @@
         android:id="@+id/tvPaavalikko"
         android:layout_width="100dp"
         android:layout_height="48dp"
-        android:background="#FFFFFF"
-        android:gravity="center_vertical"
-        android:text="@string/text_mainMenu"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tvOhitaJatkossa"
-        app:layout_constraintTop_toBottomOf="@+id/tvOhitaJatkossa" />
-
-    <TextView
-        android:id="@+id/tvOhitaJatkossa"
-        android:layout_width="100dp"
-        android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:background="#FFFFFF"
         android:gravity="center_vertical"
-        android:text="@string/text_blank"
+        android:padding="4dp"
+        android:text="@string/text_mainMenu"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/ivHampuri_peli"
         app:layout_constraintTop_toBottomOf="@+id/ivHampuri_peli" />
 
@@ -146,7 +143,8 @@
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
         tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="160dp" />
+        tools:layout_editor_absoluteY="160dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/ivNappula2"
@@ -258,7 +256,25 @@
         android:text="@string/text_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_AloitusTeksti_Peli" />
+
+    <TextView
+        android:id="@+id/tv_AloitusTeksti_Peli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="#CB5DDC4E"
+        android:padding="8dp"
+        android:text="@string/text_newGameText"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/btAloita_Peli"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

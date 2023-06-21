@@ -101,6 +101,7 @@
         android:id="@+id/tvAika_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.92"
@@ -118,4 +119,34 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus2_Sanaselitys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_taskDescriptionDictionary2"
+        app:layout_constraintEnd_toStartOf="@+id/tvSekuntimaara_Sanaselitys"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus_Sanaselitys" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus3_sanaselitys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_inSeconds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSekuntimaara_Sanaselitys"
+        app:layout_constraintTop_toTopOf="@+id/tvOhjeistus2_Sanaselitys" />
+
+    <TextView
+        android:id="@+id/tvSekuntimaara_Sanaselitys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus3_sanaselitys"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvOhjeistus2_Sanaselitys"
+        app:layout_constraintTop_toTopOf="@+id/tvOhjeistus2_Sanaselitys" />
 </androidx.constraintlayout.widget.ConstraintLayout>

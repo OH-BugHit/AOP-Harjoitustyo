@@ -110,10 +110,7 @@ public class Peli extends Fragment {
      * Vuorossa olevan pelaajan niminäkymä
      */
     private TextView tvVuorossaPelaaja;
-    /**
-     * Pelaajan ohitukseen tekstinäkymä
-     */
-    TextView tvOhitaPelaajanimi;
+    private TextView tvAlkuteksti;
     /**
      * Fragment Manager minipelien asettamiseen ja vaihtamiseen
      */
@@ -156,16 +153,15 @@ public class Peli extends Fragment {
         //Haetaan pelaajat muuttujaan uuden pelin luonnissa lisätyt pelaatat
         pelaajat = UusiPeli.itemArrayList;
 
-        tvOhitaPelaajanimi = view.findViewById(R.id.tvOhitaJatkossa);
         TextView tvPaavalikko = view.findViewById(R.id.tvPaavalikko);
         TextView tvLopeta = view.findViewById(R.id.tvLopeta);
 
-        tvOhitaPelaajanimi.setVisibility(View.INVISIBLE);
         tvPaavalikko.setVisibility(View.INVISIBLE);
         tvLopeta.setVisibility(View.INVISIBLE);
 
         ivNappula = view.findViewById(R.id.ivNappulaVuorossa);
 
+        tvAlkuteksti = view.findViewById(R.id.tv_AloitusTeksti_Peli);
         tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
 
         btFail = view.findViewById(R.id.btFail_Peli);
@@ -196,7 +192,6 @@ public class Peli extends Fragment {
         btHeitaNoppa.setOnClickListener(e -> {
             btOhita.setVisibility(View.INVISIBLE);
             btHeitaNoppa.setVisibility(View.INVISIBLE);
-            tvOhitaPelaajanimi.setEnabled(false);
 
             if (toiminto == 11 || toiminto == 12) {
                 if (tehtavaFail){
@@ -236,12 +231,10 @@ public class Peli extends Fragment {
         ivHampuri.setOnClickListener(e -> {
             if (hampuriKlikattu) {
                 hampuriKlikattu = false;
-                tvOhitaPelaajanimi.setVisibility(View.INVISIBLE);
                 tvPaavalikko.setVisibility(View.INVISIBLE);
                 tvLopeta.setVisibility(View.INVISIBLE);
             } else {
                 hampuriKlikattu = true;
-                tvOhitaPelaajanimi.setVisibility(View.VISIBLE);
                 tvPaavalikko.setVisibility(View.VISIBLE);
                 tvLopeta.setVisibility(View.VISIBLE);
             }
@@ -249,9 +242,6 @@ public class Peli extends Fragment {
 
 
         tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
-        tvOhitaPelaajanimi.setOnClickListener(e -> {
-            //TODO: Tee tänne vuoron ohitus
-        });
 
         tvPaavalikko.setOnClickListener(e -> {
             Navigation.findNavController(view).navigate(R.id.action_peli_to_alkuvalikko);
@@ -267,6 +257,7 @@ public class Peli extends Fragment {
         btAloita.setOnClickListener(e -> {
             pelilautaX = fcvPelilauta.getWidth();
             pelilautaY = fcvPelilauta.getHeight();
+            tvAlkuteksti.setVisibility(View.INVISIBLE);
             /* TODO: TÄÄ NAPPULAN LEVEYDEN HUOMIOIMINEN EI TOJI
             Ei toimi vielä
             nappulaLeveys = ivNappulat[0].getWidth();
@@ -521,7 +512,6 @@ public class Peli extends Fragment {
     public void naytaNapit() {
         btOhita.setVisibility(View.VISIBLE);
         btHeitaNoppa.setVisibility(View.VISIBLE);
-        tvOhitaPelaajanimi.setEnabled(true);
         if (pelaajat.get(vuorossaPelaaja).kaksiTotuutta) {
             bt3.setVisibility(View.VISIBLE);
             btFail.setVisibility(View.VISIBLE);

@@ -45,41 +45,40 @@
         android:layout_height="wrap_content"
         android:text="@string/text_taskDescriptionFTheDealer"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPelaajaVuorossa_FtheDealer"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus2_FtheDealer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaVuorossa_FtheDealer"
-        app:layout_constraintTop_toTopOf="@+id/tvPelaajaVuorossa_FtheDealer" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_FtheDealer"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/tvPelaajaVuorossa_FtheDealer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_blank"
-        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus2_FtheDealer"
         app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_FtheDealer"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider16"
-        app:layout_constraintVertical_bias="0.19999999" />
+        app:layout_constraintTop_toTopOf="@+id/tvOhjeistus_FtheDealer" />
 
     <TextView
         android:id="@+id/tvOhjeistus2_FtheDealer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_taskDescriptionFTheDealer2"
-        app:layout_constraintBottom_toTopOf="@+id/tvSeuraavaPelaaja_FtheDealer"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus3_FtheDealer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPelaajaVuorossa_FtheDealer" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus_FtheDealer" />
 
     <TextView
         android:id="@+id/tvSeuraavaPelaaja_FtheDealer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_blank"
-        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus4_FtheDealer"
         app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus3_FtheDealer"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -91,10 +90,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_taskDescriptionFTheDealer3"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus4_FtheDealer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvSeuraavaPelaaja_FtheDealer"
-        app:layout_constraintTop_toTopOf="@+id/tvSeuraavaPelaaja_FtheDealer" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus2_FtheDealer" />
 
     <TextView
         android:id="@+id/tvOhjeistus4_FtheDealer"
@@ -106,7 +106,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSeuraavaPelaaja_FtheDealer" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus3_FtheDealer" />
 
     <Button
         android:id="@+id/btAloita_FtheDealer"
@@ -122,7 +122,7 @@
         android:id="@+id/ivKortti_FtheDealer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/k"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@
         android:id="@+id/ivKorttiPeitto_FtheDealer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/k"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/ivKortti_FtheDealer"
         app:layout_constraintEnd_toEndOf="@+id/ivKortti_FtheDealer"
         app:layout_constraintStart_toStartOf="@+id/ivKortti_FtheDealer"

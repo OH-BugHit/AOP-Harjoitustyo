@@ -66,7 +66,7 @@ public class Bussikuski extends Fragment {
         kortti4 = view.findViewById(R.id.ivKortti4_Bussikuski);
         kortti5 = view.findViewById(R.id.ivKortti5_Bussikuski);
         osoitin = view.findViewById(R.id.ivOsoitin_Bussikuski);
-        osoitin.setImageResource(R.drawable.nuoli_alas);
+        osoitin.setImageResource(R.drawable.kysymysmerkkimusta35);
 
         ivAloituskortti.setVisibility(View.INVISIBLE);
         tvAloituskortti.setVisibility(View.INVISIBLE);
@@ -124,6 +124,7 @@ public class Bussikuski extends Fragment {
         edellinenArvo = uusiArvo;
         siirraOsoitinta(onnistui);
         if (tasoMenossa > 5 || sakko > 3) {
+            osoitin.setVisibility(View.INVISIBLE);
             btYlempi.setVisibility(View.INVISIBLE);
             btAlempi.setVisibility(View.INVISIBLE);
             btJatkaPelia.setVisibility(View.VISIBLE);

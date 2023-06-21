@@ -29,6 +29,7 @@ public class Sanaselitys extends Fragment {
     private TextView tvPistenaytto;
     private TextView tvSana;
     private TextView tvSanaOhjeistus;
+    private TextView tvSekuntimaara;
     private int aika;
     private double pistemaara = 0;
     volatile boolean sanapeliOhi = false;
@@ -44,6 +45,8 @@ public class Sanaselitys extends Fragment {
 
         teeSanaluettelo();
 
+        tvSekuntimaara = view.findViewById(R.id.tvSekuntimaara_Sanaselitys);
+        tvSekuntimaara.setText(String.valueOf(Peli.peliasetukset.sanaselitysKesto));
         tvSanaOhjeistus = view.findViewById(R.id.tvOhjeistus_Sanaselitys);
         tvSana = view.findViewById(R.id.tvSana_Sanaselitys);
         tvPistenaytto = view.findViewById(R.id.tvPisteNaytto_Sanaselitys);
@@ -73,6 +76,7 @@ public class Sanaselitys extends Fragment {
         });
 
         btAloita.setOnClickListener(e -> {
+            tvSekuntimaara.setVisibility(View.INVISIBLE);
             tvSanaOhjeistus.setVisibility(View.INVISIBLE);
             tvPistenaytto.setVisibility(View.VISIBLE);
             tvPistenaytto.setText("0");
@@ -86,8 +90,6 @@ public class Sanaselitys extends Fragment {
 
 
         btJatkaPelia.setOnClickListener(e -> {
-            //tvSana.setText(R.string.text_taskDescriptionDictionary);
-            //tvPistenaytto.setText("");
             t1.interrupt();
             Peli.seuraavaVuoro = true;
             Peli.fragmentManager.beginTransaction()

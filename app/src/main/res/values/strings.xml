@@ -63,9 +63,10 @@
     <string name="text_addedPlayers">Players:</string>
     <string name="text_add">+</string>
     <string name="text_startGame">Start Game!</string>
-    <string name="text_minMax">(2-10 players)</string>
+    <string name="text_minMax">(2–10 players)</string>
 
     <!-- Peli -->
+    <string name="text_newGameText">Always drink responsibly!\n\nRemember the real reason you had fun!\n\nGood luck, have fun!</string>
     <string name="text_fail">Fail</string>
     <string name="text_3">+3</string>
     <string name="text_X">X</string>
@@ -75,7 +76,7 @@
     <string name="text_skipTurn">Skip turn</string>
 
     <!-- Hitler
-     Ässä, Vesiputous. 2, Anna 2 huikkaa. 3, Juo 3 huikkaa. 4, Hitler. 5, 123. 6, Naiset juovat 3 huikkaa. 7, Kategoria. 8, Sääntö. 9, Kaikki juovat 3 huikkaa. 10, Miehet juovat 3 huikkaa. 11, Tauko-kortti. TEE TÄHÄN SKIPPIKORTTI? 12, Huora. 13, Kuningashörppy.
+     Ässä, Vesiputous. 2, Anna 2 huikkaa. 3, Juo 3 huikkaa. 4, Hitler. 5, 123. 6, Naiset juovat 3 huikkaa. 7, Kategoria. 8, Sääntö. 9, Kaikki juovat 3 huikkaa. 10, Miehet juovat 3 huikkaa. 11, Tauko-kortti. 12, Huora. 13, Kuningashörppy.
     Hitler:
     Kaikkien on noustava seisomaan ja huudettava hitler. Viimeisenä tämän tehnyt joutuu juomaan 3 huikkaa.
     123:
@@ -97,11 +98,11 @@
     <string name="text_drink3">Drink three!\n\nDrink 3 sips!</string>
     <string name="text_hitler">Hitler\n\nLast one to stand up and shout "Hitler!", drinks 3 sips.
         Probably you since you are still reading this!</string>
-    <string name="text_123">123!\n\nThe one that drew the card drinks 1, next one 2, next one 3 etc…</string>
+    <string name="text_123">123!\n\nThe one who drew the card drinks 1, next one 2, next one 3 etc…</string>
     <string name="text_womenDrink">Women drink!\n\nAll the women drink 3 sips!</string>
-    <string name="text_category">Category\n\nPlayer who drew card tells category and first example. All players in turn must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
-    <string name="text_rule">Rule!\n\nMake new rule for the game! Rule stays in place until next role (or you decide, it\'s your rule anyway)</string>
-    <string name="text_everybodyDrink">Everyone drinks!\n\nEverybody takes 3 sips</string>
+    <string name="text_category">Category\n\nPlayer who drew card tells category and first example. Next player must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
+    <string name="text_rule">Rule!\n\nMake new rule for the game! Rule stays in place until next rule (or you decide, it\'s your rule anyway)</string>
+    <string name="text_everybodyDrink">Everyone drinks!\n\nEveryone takes 3 sips</string>
     <string name="text_menDrink">Men drink!\n\nAll the men drink 3 sips</string>
     <string name="text_skip">Skip-Task!\n\nWohoo! This is the "Skip-Task"-card! Unfortunately it doesn\'t allow you to skip actual tasks, but feel free to skip next few sips you should otherwise take!</string>
     <string name="text_hoe">Hoe!\n\nMake a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 2 sips now! (That makes it 4 to your hoe ;) )</string>
@@ -121,7 +122,7 @@
     <string name="text_taskDescriptionTruthOrDarePt2">Truth: Other players asks something and </string>
     <string name="text_taskDescriptionTruthOrDarePt3"> has to answer truthfully.</string>
     <string name="text_taskDescriptionTruthOrDarePt4">Dare: Other players dare </string>
-    <string name="text_taskDescriptionTruthOrDarePt5"> to do task.</string>
+    <string name="text_taskDescriptionTruthOrDarePt5"> to do a task they choose.</string>
 
     <!-- Would You Rather -->
     <string name="text_WouldYouRatherTitle">Would You Rather?</string>
@@ -135,11 +136,14 @@
 
     <!-- 2 Totuutta 1 Valhe -->
     <string name="text_2Truths1LieTitle">Two Truths One Lie!</string>
-    <string name="text_taskDescription2Truths1Lie">Think of two true events from your life or things about you and one lie.\n\nOther players may ask questions about those claims.\n\nFinally everybody tries to guess which one is the lie.\n\nWrong guess gets rewarded with 5 sips!\n\nSucceeding to fool everybody results +3 steps to your next dice!\nYou will be presented \"Failure\" and \"+3\" buttons at board view visible at your turns to click before throwing the dice when completed this task.\n\nGame can continue until you are ready with claims,\nbut there is 5 sips penalty every round to you until you complete this task.</string>
+    <string name="text_taskDescription2Truths1Lie">Think of two true events from your life or things about you and one lie.\n\nOther players may ask questions about those claims.\n\nFinally everybody tries to guess which one is the lie.\n\nWrong guess gets rewarded with 5 sips!\n\nSucceeding to fool everybody results +3 steps to your next dice!\nYou will be presented \"Failure\" and \"+3\" buttons at board view visible at your turns to click before throwing the dice when completed this task.\n\nGame can continue until you are ready with claims,\nbut there is 3 sips penalty every round to you until you complete this task.</string>
 
     <!-- Sanaselitys -->
     <string name="text_dictionaryTitle">Dictionary!</string>
-    <string name="text_taskDescriptionDictionary">Choose partner for this task\n\nExplain words presented here before timer runs out\n\nYou have 1 minute\n\nYou can explain the last word after the time has run out\n\nYou may not use any part of the word itself\n\nYou may skip words with the skip button (penalty 0,5)\n\nGood luck!</string>
+    <string name="text_taskDescriptionDictionary">Choose partner for this task\n\nExplain words presented here before timer runs out\n</string>
+    <string name="text_taskDescriptionDictionary2">You have \n</string>
+    <string name="text_seconds"> seconds</string>
+    <string name="text_taskDescriptionDictionary3">You can explain the last word after the time has run out\n\nYou may not use any part of the word itself\n\nYou may skip words with the skip button (penalty 0,5)\n\nGood luck!</string>
     <string name="text_btSkip">Skip!</string>
     <string name="text_btCorrect">Correct!</string>
     <string name="text_start">Start!</string>
@@ -147,9 +151,9 @@
 
     <!-- Fuck The Dealer -->
     <string name="text_fTheDealerTitle">Fuck The Dealer!</string>
-    <string name="text_taskDescriptionFTheDealer">, take this device to your hands for the duration of this task!</string>
-    <string name="text_taskDescriptionFTheDealer2">Touch the card to peek it</string>
-    <string name="text_taskDescriptionFTheDealer3"> tries to guess the card</string>
+    <string name="text_taskDescriptionFTheDealer">, take this device to your hands for the duration of this task!\n</string>
+    <string name="text_taskDescriptionFTheDealer2">Touch the card to peek it\n</string>
+    <string name="text_taskDescriptionFTheDealer3"> tries to guess the card\n</string>
     <string name="text_taskDescriptionFTheDealer4">After first guess, you have to tell if your card is higher or lower (or if it\'s correct).\n\nIf the first guess is right you have to take 5 sips\n\nSame player takes a second guess\n\nYou show everybody the card\n\nIf the card is right, you take 3 sips, if wrong the one who guessed, takes 3 sips\n\nChange card and repeat to all players</string>
     <string name="text_btPeek">Peek</string>
     <string name="text_btNextCard">Next card</string>

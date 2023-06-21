@@ -69,9 +69,11 @@ public class Ravit extends Fragment {
      * Arvotun kortin ImageView
      */
     private ImageView ivArvottuKortti;
+    private ImageView ivTausta;
     /**
      * Ohjeiden ja lopputekstin TextView
      */
+    private TextView tvTitle;
     private TextView tvOheistus;
     /**
      * Käytetään määrittämään onko taso 1 saavutettu kaikilla ässillä
@@ -130,12 +132,15 @@ public class Ravit extends Fragment {
         View view = inflater.inflate(R.layout.fragment_ravit, container, false);
 
         tvOheistus = view.findViewById(R.id.tvOhjeistus_Ravit);
+        tvTitle = view.findViewById(R.id.tvTitle_Ravit);
 
         btJatkaPelia = view.findViewById(R.id.btJatkaPelia_ravit);
         //Piilotetaan pelin jatkamisnäppäin pelin ajaksi. Se tulee takaisin nähtäville kun peli ohitse
         btJatkaPelia.setVisibility(View.INVISIBLE);
         Button btAloita = view.findViewById(R.id.btAloita_Ravit);
         ivArvottuKortti = view.findViewById(R.id.ivArvottuKortti_Ravit);
+        ivTausta = view.findViewById(R.id.ivTausta_Ravit);
+        ivTausta.setVisibility(View.INVISIBLE);
 
         ivPataAssa = view.findViewById(R.id.ivPataAssa_Ravit);
         ivRistiAssa = view.findViewById(R.id.ivRistiAssa_Ravit);
@@ -167,6 +172,8 @@ public class Ravit extends Fragment {
         ivMaali.setVisibility(View.INVISIBLE);
 
         btAloita.setOnClickListener(e -> {
+            tvTitle.setVisibility(View.INVISIBLE);
+            ivTausta.setVisibility(View.VISIBLE);
             alustaPeli();
             ivHerttaAssa.setImageDrawable(ravipakka.remove(0).kuva);
             ivRuutuAssa.setImageDrawable(ravipakka.remove(12).kuva);

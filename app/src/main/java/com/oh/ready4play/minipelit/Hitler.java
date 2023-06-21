@@ -65,11 +65,11 @@ public class Hitler extends Fragment {
 
     //TODO: TEE KUVAT KORTEISTA JA ASETA NE TÄNNE!
     private void kortinTapahtuma(Kortti kortti) {
-        switch (kortti.arvo-1) {
-            case 0 -> {
+        switch (kortti.arvo) {
+            case 1 -> {
                tvOhjeet.setText(R.string.text_waterfallDesc);
             }
-            case 1 -> {
+            case 2 -> {
                 tvOhjeet.setText(R.string.text_give2);
             }
             case 3 -> {

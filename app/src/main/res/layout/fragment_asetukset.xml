@@ -55,13 +55,18 @@
             android:id="@+id/rbNoppa0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="4dp"
             android:text="@string/text_dice0"
+            android:textColor="#FFFFFF"
             android:textSize="12sp" />
 
         <RadioButton
             android:id="@+id/rbNoppa2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="4dp"
             android:text="@string/text_dice2"
             android:textSize="12sp" />
 
@@ -69,13 +74,18 @@
             android:id="@+id/rbNoppa3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="4dp"
             android:text="@string/text_dice3"
+            android:textColor="#FFFFFF"
             android:textSize="12sp" />
 
         <RadioButton
             android:id="@+id/rbNoppa5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="4dp"
             android:text="@string/text_dice5"
             android:textSize="12sp" />
     </RadioGroup>
@@ -116,32 +126,41 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht1_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_200"
+            android:backgroundTintMode="src_atop"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task1_settings"
             android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/swTeht5_Asetukset"
+            app:layout_constraintEnd_toStartOf="@+id/swTeht5_Asetukset"
             app:layout_constraintStart_toStartOf="@+id/swTeht2_Asetukset"
             app:layout_constraintTop_toTopOf="@+id/swTeht4_Asetukset"
             app:layout_constraintVertical_chainStyle="spread" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht2_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_700"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task2_settings"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/swTeht3_Asetukset"
+            app:layout_constraintEnd_toEndOf="@+id/swTeht3_Asetukset"
+            app:layout_constraintEnd_toStartOf="@+id/swTeht5_Asetukset"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/swTeht3_Asetukset"
             app:layout_constraintTop_toBottomOf="@+id/swTeht1_Asetukset" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht3_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="140dp"
             android:layout_height="48dp"
+            android:background="@color/teal_200"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task3_settings"
@@ -153,32 +172,37 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht4_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_700"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task4_settings"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/swTeht1_Asetukset"
+            app:layout_constraintEnd_toStartOf="@+id/swTeht8_Asetukset"
+            app:layout_constraintStart_toEndOf="@+id/swTeht2_Asetukset"
             app:layout_constraintStart_toStartOf="@+id/swTeht5_Asetukset"
             app:layout_constraintTop_toTopOf="@+id/swTeht7_Asetukset" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht5_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_200"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task5_settings"
             android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/swTeht2_Asetukset"
-            app:layout_constraintStart_toStartOf="@+id/swTeht6_Asetukset"
+            app:layout_constraintEnd_toEndOf="@+id/swTeht6_Asetukset"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/swTeht3_Asetukset"
             app:layout_constraintTop_toTopOf="@+id/swTeht2_Asetukset" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht6_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="140dp"
             android:layout_height="48dp"
+            android:background="@color/teal_700"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task6_settings"
@@ -190,24 +214,30 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht7_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_200"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task7_settings"
             android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/swTeht9_Asetukset"
             app:layout_constraintStart_toEndOf="@+id/swTeht4_Asetukset"
             app:layout_constraintStart_toStartOf="@+id/swTeht8_Asetukset"
             app:layout_constraintTop_toTopOf="@+id/swTeht10_Asetukset" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht8_Asetukset"
-            android:layout_width="135dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_700"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task8_settings"
             android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/swTeht9_Asetukset"
+            app:layout_constraintEnd_toStartOf="@+id/swKasa_Asetukset"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/swTeht5_Asetukset"
             app:layout_constraintStart_toStartOf="@+id/swTeht9_Asetukset"
             app:layout_constraintTop_toTopOf="@+id/swTeht5_Asetukset" />
@@ -216,6 +246,7 @@
             android:id="@+id/swTeht9_Asetukset"
             android:layout_width="140dp"
             android:layout_height="48dp"
+            android:background="@color/teal_200"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task9_settings"
@@ -227,33 +258,39 @@
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht10_Asetukset"
-            android:layout_width="136dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_700"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task10_settings"
             android:textSize="12sp"
             app:layout_constraintBottom_toTopOf="@+id/swTeht11_Asetukset"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/swTeht7_Asetukset"
             app:layout_constraintStart_toStartOf="@+id/swTeht11_Asetukset"
             app:layout_constraintVertical_chainStyle="spread" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swTeht11_Asetukset"
-            android:layout_width="136dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
+            android:background="@color/teal_200"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task11_settings"
             android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/swTeht8_Asetukset"
             app:layout_constraintStart_toStartOf="@+id/swKasa_Asetukset"
             app:layout_constraintTop_toTopOf="@+id/swTeht8_Asetukset" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/swKasa_Asetukset"
-            android:layout_width="136dp"
+            android:layout_width="140dp"
             android:layout_height="48dp"
+            android:background="@color/teal_700"
             android:checked="true"
             android:padding="4dp"
             android:text="@string/text_task12_settings"
