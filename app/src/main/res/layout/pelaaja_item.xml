@@ -38,6 +38,7 @@
       android:id="@+id/btPoistaPelaaja_Pelaaja_Item"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:background="@drawable/btn_teema_quit"
       android:minWidth="48dp"
       android:minHeight="48dp"
       android:text="@string/text_X"

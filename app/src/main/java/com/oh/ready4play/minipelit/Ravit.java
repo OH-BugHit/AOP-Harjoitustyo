@@ -153,7 +153,7 @@ public class Ravit extends Fragment {
         ivNeljasTaso = view.findViewById(R.id.ivNeljasTaso_Ravit);
 
         ivMaali = view.findViewById(R.id.ivMaali_Ravit);
-        ivMaali.setImageResource(R.drawable.maali);
+        ivMaali.setImageResource(R.drawable.maaliviiva);
 
         //Asetetaan piiloon kortit.
         ivArvottuKortti.setVisibility(View.INVISIBLE);

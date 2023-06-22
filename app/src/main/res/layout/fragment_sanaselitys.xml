@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_teema_continue"
         android:minHeight="48dp"
         android:text="@string/text_continueGame"
         app:layout_constraintBottom_toBottomOf="@+id/tvTitle_2Totuutta1Valhe2"
@@ -54,6 +55,7 @@
         android:id="@+id/btOhita_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_teema_alempi"
         android:minHeight="48dp"
         android:text="@string/text_btSkip"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,6 +69,7 @@
         android:id="@+id/btOikein_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_teema_continue"
         android:minHeight="48dp"
         android:text="@string/text_btCorrect"
         app:layout_constraintBottom_toBottomOf="@+id/btOhita_Sanaselitys"
@@ -79,6 +82,7 @@
         android:id="@+id/btAloita_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_teema_start"
         android:minHeight="48dp"
         android:text="@string/text_start"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -101,7 +105,7 @@
         android:id="@+id/tvAika_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="48sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.92"
@@ -114,7 +118,7 @@
         android:layout_height="wrap_content"
         android:textAllCaps="true"
         android:textColor="#000000"
-        android:textSize="30sp"
+        android:textSize="48sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -132,16 +136,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus_Sanaselitys" />
 
     <TextView
-        android:id="@+id/tvOhjeistus3_sanaselitys"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/text_inSeconds"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tvSekuntimaara_Sanaselitys"
-        app:layout_constraintTop_toTopOf="@+id/tvOhjeistus2_Sanaselitys" />
-
-    <TextView
         android:id="@+id/tvSekuntimaara_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -149,4 +143,16 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvOhjeistus2_Sanaselitys"
         app:layout_constraintTop_toTopOf="@+id/tvOhjeistus2_Sanaselitys" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus3_sanaselitys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="@string/text_inSeconds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSekuntimaara_Sanaselitys"
+        app:layout_constraintTop_toTopOf="@+id/tvOhjeistus2_Sanaselitys" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/btn_teema_continue"
         android:text="@string/text_continueGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,11 +152,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:src="@drawable/hampurilainen"
+        android:rotation="-0.4"
         app:layout_constraintBottom_toTopOf="@+id/ivArvottuKortti_Ravit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/maali" />
+        tools:src="@drawable/maaliviiva" />
 
     <TextView
         android:id="@+id/tvOhjeistus_Ravit"
@@ -176,6 +177,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_teema_start"
         android:text="@string/text_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

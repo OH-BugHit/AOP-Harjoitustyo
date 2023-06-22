@@ -10,11 +10,8 @@
 
     <TextView
         android:id="@+id/tvGameTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        style="@style/main_title_text"
         android:text="@string/text_gametitle"
-        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,6 +31,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:background="@drawable/btn_teema_start"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:text="@string/text_newGame"
         app:layout_constraintBottom_toTopOf="@+id/btAsetukset_alkuvalikko"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +45,7 @@
         android:id="@+id/btAsetukset_alkuvalikko"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_teema_settings"
         android:text="@string/text_gameSettings"
         app:layout_constraintBottom_toTopOf="@+id/btLopeta_alkuvalikko"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/btn_teema_quit"
         android:text="@string/text_quit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

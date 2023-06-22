@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_teema_continue"
         android:minHeight="48dp"
         android:text="@string/text_throwDice"
         app:layout_constraintBottom_toBottomOf="@+id/ivNappulaVuorossa"
@@ -24,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_teema_settings"
         android:minHeight="48dp"
         android:text="@string/text_skipTurn"
         app:layout_constraintBottom_toBottomOf="@+id/btHeita_Peli"
@@ -75,10 +77,11 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginEnd="4dp"
-        android:src="@drawable/hampurilainen"
+        android:src="@drawable/hampurilainen2"
         app:layout_constraintBottom_toTopOf="@+id/divider_Peli"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/hampurilainen2" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvPelilauta"
@@ -224,6 +227,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
+        android:background="@drawable/btn_teema_continue"
         android:text="@string/text_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -234,6 +238,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="4dp"
+        android:background="@drawable/btn_teema_quit"
         android:text="@string/text_fail"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -253,6 +258,7 @@
         android:id="@+id/btAloita_Peli"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/btn_teema_start"
         android:text="@string/text_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -265,7 +271,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="#CB5DDC4E"
+        android:background="#E45DDC4E"
         android:padding="8dp"
         android:text="@string/text_newGameText"
         android:textAlignment="center"

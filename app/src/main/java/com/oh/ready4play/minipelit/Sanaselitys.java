@@ -29,6 +29,8 @@ public class Sanaselitys extends Fragment {
     private TextView tvPistenaytto;
     private TextView tvSana;
     private TextView tvSanaOhjeistus;
+    private TextView tvSanaOhjeistus2;
+    private TextView tvSanaOhjeistus3;
     private TextView tvSekuntimaara;
     private int aika;
     private double pistemaara = 0;
@@ -48,6 +50,8 @@ public class Sanaselitys extends Fragment {
         tvSekuntimaara = view.findViewById(R.id.tvSekuntimaara_Sanaselitys);
         tvSekuntimaara.setText(String.valueOf(Peli.peliasetukset.sanaselitysKesto));
         tvSanaOhjeistus = view.findViewById(R.id.tvOhjeistus_Sanaselitys);
+        tvSanaOhjeistus2 = view.findViewById(R.id.tvOhjeistus2_Sanaselitys);
+        tvSanaOhjeistus3 = view.findViewById(R.id.tvOhjeistus3_sanaselitys);
         tvSana = view.findViewById(R.id.tvSana_Sanaselitys);
         tvPistenaytto = view.findViewById(R.id.tvPisteNaytto_Sanaselitys);
         tvPistenaytto.setVisibility(View.INVISIBLE);
@@ -78,6 +82,9 @@ public class Sanaselitys extends Fragment {
         btAloita.setOnClickListener(e -> {
             tvSekuntimaara.setVisibility(View.INVISIBLE);
             tvSanaOhjeistus.setVisibility(View.INVISIBLE);
+            tvSanaOhjeistus2.setVisibility(View.INVISIBLE);
+            tvSanaOhjeistus3.setVisibility(View.INVISIBLE);
+            tvSekuntimaara.setVisibility(View.INVISIBLE);
             tvPistenaytto.setVisibility(View.VISIBLE);
             tvPistenaytto.setText("0");
             btAloita.setVisibility(View.INVISIBLE);
@@ -133,7 +140,8 @@ public class Sanaselitys extends Fragment {
 
     private void paivitaAika() {
         aika -= 1;
-        tvAika.setText(String.valueOf(aika));
+        String asetaAika =aika + " ";
+        tvAika.setText(asetaAika);
     }
 
     private void seuraavaSana() {
@@ -141,15 +149,12 @@ public class Sanaselitys extends Fragment {
         System.out.println("Valittu kieli on: " + kieli);
         String valittuSana;
         if (!sanasto.isEmpty() || !glossary.isEmpty()) {
-            switch (kieli) {
-                case "fin" -> {
-                    valittuSana = sanasto.remove(random.nextInt(sanasto.size()));
-                    tvSana.setText(valittuSana);
-                }
-                default -> {
-                    valittuSana = glossary.remove(random.nextInt(glossary.size()));
-                    tvSana.setText(valittuSana);
-                }
+            if ("fin".equals(kieli)) {
+                valittuSana = sanasto.remove(random.nextInt(sanasto.size()));
+                tvSana.setText(valittuSana);
+            } else {
+                valittuSana = glossary.remove(random.nextInt(glossary.size()));
+                tvSana.setText(valittuSana);
             }
         } else tvSana.setText(R.string.text_blank);
     }

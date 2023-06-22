@@ -34,9 +34,11 @@
 
     <Button
         android:id="@+id/btJatkaPelia_Bussikuski"
+        style="@style/button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_teema_continue"
         android:text="@string/text_continueGame"
         app:layout_constraintBottom_toBottomOf="@+id/tvTitle_Bussikuski"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,13 +46,11 @@
 
     <TextView
         android:id="@+id/tvTitle_Bussikuski"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:text="@string/text_busDriverTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/title_text" />
 
     <ImageView
         android:id="@+id/ivKortti1_Bussikuski"
@@ -130,6 +130,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/btn_teema_ylempi"
         android:text="@string/text_higher"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -141,6 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@drawable/btn_teema_alempi"
         android:text="@string/text_lower"
         app:layout_constraintEnd_toStartOf="@+id/btSuurempi_Bussikuski"
         app:layout_constraintHorizontal_bias="0.5"
@@ -151,7 +153,6 @@
         android:id="@+id/ivOsoitin_Bussikuski"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/hampurilainen"
         app:layout_constraintBottom_toBottomOf="@+id/ivKortti1_Bussikuski"
         app:layout_constraintEnd_toEndOf="@+id/ivKortti1_Bussikuski"
         app:layout_constraintStart_toStartOf="@+id/ivKortti1_Bussikuski"
@@ -163,6 +164,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_teema_start"
         android:text="@string/text_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

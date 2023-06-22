@@ -142,7 +142,7 @@
     <string name="text_dictionaryTitle">Dictionary!</string>
     <string name="text_taskDescriptionDictionary">Choose partner for this task\n\nExplain words presented here before timer runs out\n</string>
     <string name="text_taskDescriptionDictionary2">You have \n</string>
-    <string name="text_seconds"> seconds</string>
+    <string name="text_seconds">seconds</string>
     <string name="text_taskDescriptionDictionary3">You can explain the last word after the time has run out\n\nYou may not use any part of the word itself\n\nYou may skip words with the skip button (penalty 0,5)\n\nGood luck!</string>
     <string name="text_btSkip">Skip!</string>
     <string name="text_btCorrect">Correct!</string>
