@@ -108,10 +108,10 @@ public class UusiPeli extends Fragment {
     private int seuraavaNappula(int vapaaNappula) {
         switch (vapaaNappula) {
             case 0 -> {return R.drawable.nappulacarbon;}
-            case 1 -> {return R.drawable.nappula2;}
-            case 2 -> {return R.drawable.nappula3;}
-            case 3 -> {return R.drawable.nappula4;}
-            case 4 -> {return R.drawable.nappula5;}
+            case 1 -> {return R.drawable.nappulablackopaque;}
+            case 2 -> {return R.drawable.nappulagold;}
+            case 3 -> {return R.drawable.nappulamirror;}
+            case 4 -> {return R.drawable.nappulablueled;}
             case 5 -> {return R.drawable.nappula6;}
             case 6 -> {return R.drawable.nappula7;}
             case 7 -> {return R.drawable.nappula8;}
