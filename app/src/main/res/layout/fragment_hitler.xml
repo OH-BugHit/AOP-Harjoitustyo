@@ -22,6 +22,7 @@
 
     <TextView
         android:id="@+id/tvTitle_Hitler"
+        style="@style/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -34,10 +35,11 @@
         android:id="@+id/divider7"
         android:layout_width="0dp"
         android:layout_height="1dp"
+        android:layout_marginTop="16dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btJatkaPelia_Hitler" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle_Hitler" />
 
     <Button
         android:id="@+id/btJatkaPelia_Hitler"

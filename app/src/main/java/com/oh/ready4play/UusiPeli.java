@@ -51,7 +51,7 @@ public class UusiPeli extends Fragment {
         EditText etLisattavaPelaajaNimi = view.findViewById(R.id.etLisattavaPelaaja_UusiPeli);
         ivNappulanKuva = view.findViewById(R.id.ivLisattavanKuva_UusiPeli);
 
-        ivNappulanKuva.setImageResource(R.drawable.nappula1);
+        ivNappulanKuva.setImageResource(R.drawable.nappulacarbon);
 
         RecyclerView recyclerView = view.findViewById(R.id.rvPelaajat);
 
@@ -107,7 +107,7 @@ public class UusiPeli extends Fragment {
 
     private int seuraavaNappula(int vapaaNappula) {
         switch (vapaaNappula) {
-            case 0 -> {return R.drawable.nappula1;}
+            case 0 -> {return R.drawable.nappulacarbon;}
             case 1 -> {return R.drawable.nappula2;}
             case 2 -> {return R.drawable.nappula3;}
             case 3 -> {return R.drawable.nappula4;}

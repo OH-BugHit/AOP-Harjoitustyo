@@ -5,7 +5,7 @@
     android:id="@+id/peliLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E6FFFF"
+    android:background="@drawable/tausta_teema_peli"
     tools:context=".Peli">
 
     <Button
@@ -60,7 +60,7 @@
         android:contentDescription="@string/contentDesc_piece"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi_Peli"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/nappula1" />
+        tools:src="@drawable/nappulacarbon" />
 
     <View
         android:id="@+id/divider_Peli"
@@ -135,7 +135,7 @@
         android:layout_width="26dp"
         android:layout_height="26dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappulacarbon"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="153dp" />
 
@@ -145,9 +145,9 @@
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
         android:src="@drawable/nappula1"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="28dp"
-        tools:layout_editor_absoluteY="160dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="160dp" />
 
     <ImageView
         android:id="@+id/ivNappula2"
@@ -245,7 +245,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fcvMinipeliNakyma"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -271,7 +271,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="#E45DDC4E"
+        android:background="@drawable/btn_teema_horserace"
         android:padding="8dp"
         android:text="@string/text_newGameText"
         android:textAlignment="center"

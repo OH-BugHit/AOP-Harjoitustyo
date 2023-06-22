@@ -168,14 +168,14 @@
 
     <!-- Bussikuski -->
     <string name="text_busDriverTitle">Minibus Driver!</string>
-    <string name="text_taskDescriptionBusDriver">There is no getting out of this bus until the end of line!\n\nGuess if the next card is lower or higher!\n\nIf you make wrong guess: drink 3 sips and start again!\n\nYou got 4 tries.\n\nGood Luck!</string>
+    <string name="text_taskDescriptionBusDriver">There is no getting out of this bus until the end of line!\n\nGuess if the next card is lower or higher!\n\nIf you make wrong guess you get 3 sips penalty and start again!\n\nYou got 4 tries.\n\nGood Luck!</string>
     <string name="text_higher">Higher!</string>
     <string name="text_lower">Lower!</string>
     <string name="text_busDriverFailEnd">You ain\'t in any condition to drive!</string>
     <string name="text_busDriverEnd">Nice Driving!</string>
     <string name="text_startCard">Starting card</string>
     <string name="text_falseGuesses_Busdriver">Wrong guesses:</string>
-    <string name="text_penaltyBusdriver">Your penalty sips:</string>
+    <string name="text_penaltyBusdriver">Your total penalty sips:</string>
 
     <!-- Kasa -->
     <string name="text_stackTitle">Pile!</string>

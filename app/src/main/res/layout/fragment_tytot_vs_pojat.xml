@@ -10,6 +10,7 @@
 
     <TextView
         android:id="@+id/tvTitle_TytotVsPojat"
+        style="@style/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
