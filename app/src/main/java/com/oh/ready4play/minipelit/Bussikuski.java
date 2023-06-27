@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.oh.ready4play.Kortti;
+import com.oh.ready4play.MainActivity;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
@@ -20,7 +21,8 @@ import java.util.Random;
 
 
 public class Bussikuski extends Fragment {
-    private Random random = new Random();
+    private final Random random = new Random();
+    private boolean onnistui;
     private int edellinenArvo;
     private int uusiArvo;
     private int tasoMenossa = 1;
@@ -39,6 +41,7 @@ public class Bussikuski extends Fragment {
     private TextView tvSakkoMaara;
     private Button btYlempi;
     private Button btAlempi;
+    private Button btJatkaPelia;
 
 
     public Bussikuski() {super(R.layout.fragment_bussikuski);}
@@ -54,7 +57,7 @@ public class Bussikuski extends Fragment {
         tvSakko = view.findViewById(R.id.tvSakko_Bussikuski);
         tvAloituskortti = view.findViewById(R.id.tvAloituskortti_Bussikuski);
         tvOheistus = view.findViewById(R.id.tvOhjeistus_Bussikuski);
-        Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_Bussikuski);
+        btJatkaPelia = view.findViewById(R.id.btJatkaPelia_Bussikuski);
         Button btAloita = view.findViewById(R.id.btAloita_Bussikuski);
         btYlempi = view.findViewById(R.id.btSuurempi_Bussikuski);
         btAlempi = view.findViewById(R.id.btPienempi_Bussikuski);
@@ -102,12 +105,16 @@ public class Bussikuski extends Fragment {
         });
 
         btAlempi.setOnClickListener(e -> {
-            boolean onnistui = suoritaVuoro(0);
-            vuoronJalkeen(btJatkaPelia, onnistui);
+            btAlempi.setEnabled(false);
+            btYlempi.setEnabled(false);
+            onnistui = suoritaVuoro(0);
+            vuoronJalkeen();
         });
         btYlempi.setOnClickListener(e -> {
-            boolean onnistui = suoritaVuoro(1);
-            vuoronJalkeen(btJatkaPelia, onnistui);
+            btAlempi.setEnabled(false);
+            btYlempi.setEnabled(false);
+            onnistui = suoritaVuoro(1);
+            vuoronJalkeen();
         });
 
         btJatkaPelia.setOnClickListener(e -> {
@@ -120,7 +127,9 @@ public class Bussikuski extends Fragment {
         return view;
     }
 
-    private void vuoronJalkeen(Button btJatkaPelia, boolean onnistui) {
+    private void vuoronJalkeen() {
+        btAlempi.setEnabled(true);
+        btYlempi.setEnabled(true);
         edellinenArvo = uusiArvo;
         siirraOsoitinta(onnistui);
         if (tasoMenossa > 5 || sakko > 3) {
@@ -192,7 +201,19 @@ public class Bussikuski extends Fragment {
                 tasoMenossa ++;
                 return true;
             } else {
-                piilotaKortit();
+                Thread t1 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(600);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                        MainActivity.INSTANCE.runOnUiThread(Bussikuski.this::piilotaKortit);
+                    }
+                });
+                t1.start();
+                //piilotaKortit();
                 sakko ++;
                 tvSakko.setText(R.string.text_falseGuesses_Busdriver);
                 tvSakkoMaara.setText(String.valueOf(sakko));
@@ -204,7 +225,19 @@ public class Bussikuski extends Fragment {
                 tasoMenossa ++;
                 return true;
             } else {
-                piilotaKortit();
+                Thread t1 = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(600);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                        MainActivity.INSTANCE.runOnUiThread(Bussikuski.this::piilotaKortit);
+                    }
+                });
+                t1.start();
+                //piilotaKortit();
                 sakko ++;
                 tvSakko.setText(R.string.text_falseGuesses_Busdriver);
                 tvSakkoMaara.setText(String.valueOf(sakko));

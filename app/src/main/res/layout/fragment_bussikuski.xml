@@ -3,19 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bussikuskiLayout"
-    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tausta_teema_peli"
     tools:context=".minipelit.Bussikuski">
 
     <TextView
         android:id="@+id/tvOhjeistus_Bussikuski"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/tausta_teema_peli"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:text="@string/text_taskDescriptionBusDriver"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/btAloita_Bussikuski"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -45,11 +47,12 @@
 
     <TextView
         android:id="@+id/tvTitle_Bussikuski"
+        style="@style/title_text"
         android:text="@string/text_busDriverTitle"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/title_text" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivKortti1_Bussikuski"
@@ -175,6 +178,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="@string/text_startCard"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/ivAloituskortti_Bussikuski"
         app:layout_constraintStart_toStartOf="@+id/ivAloituskortti_Bussikuski"
         app:layout_constraintTop_toBottomOf="@+id/ivAloituskortti_Bussikuski" />
@@ -184,6 +188,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus_Bussikuski"
         app:layout_constraintEnd_toStartOf="@+id/tvSakkoMaara_Bussikuski"
         app:layout_constraintHorizontal_bias="0.5"
@@ -195,6 +200,7 @@
         android:id="@+id/tvSakkoMaara_Bussikuski"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/tvSakko_Bussikuski"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

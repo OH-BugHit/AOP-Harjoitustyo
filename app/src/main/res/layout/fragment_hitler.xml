@@ -3,22 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/hitlerLayout"
-    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tausta_teema_peli"
     tools:context=".minipelit.Hitler">
-
-    <ImageView
-        android:id="@+id/ivTausta_Hitler"
-        style="@style/taustavari"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="fitXY"
-        android:src="@drawable/einappulaa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvTitle_Hitler"
@@ -62,7 +50,6 @@
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_Hitler"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvOhjeistus_Hitler"
         app:layout_constraintTop_toBottomOf="@+id/divider7"
@@ -77,11 +64,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/text_taskDescriptionHitler"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ivKortti_Hitler"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toEndOf="@+id/ivTausta_Hitler"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider7" />
 
@@ -89,6 +76,7 @@
         android:id="@+id/tvArvottuPelaaja_Hitler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/ivKortti_Hitler"
         app:layout_constraintEnd_toEndOf="@+id/ivKortti_Hitler"
         app:layout_constraintStart_toStartOf="@+id/ivKortti_Hitler"

@@ -11,20 +11,15 @@
         android:label="fragment_alkuvalikko"
         tools:layout="@layout/fragment_alkuvalikko" >
         <action
-            android:id="@+id/action_alkuvalikko_to_quitFragment"
-            app:destination="@id/quitFragment" />
-        <action
             android:id="@+id/action_alkuvalikko_to_asetukset"
             app:destination="@id/asetukset" />
         <action
             android:id="@+id/action_alkuvalikko_to_uusiPeli"
             app:destination="@id/uusiPeli" />
+        <action
+            android:id="@+id/action_alkuvalikko_to_quitFragment2"
+            app:destination="@id/quitFragment" />
     </fragment>
-    <activity
-        android:id="@+id/quitFragment"
-        android:name="com.oh.ready4play.QuitFragment"
-        android:label="fragment_quit"
-        tools:layout="@layout/fragment_quit" />
     <fragment
         android:id="@+id/asetukset"
         android:name="com.oh.ready4play.Asetukset"
@@ -52,7 +47,12 @@
             android:id="@+id/action_peli_to_alkuvalikko"
             app:destination="@id/alkuvalikko" />
         <action
-            android:id="@+id/action_peli_to_quitFragment"
+            android:id="@+id/action_peli_to_quitFragment2"
             app:destination="@id/quitFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/quitFragment"
+        android:name="com.oh.ready4play.QuitFragment"
+        android:label="fragment_quit"
+        tools:layout="@layout/fragment_quit" />
 </navigation>

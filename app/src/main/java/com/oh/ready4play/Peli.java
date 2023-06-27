@@ -80,8 +80,6 @@ public class Peli extends Fragment {
     private int toiminto;
     private int pelilautaX;
     private int pelilautaY;
-    private float nappulaLeveys;
-    private float nappulaKorkeus;
     /**
      * Onko hampurilaisvalikkoa klikattu vai ei
      */
@@ -248,7 +246,7 @@ public class Peli extends Fragment {
         });
 
         tvLopeta.setOnClickListener(e-> {
-            Navigation.findNavController(view).navigate(R.id.action_peli_to_quitFragment);
+            Navigation.findNavController(view).navigate(R.id.action_peli_to_quitFragment2);
         });
 
 
@@ -258,11 +256,6 @@ public class Peli extends Fragment {
             pelilautaX = fcvPelilauta.getWidth();
             pelilautaY = fcvPelilauta.getHeight();
             tvAlkuteksti.setVisibility(View.INVISIBLE);
-            /* TODO: TÄÄ NAPPULAN LEVEYDEN HUOMIOIMINEN EI TOJI
-            Ei toimi vielä
-            nappulaLeveys = ivNappulat[0].getWidth();
-            nappulaKorkeus = ivNappulat[0].getHeight();
-            */
             alustaPelilauta();
             alustaPeli();
             btAloita.setVisibility(View.INVISIBLE);
@@ -519,10 +512,6 @@ public class Peli extends Fragment {
             bt3.setVisibility(View.INVISIBLE);
             btFail.setVisibility(View.INVISIBLE);
         }
-    }
-
-    private void resetoiPeli() {
-        vuorossaPelaaja = 0;
     }
 
     /**

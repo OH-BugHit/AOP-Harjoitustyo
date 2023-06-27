@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/kolmeShottiaLayout"
-    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tausta_teema_peli"
     tools:context=".minipelit.KolmeShottia">
 
     <TextView
@@ -46,6 +46,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_taskDescription3Shots"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +58,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
         android:text="@string/text_taskDescriprion3Shots2"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaVuorossa_3Shottia"
@@ -68,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/text_blank"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus_3Shottia2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"

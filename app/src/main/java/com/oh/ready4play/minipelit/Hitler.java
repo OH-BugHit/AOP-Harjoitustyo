@@ -46,6 +46,7 @@ public class Hitler extends Fragment {
         btJatkaPelia.setVisibility(View.INVISIBLE);
 
         ivKortti.setOnClickListener(e -> {
+            tvArvottu.setText("");
             Kortti kortti = arvoKortti();
             kortinTapahtuma(kortti);
             btJatkaPelia.setVisibility(View.VISIBLE);

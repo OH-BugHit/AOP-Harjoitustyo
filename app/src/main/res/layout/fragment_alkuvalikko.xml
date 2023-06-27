@@ -5,8 +5,8 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Alkuvalikko"
-    style="@style/taustavari">
+    android:background="@drawable/tausta_teema_peli"
+    tools:context=".Alkuvalikko">
 
     <TextView
         android:id="@+id/tvGameTitle"

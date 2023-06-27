@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/kasaLayout"
-    style="@style/taustavari"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/tausta_teema_peli"
     tools:context=".minipelit.Kasa">
 
     <Button
@@ -50,11 +50,14 @@
         android:layout_marginEnd="32dp"
         android:text="@string/text_taskDescriptionStack"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus2_Kasa"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/divider18"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/tvOhjeistus_Kasa2"
@@ -63,8 +66,11 @@
         android:layout_marginTop="8dp"
         android:text="@string/text_taskDesctiptionStack3"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tvOhjeistus_Kasa"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/tvOhjeistus_Kasa"
         app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus2_Kasa" />
 
@@ -72,6 +78,7 @@
         android:id="@+id/tvPelaajaNimi_Kasa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/tvOhjeistus2_Kasa"
         app:layout_constraintHorizontal_bias="0.5"
@@ -85,7 +92,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/text_taskDescriptionStack2"
+        android:textColor="@color/black"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus_Kasa2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi_Kasa"

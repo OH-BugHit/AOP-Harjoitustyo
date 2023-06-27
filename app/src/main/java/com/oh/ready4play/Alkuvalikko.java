@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.navigation.Navigator;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.oh.ready4play.AlkuvalikkoDirections;
 
 /**
  * Alkuvalikko-fragment sisältää alkuvalikon
@@ -49,7 +52,7 @@ public class Alkuvalikko extends Fragment {
         });
 
         btQuit.setOnClickListener(e -> {
-            Navigation.findNavController(view).navigate(R.id.action_alkuvalikko_to_quitFragment);
+            Navigation.findNavController(view).navigate(R.id.action_alkuvalikko_to_quitFragment2);
         });
 
 
