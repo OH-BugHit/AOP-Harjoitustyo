@@ -23,6 +23,7 @@ import java.util.Random;
 public class Bussikuski extends Fragment {
     private final Random random = new Random();
     private boolean onnistui;
+    private int aloitusArvo;
     private int edellinenArvo;
     private int uusiArvo;
     private int tasoMenossa = 1;
@@ -218,6 +219,7 @@ public class Bussikuski extends Fragment {
                 tvSakko.setText(R.string.text_falseGuesses_Busdriver);
                 tvSakkoMaara.setText(String.valueOf(sakko));
                 tasoMenossa = 1;
+                edellinenArvo = aloitusArvo;
                 return false;
             }
         } else {
@@ -242,6 +244,7 @@ public class Bussikuski extends Fragment {
                 tvSakko.setText(R.string.text_falseGuesses_Busdriver);
                 tvSakkoMaara.setText(String.valueOf(sakko));
                 tasoMenossa = 1;
+                edellinenArvo = aloitusArvo;
                 return false;
             }
         }
@@ -258,7 +261,8 @@ public class Bussikuski extends Fragment {
     private void asetaAloituskortti() {
         Kortti nosto = nostaKortti();
         System.out.println("Aloituskortti: " + nosto.arvo);
-        edellinenArvo = nosto.arvo;
+        aloitusArvo = nosto.arvo;
+        edellinenArvo = aloitusArvo;
         ivAloituskortti.setImageDrawable(nosto.kuva);
     }
 

@@ -1,41 +1,54 @@
 package com.oh.ready4play;
 
-import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import java.util.Random;
 
-public class Noppa extends Fragment {
-    private static Random random = new Random();
-    private static ImageView noppaKuva;
+public class Noppa {
+    private static final Random random = new Random();
+    private final ImageView noppaKuva;
+    private int heitto;
 
-    public Noppa() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_noppa, container, false);
-        noppaKuva = view.findViewById(R.id.ivNoppa);
-        noppaKuva.setVisibility(View.INVISIBLE);
-        return view;
+    public Noppa(ImageView noppaKuva) {
+        this.noppaKuva = noppaKuva;
     }
 
     /**
      * Heittää nopan ja asettaa nopan kuvan näkyviin
      * @return Palauttaa heiton arvon (mukaan laskettu asetuksissa määritelty asetus)
      */
-    public static int heitaNoppaa() {
+    public int heitaNoppaa() throws InterruptedException {
         noppaKuva.setVisibility(View.VISIBLE);
-        int heitto = random.nextInt(6) + 1 + Peli.peliasetukset.noppa;
+
+        int animaatioKesto = random.nextInt(19) + 6;
+        int animaatioNopeus = random.nextInt(50) + 30;
+
+        for (int i = animaatioKesto; i > 0; i--) {
+            heitto = random.nextInt(6) + 1 + Peli.peliasetukset.noppa;
+                Thread.sleep(animaatioNopeus);
+            animaatioNopeus += random.nextInt(10);
+            naytaHeittokuva(heitto);
+        }
+
+        Thread.sleep(1000);
+
+
+        if (Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet) {
+            heitto += 3;
+            Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet = false;
+        }
+        if (Peli.pelaajat.get(Peli.vuorossaPelaaja).sijainti + heitto > 61) {
+            heitto = 61 - Peli.pelaajat.get(Peli.vuorossaPelaaja).sijainti;
+        }
+        return heitto ;
+    }
+
+    /**
+     * Asettaa heiton mukaisen noppakuvan
+     * @param heitto nopan heiton tulos
+     */
+    private void naytaHeittokuva(int heitto) {
         switch (heitto) {
             case 1 -> noppaKuva.setImageResource(R.drawable.noppa1);
             case 2 -> noppaKuva.setImageResource(R.drawable.noppa2);
@@ -49,13 +62,5 @@ public class Noppa extends Fragment {
             case 10 -> noppaKuva.setImageResource(R.drawable.noppa10);
             case 11 -> noppaKuva.setImageResource(R.drawable.noppa11);
         }
-        if (Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet) {
-            heitto += 3;
-            Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet = false;
-        }
-        if (Peli.pelaajat.get(Peli.vuorossaPelaaja).sijainti + heitto > 61) {
-            heitto = 61 - Peli.pelaajat.get(Peli.vuorossaPelaaja).sijainti;
-        }
-        return heitto ;
     }
 }

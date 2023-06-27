@@ -33,6 +33,7 @@ import com.oh.ready4play.minipelit.WouldYouRather;
 import java.util.ArrayList;
 
 public class Peli extends Fragment {
+    private Noppa noppa;
     /**
      * Käytettävät peliasetukset
      */
@@ -41,6 +42,8 @@ public class Peli extends Fragment {
      * Seuraava vuoro asetetaan true-tilaan minipelissä sen päättyessä.
      */
     public static volatile boolean seuraavaVuoro = false;
+
+    private static volatile boolean noppaValmis = false;
     /**
      * Tehtävä 11 (epäonnistuessaan) ja 12 siirtävät pelaajaa taaksepäin.
      * Tällä booleanilla toteutetaan taaksepäin siirtämisen pyytäminen, kun noppaa heitetään seuraavan kerran.
@@ -55,15 +58,15 @@ public class Peli extends Fragment {
      */
     View view;
     /**
-     * Pelinappulat pelilaudalla
+     * Pelinappulat pelilaudalla. (Max 10 pelaajaa)
      */
     public static ImageView[] ivNappulat = new ImageView[10];
     /**
-     * Pelaajat
+     * Pelaajat Pelaaja-olioina
      */
     public static ArrayList<Pelaaja> pelaajat;
     /**
-     * Peliruudut pelilaudalla
+     * Peliruudut pelilaudalla Ruutu-olioina
      */
     private static final ArrayList<Ruutu> peliRuudut = new ArrayList<>();
     /**
@@ -75,10 +78,20 @@ public class Peli extends Fragment {
      */
     public static int pelaajamaara;
     /**
+     * Nopanheiton tulos
+     */
+    private int nopanHeitto;
+    /**
      * Peliruudun "toiminto"
      */
     private int toiminto;
+    /**
+     * Pelilaudan leveys ruutujen sijainnin määrittämiseen
+     */
     private int pelilautaX;
+    /**
+     * Pelilaudan korkeus ruutujen sijainnin määrittämiseen
+     */
     private int pelilautaY;
     /**
      * Onko hampurilaisvalikkoa klikattu vai ei
@@ -113,8 +126,15 @@ public class Peli extends Fragment {
      * Fragment Manager minipelien asettamiseen ja vaihtamiseen
      */
     public static FragmentManager fragmentManager;
+    /**
+     * FragmentContainerView pelilaudan esittämiseen
+     */
     private FragmentContainerView fcvPelilauta;
+    /**
+     * FragmentContainerView minipelin näyttämiseen
+     */
     private FragmentContainerView fcvMinipeliNakyma;
+
     public Peli() {
         // Required empty public constructor
     }
@@ -128,10 +148,13 @@ public class Peli extends Fragment {
         lataaAsetukset();
 
         view = inflater.inflate(R.layout.fragment_peli, container, false);
+        ImageView ivNoppa = view.findViewById(R.id.ivNoppa_peli);
+        noppa = new Noppa(ivNoppa);
 
         fcvMinipeliNakyma = view.findViewById(R.id.fcvMinipeliNakyma);
         fcvPelilauta = view.findViewById(R.id.fcvPelilauta);
 
+        //Asetellaan pelinappuloille niiden imageviewit ja asetellaan ne näkymättömiksi
         ivNappulat[0] = view.findViewById(R.id.ivNappula0);
         ivNappulat[1] = view.findViewById(R.id.ivNappula1);
         ivNappulat[2] = view.findViewById(R.id.ivNappula2);
@@ -157,6 +180,7 @@ public class Peli extends Fragment {
         tvPaavalikko.setVisibility(View.INVISIBLE);
         tvLopeta.setVisibility(View.INVISIBLE);
 
+        //Vuorossa olevan pelinappulan imageview. Näkyy pelinäkymän yläreunassa
         ivNappula = view.findViewById(R.id.ivNappulaVuorossa);
 
         tvAlkuteksti = view.findViewById(R.id.tv_AloitusTeksti_Peli);
@@ -174,6 +198,7 @@ public class Peli extends Fragment {
 
         ImageView ivHampuri = view.findViewById(R.id.ivHampuri_peli);
 
+        //Tikapuiden +3 askelta nappula
         bt3.setOnClickListener(e -> {
             pelaajat.get(vuorossaPelaaja).bonusAskeleet = true;
             pelaajat.get(vuorossaPelaaja).kaksiTotuutta = false;
@@ -181,13 +206,16 @@ public class Peli extends Fragment {
             btFail.setVisibility(View.INVISIBLE);
         });
 
+        //Tikapuissa jos epäonnistutaan niin painetaan tätä jolloin ei tule bonusaskelia
         btFail.setOnClickListener(e -> {
             pelaajat.get(vuorossaPelaaja).kaksiTotuutta = false;
             bt3.setVisibility(View.INVISIBLE);
             btFail.setVisibility(View.INVISIBLE);
         });
 
+        //Nopanheittonappula
         btHeitaNoppa.setOnClickListener(e -> {
+            noppaValmis = false;
             btOhita.setVisibility(View.INVISIBLE);
             btHeitaNoppa.setVisibility(View.INVISIBLE);
 
@@ -198,23 +226,44 @@ public class Peli extends Fragment {
                 }
             }
 
-            int nopanHeitto = Noppa.heitaNoppaa();
-            toiminto = liikutaPelaajaa(nopanHeitto);
-            if (toiminto != 13) {
-                suoritaVuoro(toiminto);
-            } else {//TODO: GAME OVER! Voittaja on vuorossaoleva
-                System.out.println("Pelissä edettiin maaliin!!\nVoittaja on: " + vuorossaPelaaja);
-            }
+            //Noppa heitetään omassa threadissa sen animoimiseksi
+            Thread tNoppa = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        nopanHeitto = noppa.heitaNoppaa();
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    noppaValmis = true;
+                }
+            });
+            tNoppa.start();
+
             Thread t1 = new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    arpaOnHeitetty();
+                    MainActivity.INSTANCE.runOnUiThread(Peli.this::nopanAnimaationJalkeen);
                     seuraavanPelaajanVuoro();
                     MainActivity.INSTANCE.runOnUiThread(Peli.this::naytaNapit);
+                }
+
+                private void arpaOnHeitetty() {
+                    while (!noppaValmis) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                            Thread.onSpinWait();
+                        }
+                    }
+                    noppaValmis = false;
                 }
             });
             t1.start();
         });
 
+        //Nopanheittonappula päättyy
+
+        //Vuoron ohitusnappula
         btOhita.setOnClickListener(e -> {
             seuraavaVuoro = true;
             seuraavanPelaajanVuoro();
@@ -226,6 +275,8 @@ public class Peli extends Fragment {
             }
         });
 
+        //Hampurilaisvalikon painaminen
+        //TODO: TEE TOASTIT NÄIHIN!!! MUISTA MAINITA ETTEI PELIIN VOI PALATA!
         ivHampuri.setOnClickListener(e -> {
             if (hampuriKlikattu) {
                 hampuriKlikattu = false;
@@ -238,9 +289,9 @@ public class Peli extends Fragment {
             }
         });
 
-
         tvVuorossaPelaaja = view.findViewById(R.id.tvPelaajaNimi_Peli);
 
+        //Hampurilaisvalikon toiminnot: Päävalikko ja Lopeta
         tvPaavalikko.setOnClickListener(e -> {
             Navigation.findNavController(view).navigate(R.id.action_peli_to_alkuvalikko);
         });
@@ -249,7 +300,7 @@ public class Peli extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_peli_to_quitFragment2);
         });
 
-
+        //Aloita peli -nappula ja sen toiminto
         Button btAloita = view.findViewById(R.id.btAloita_Peli);
 
         btAloita.setOnClickListener(e -> {
@@ -264,6 +315,17 @@ public class Peli extends Fragment {
         return view;
         }
 
+    /**
+     * Nopan animaation jälkeen toteutettava toiminta.
+     */
+    private void nopanAnimaationJalkeen() {
+        toiminto = liikutaPelaajaa(nopanHeitto);
+        if (toiminto != 13) {
+            suoritaVuoro(toiminto);
+        } else {//TODO: GAME OVER! Voittaja on vuorossaoleva
+            System.out.println("Pelissä edettiin maaliin!!\nVoittaja on: " + vuorossaPelaaja);
+        }
+    }
 
 
     /**
@@ -385,6 +447,7 @@ public class Peli extends Fragment {
 
     /**
      * Liikuttaa pelaajaa pelilaudalla
+     * Jos ruutu johon päädytään ei ole käytössä asetuksissa, mennään seuraavaan ruutuun. (Toistuu kunnes ruutu ok, viimeistään maalissa!)
      * Päivittää ruudussa olevien pelaajien lukumäärän. Tätä lukumäärää käytetään sijoittelemaan useampi pelaaja samaan ruutuun.
      * @param nopanHeitto Saa arvokseen nopanheiton tuloksen
      * @return Palauttaa saavutun ruudun tehtävän
@@ -392,7 +455,6 @@ public class Peli extends Fragment {
     private int liikutaPelaajaa(int nopanHeitto) {
         peliRuudut.get(pelaajat.get(vuorossaPelaaja).sijainti).pelaajiaRuudussa --;
         int uusiruutu = pelaajat.get(vuorossaPelaaja).sijainti + nopanHeitto;
-        //tästä
         boolean ruutuOk = peliasetukset.kaikkitrue();
         while (!ruutuOk) {
             if (peliRuudut.get(uusiruutu).tehtava == 1) {
@@ -493,7 +555,6 @@ public class Peli extends Fragment {
                 ruutuOk = true;
             }
         }
-        //Tähän asti
         peliRuudut.get(uusiruutu).pelaajiaRuudussa ++;
         Pelaaja.liikutaPelaajaRuutuun(pelaajat.get(vuorossaPelaaja),peliRuudut.get(uusiruutu));
         return peliRuudut.get(uusiruutu).tehtava;
@@ -604,7 +665,7 @@ public class Peli extends Fragment {
                 case 45 -> kortti.kuva = getResources().getDrawable(R.drawable.risti7,MainActivity.INSTANCE.getTheme());
                 case 46 -> kortti.kuva = getResources().getDrawable(R.drawable.risti8,MainActivity.INSTANCE.getTheme());
                 case 47 -> kortti.kuva = getResources().getDrawable(R.drawable.risti9,MainActivity.INSTANCE.getTheme());
-                case 48 -> kortti.kuva = getResources().getDrawable(R.drawable.ruutu10,MainActivity.INSTANCE.getTheme());
+                case 48 -> kortti.kuva = getResources().getDrawable(R.drawable.risti10,MainActivity.INSTANCE.getTheme());
                 case 49 -> kortti.kuva = getResources().getDrawable(R.drawable.risti11,MainActivity.INSTANCE.getTheme());
                 case 50 -> kortti.kuva = getResources().getDrawable(R.drawable.risti12,MainActivity.INSTANCE.getTheme());
                 case 51 -> kortti.kuva = getResources().getDrawable(R.drawable.risti13,MainActivity.INSTANCE.getTheme());
@@ -1070,12 +1131,27 @@ public class Peli extends Fragment {
         }
     }
 
+    /**
+     * Laskee sijainnin Y-kordinaatistolla
+     * @param suhdeKerroin suhteellinen sijainti Y-kordinaatistolla 0-1
+     * @return Palauttaa todellisen sijainnin näytöllä Y-koordinaatistossa
+     */
     private float laskeY(double suhdeKerroin) {
         return Float.parseFloat(String.valueOf(pelilautaY * suhdeKerroin)) + fcvMinipeliNakyma.getHeight() - fcvPelilauta.getHeight();
     }
+
+    /**
+     * Laskee sijainnin X-kordinaatistolla
+     * @param suhdeKerroin suhteellinen sijainti X-kordinaatistolla 0-1
+     * @return Palauttaa todellisen sijainnin näytöllä X-koordinaatistossa
+     */
     private float laskeX(double suhdeKerroin) {
         return Float.parseFloat(String.valueOf(pelilautaX * suhdeKerroin));
     }
+
+    /**
+     * Lataa käytettävät asetukset
+     */
     private void lataaAsetukset() {
         Alkuvalikko.sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         peliasetukset.hitler = lataaTehtavaKaytossa(getString(R.string.saved_task_hitler));
@@ -1095,6 +1171,11 @@ public class Peli extends Fragment {
         peliasetukset.sanaselitysKesto = Alkuvalikko.sharedPref.getInt(getString(R.string.saved_durationDictionary),60);
     }
 
+    /**
+     * Extraktoitu metodi tehtävän käytettävyyden lataamiseen
+     * @param avain avainsana, jolla asetus on tallennettu
+     * @return palauttaa FALSE jos tehtävä ei käytössä, muuten TRUE
+     */
     private boolean lataaTehtavaKaytossa(String avain) {
         boolean taskKaytossa;
         boolean defaultValue = true;
