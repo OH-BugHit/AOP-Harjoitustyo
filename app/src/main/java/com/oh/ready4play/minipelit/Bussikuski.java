@@ -214,7 +214,6 @@ public class Bussikuski extends Fragment {
                     }
                 });
                 t1.start();
-                //piilotaKortit();
                 sakko ++;
                 tvSakko.setText(R.string.text_falseGuesses_Busdriver);
                 tvSakkoMaara.setText(String.valueOf(sakko));
@@ -239,7 +238,6 @@ public class Bussikuski extends Fragment {
                     }
                 });
                 t1.start();
-                //piilotaKortit();
                 sakko ++;
                 tvSakko.setText(R.string.text_falseGuesses_Busdriver);
                 tvSakkoMaara.setText(String.valueOf(sakko));

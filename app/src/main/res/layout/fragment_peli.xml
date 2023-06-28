@@ -60,7 +60,7 @@
         android:contentDescription="@string/contentDesc_piece"
         app:layout_constraintStart_toEndOf="@+id/tvPelaajaNimi_Peli"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/nappulacarbon" />
+        tools:src="@drawable/nappula_carbon" />
 
     <View
         android:id="@+id/divider_Peli"
@@ -135,7 +135,8 @@
         android:layout_width="26dp"
         android:layout_height="26dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappulacarbon"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="153dp" />
 
@@ -144,7 +145,7 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="28dp"
         tools:layout_editor_absoluteY="160dp" />
@@ -154,7 +155,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="40dp"
         tools:layout_editor_absoluteY="171dp" />
 
@@ -163,7 +165,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="56dp"
         tools:layout_editor_absoluteY="182dp" />
 
@@ -172,7 +175,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="64dp"
         tools:layout_editor_absoluteY="190dp" />
 
@@ -181,7 +185,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="80dp"
         tools:layout_editor_absoluteY="203dp" />
 
@@ -190,7 +195,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="219dp" />
 
@@ -199,7 +205,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="104dp"
         tools:layout_editor_absoluteY="230dp" />
 
@@ -208,7 +215,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="116dp"
         tools:layout_editor_absoluteY="246dp" />
 
@@ -217,7 +225,8 @@
         android:layout_width="25dp"
         android:layout_height="30dp"
         android:contentDescription="@string/contentDesc_piece"
-        android:src="@drawable/nappula1"
+        android:src="@drawable/nappula_carbon"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="128dp"
         tools:layout_editor_absoluteY="259dp" />
 

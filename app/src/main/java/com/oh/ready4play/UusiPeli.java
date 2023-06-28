@@ -1,8 +1,10 @@
 package com.oh.ready4play;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -21,8 +23,13 @@ import java.util.ArrayList;
 
 //TODO: Jäänyt bugi. Jos poistaa viimeisen, sen nappula tulee uusiksi. Muuten toimii
 public class UusiPeli extends Fragment {
+
+    @SuppressLint("StaticFieldLeak")
     public static UusiPeli INSTANCE;
     public static ArrayList<Pelaaja> itemArrayList = new ArrayList<>();
+    /**
+     * Taulukko, johon tallennetaan tieto onko nappula varattu
+     */
     public static Boolean[] nappulaKuva = new Boolean[10];
     //Tarkastele tätä ongelmaa
     public ImageView ivNappulanKuva;
@@ -51,7 +58,7 @@ public class UusiPeli extends Fragment {
         EditText etLisattavaPelaajaNimi = view.findViewById(R.id.etLisattavaPelaaja_UusiPeli);
         ivNappulanKuva = view.findViewById(R.id.ivLisattavanKuva_UusiPeli);
 
-        ivNappulanKuva.setImageResource(R.drawable.nappulacarbon);
+        ivNappulanKuva.setImageResource(R.drawable.nappula_kulta);
 
         RecyclerView recyclerView = view.findViewById(R.id.rvPelaajat);
 
@@ -71,6 +78,9 @@ public class UusiPeli extends Fragment {
             if (!taynna) {
                 if (!etLisattavaPelaajaNimi.getText().toString().equals("") && etLisattavaPelaajaNimi.getText().toString().length() < 15) {
                     Pelaaja pelaaja = new Pelaaja(vapaaNappula(), etLisattavaPelaajaNimi.getText().toString(), valitseNappula(vapaaNappula(), true));
+                    if (etLisattavaPelaajaNimi.getText().toString().equals("OH")) {
+                        pelaaja.pelaajakuva = ResourcesCompat.getDrawable(getResources(),R.drawable.nappula_led_vihrea,null);
+                    }
                     itemArrayList.add(pelaaja);
                     etLisattavaPelaajaNimi.setText("");
                 } else {
@@ -90,6 +100,10 @@ public class UusiPeli extends Fragment {
         }
     }
 
+    /**
+     * Tarkistaa listasta pelaajalle indeksinumeron
+     * @return palauttaa vapaan indeksinumeron 0-9
+     */
     private int vapaaNappula() {
         taynna = true;
         int vapaaNappula = 0;
@@ -107,19 +121,19 @@ public class UusiPeli extends Fragment {
 
     private int seuraavaNappula(int vapaaNappula) {
         switch (vapaaNappula) {
-            case 0 -> {return R.drawable.nappulacarbon;}
-            case 1 -> {return R.drawable.nappulablackopaque;}
-            case 2 -> {return R.drawable.nappulagold;}
-            case 3 -> {return R.drawable.nappulamirror;}
-            case 4 -> {return R.drawable.nappulablueled;}
-            case 5 -> {return R.drawable.nappula6;}
-            case 6 -> {return R.drawable.nappula7;}
-            case 7 -> {return R.drawable.nappula8;}
-            case 8 -> {return R.drawable.nappula9;}
-            case 9 -> {return R.drawable.nappula10;}
-            case 10 -> {return R.drawable.einappulaa;}
+            case 0 -> {return R.drawable.nappula_kulta;}
+            case 1 -> {return R.drawable.nappula_peili;}
+            case 2 -> {return R.drawable.nappula_jade;}
+            case 3 -> {return R.drawable.nappula_valkoinen_marmori;}
+            case 4 -> {return R.drawable.nappula_safiiri;}
+            case 5 -> {return R.drawable.nappula_ruby;}
+            case 6 -> {return R.drawable.nappula_carbon;}
+            case 7 -> {return R.drawable.nappula_keltainen_emali;}
+            case 8 -> {return R.drawable.nappula_punainen_emali;}
+            case 9 -> {return R.drawable.nappula_sininen_emali;}
+            case 10 -> {return R.drawable.block;}
         }
-        return R.drawable.einappulaa;
+        return R.drawable.block;
     }
 
     private Drawable valitseNappula(int vapaaNappula, boolean varaa) {
@@ -130,7 +144,7 @@ public class UusiPeli extends Fragment {
                 btLisaaPelaaja.setEnabled(true);
             }
             case 10 -> {
-                ivNappulanKuva.setImageResource(R.drawable.einappulaa);
+                ivNappulanKuva.setImageResource(R.drawable.block);
                 taynna = true;
             }
         }

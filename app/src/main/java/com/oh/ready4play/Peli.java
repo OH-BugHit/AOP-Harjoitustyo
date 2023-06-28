@@ -1,6 +1,7 @@
 package com.oh.ready4play;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.oh.ready4play.minipelit.Bussikuski;
 import com.oh.ready4play.minipelit.FuckTheDealer;
 import com.oh.ready4play.minipelit.Hitler;
@@ -31,6 +33,7 @@ import com.oh.ready4play.minipelit.TytotVsPojat;
 import com.oh.ready4play.minipelit.WouldYouRather;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Peli extends Fragment {
     private Noppa noppa;
@@ -276,7 +279,6 @@ public class Peli extends Fragment {
         });
 
         //Hampurilaisvalikon painaminen
-        //TODO: TEE TOASTIT NÄIHIN!!! MUISTA MAINITA ETTEI PELIIN VOI PALATA!
         ivHampuri.setOnClickListener(e -> {
             if (hampuriKlikattu) {
                 hampuriKlikattu = false;
@@ -293,11 +295,27 @@ public class Peli extends Fragment {
 
         //Hampurilaisvalikon toiminnot: Päävalikko ja Lopeta
         tvPaavalikko.setOnClickListener(e -> {
-            Navigation.findNavController(view).navigate(R.id.action_peli_to_alkuvalikko);
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this.getContext());
+            //Tekstin määrittely
+            builder.setMessage(R.string.dialog_new_info);
+            //Vahvista navigoi pois
+            builder.setPositiveButton(R.string.dialog_vahvista,(dialogInterface,i) -> Navigation.findNavController(view).navigate(R.id.action_peli_to_alkuvalikko));
+            //Peruuta. Painike ei muuta, kuin sulkee ilmoituksen itsestään
+            builder.setNegativeButton(R.string.dialog_peruuta, (dialogInterface, i) -> {
+            });
+            builder.show();
         });
 
         tvLopeta.setOnClickListener(e-> {
-            Navigation.findNavController(view).navigate(R.id.action_peli_to_quitFragment2);
+            MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this.getContext());
+            //Tekstin määrittely
+            builder.setMessage(R.string.dialog_new_info);
+            //Vahvista navigoi pois
+            builder.setPositiveButton(R.string.dialog_vahvista,(dialogInterface,i) -> Navigation.findNavController(view).navigate(R.id.action_peli_to_quitFragment2));
+            //Peruuta. Painike ei muuta, kuin sulkee ilmoituksen itsestään
+            builder.setNegativeButton(R.string.dialog_peruuta, (dialogInterface, i) -> {
+            });
+            builder.show();
         });
 
         //Aloita peli -nappula ja sen toiminto

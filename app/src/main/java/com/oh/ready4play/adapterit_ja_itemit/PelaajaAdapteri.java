@@ -1,5 +1,6 @@
 package com.oh.ready4play.adapterit_ja_itemit;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.oh.ready4play.MainActivity;
 import com.oh.ready4play.Pelaaja;
 import com.oh.ready4play.R;
 import com.oh.ready4play.UusiPeli;
@@ -27,6 +27,7 @@ public class PelaajaAdapteri extends RecyclerView.Adapter<PelaajaAdapteri.ViewHo
 
     View.OnClickListener poistaPelaajaListener = new View.OnClickListener() {
 
+        @SuppressLint("NotifyDataSetChanged")
         @Override
         public void onClick(View v) {
             int position = (int) v.getTag();
@@ -38,7 +39,6 @@ public class PelaajaAdapteri extends RecyclerView.Adapter<PelaajaAdapteri.ViewHo
                 UusiPeli.INSTANCE.btAloitaPeli.setEnabled(false);
             } else {UusiPeli.INSTANCE.btAloitaPeli.setEnabled(true);}
             UusiPeli.INSTANCE.ivNappulanKuva.setImageDrawable(pelaajaSetti.get(position).pelaajakuva);
-            // KORVATTU YLLÄ UusiPeli.ivNappulanKuva.setImageDrawable(pelaajaSetti.get(position).pelaajakuva);
             UusiPeli.itemArrayList.remove(position);
             notifyDataSetChanged();
         }

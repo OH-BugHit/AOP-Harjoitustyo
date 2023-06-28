@@ -75,8 +75,11 @@ public class Asetukset extends Fragment {
         Alkuvalikko.sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         int defalutNoppa = 0;
         int noppa = Alkuvalikko.sharedPref.getInt(getString(R.string.saved_dice), defalutNoppa);
-        for (int i = 0; i < nopat.length; i++) {
-            nopat[i].setChecked(noppa == i);
+        switch (noppa) {
+            case 0 -> nopat[0].setChecked(true);
+            case 2 -> nopat[1].setChecked(true);
+            case 3 -> nopat[2].setChecked(true);
+            case 5 -> nopat[3].setChecked(true);
         }
         kytkimet[0].setChecked(lataaKytkin(getString(R.string.saved_task_hitler)));
         kytkimet[1].setChecked(lataaKytkin(getString(R.string.saved_task_hoe)));
@@ -105,10 +108,20 @@ public class Asetukset extends Fragment {
     private void tallennaAsetukset() {
         int noppa = 0;
         for (int i = 0; i < nopat.length; i++) {
-            if (nopat[i].isChecked()) {
-                noppa = i;
+            if (nopat[0].isChecked()) {
+                noppa = 0;
             }
         }
+        if (nopat[0].isChecked()) {
+            noppa = 0;
+        } else if (nopat[1].isChecked()) {
+            noppa = 2;
+        } else if (nopat[2].isChecked()) {
+            noppa = 3;
+        } else if (nopat[3].isChecked()) {
+            noppa = 5;
+        }
+
         Alkuvalikko.sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = Alkuvalikko.sharedPref.edit();
         editor.putInt(getString(R.string.saved_dice), noppa);
