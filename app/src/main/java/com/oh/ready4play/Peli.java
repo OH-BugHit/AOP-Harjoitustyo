@@ -33,7 +33,6 @@ import com.oh.ready4play.minipelit.TytotVsPojat;
 import com.oh.ready4play.minipelit.WouldYouRather;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Peli extends Fragment {
     private Noppa noppa;
@@ -100,6 +99,8 @@ public class Peli extends Fragment {
      * Onko hampurilaisvalikkoa klikattu vai ei
      */
     private boolean hampuriKlikattu = false;
+    private Button btMainMenu;
+    private Button btAloita;
     /**
      * Painike nopan heittämiseen
      */
@@ -193,6 +194,8 @@ public class Peli extends Fragment {
         btFail.setVisibility(View.INVISIBLE);
         bt3 = view.findViewById(R.id.bt3_Peli);
         bt3.setVisibility(View.INVISIBLE);
+        btMainMenu = view.findViewById(R.id.btMainMenu_Peli);
+        btMainMenu.setVisibility(View.INVISIBLE);
 
         btHeitaNoppa = view.findViewById(R.id.btHeita_Peli);
         btHeitaNoppa.setVisibility(View.INVISIBLE);
@@ -201,6 +204,9 @@ public class Peli extends Fragment {
 
         ImageView ivHampuri = view.findViewById(R.id.ivHampuri_peli);
 
+        btMainMenu.setOnClickListener(e -> {
+            Navigation.findNavController(view).navigate(R.id.action_peli_to_alkuvalikko);
+        });
         //Tikapuiden +3 askelta nappula
         bt3.setOnClickListener(e -> {
             pelaajat.get(vuorossaPelaaja).bonusAskeleet = true;
@@ -319,9 +325,10 @@ public class Peli extends Fragment {
         });
 
         //Aloita peli -nappula ja sen toiminto
-        Button btAloita = view.findViewById(R.id.btAloita_Peli);
+        btAloita = view.findViewById(R.id.btAloita_Peli);
 
         btAloita.setOnClickListener(e -> {
+            btMainMenu.setVisibility(View.INVISIBLE);
             pelilautaX = fcvPelilauta.getWidth();
             pelilautaY = fcvPelilauta.getHeight();
             tvAlkuteksti.setVisibility(View.INVISIBLE);
@@ -336,12 +343,21 @@ public class Peli extends Fragment {
     /**
      * Nopan animaation jälkeen toteutettava toiminta.
      */
+    @SuppressLint("SetTextI18n")
     private void nopanAnimaationJalkeen() {
         toiminto = liikutaPelaajaa(nopanHeitto);
         if (toiminto != 13) {
             suoritaVuoro(toiminto);
-        } else {//TODO: GAME OVER! Voittaja on vuorossaoleva
-            System.out.println("Pelissä edettiin maaliin!!\nVoittaja on: " + vuorossaPelaaja);
+        } else {
+            btFail.setVisibility(View.INVISIBLE);
+            bt3.setVisibility(View.INVISIBLE);
+            tvAlkuteksti.setVisibility(View.VISIBLE);
+            String a = getString(R.string.text_winner);
+            String b = getString(R.string.text_winner2);
+            tvAlkuteksti.setText(a + " " + pelaajat.get(vuorossaPelaaja).pelaajanimi + "!" + "\n\n" + b);
+            btAloita.setVisibility(View.VISIBLE);
+            btAloita.setText(R.string.text_secondRound);
+            btMainMenu.setVisibility(View.VISIBLE);
         }
     }
 

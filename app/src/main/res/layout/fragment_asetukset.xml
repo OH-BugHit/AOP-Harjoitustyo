@@ -36,20 +36,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_diceAdd"
-        app:layout_constraintBottom_toTopOf="@+id/rgNoppa_Asetukset"
         app:layout_constraintEnd_toEndOf="@+id/rgNoppa_Asetukset"
         app:layout_constraintStart_toStartOf="@+id/rgNoppa_Asetukset"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+        app:layout_constraintTop_toTopOf="@+id/textView3" />
 
     <RadioGroup
         android:id="@+id/rgNoppa_Asetukset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/divider4"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNoppa_Asetukset">
+        app:layout_constraintTop_toBottomOf="@+id/tvNoppa_Asetukset"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout">
 
         <RadioButton
             android:id="@+id/rbNoppa0"
@@ -98,9 +97,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_tasksInGame"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/constraintLayout"
-        app:layout_constraintTop_toTopOf="@+id/tvNoppa_Asetukset" />
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
     <TextView
         android:id="@+id/textView"

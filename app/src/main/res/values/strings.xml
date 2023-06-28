@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Ready4Play</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_blank">blank</string>
     <string name="text_score">Score</string>
 
@@ -78,6 +76,9 @@
     <string name="text_inTurn">Turn: </string>
     <string name="text_throwDice">Throw the Dice!</string>
     <string name="text_skipTurn">Skip turn</string>
+    <string name="text_winner">We have a winner!\n\nCongratulations</string>
+    <string name="text_winner2">(Also take 1 sip)</string>
+    <string name="text_secondRound">Second round!</string>
 
     <!-- Hitler
      Ässä, Vesiputous. 2, Anna 2 huikkaa. 3, Juo 3 huikkaa. 4, Hitler. 5, 123. 6, Naiset juovat 3 huikkaa. 7, Kategoria. 8, Sääntö. 9, Kaikki juovat 3 huikkaa. 10, Miehet juovat 3 huikkaa. 11, Tauko-kortti. 12, Huora. 13, Kuningashörppy.

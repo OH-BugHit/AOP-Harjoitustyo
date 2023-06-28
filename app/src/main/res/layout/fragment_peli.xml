@@ -275,6 +275,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_AloitusTeksti_Peli" />
 
+    <Button
+        android:id="@+id/btMainMenu_Peli"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_teema_settings"
+        android:text="@string/text_mainMenu"
+        app:layout_constraintEnd_toEndOf="@+id/btAloita_Peli"
+        app:layout_constraintStart_toStartOf="@+id/btAloita_Peli"
+        app:layout_constraintTop_toBottomOf="@+id/btAloita_Peli" />
+
     <TextView
         android:id="@+id/tv_AloitusTeksti_Peli"
         android:layout_width="wrap_content"
