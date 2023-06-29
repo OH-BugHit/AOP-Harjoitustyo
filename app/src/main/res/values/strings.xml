@@ -1,17 +1,18 @@
 <resources>
-    <string name="app_name">Ready4Play</string>
-    <string name="text_blank">blank</string>
+    <string name="app_name" translatable="false">Ready4Play</string>
+    <string name="text_blank" translatable="false">blank</string>
     <string name="text_score">Score</string>
 
-    <string name="preference_file_key">com.oh.ready4play.PREFERENCE_FILE_KEY</string>
-    <string name="ad_attribution">Ad</string>
+    <string name="preference_file_key" translatable="false">com.oh.ready4play.PREFERENCE_FILE_KEY</string>
+    <string name="ad_attribution" translatable="false">Ad</string>
+    <string name="text_giveName">Insert name for player</string>
 
     <string name="dialog_new_info">Game will not be saved! Proceed?</string>
     <string name="dialog_vahvista">Proceed</string>
     <string name="dialog_peruuta">Continue game</string>
 
     <!-- Alkuvalikko -->
-    <string name="text_gametitle">Ready4Play</string>
+    <string name="text_gametitle" translatable="false">Ready4Play</string>
     <string name="text_newGame">New Game</string>
     <string name="text_gameSettings">Game Settings</string>
     <string name="text_quit">Quit</string>
@@ -28,20 +29,20 @@
     <string name="text_durationDictionary">Duration of the Dictionary:</string>
     <string name="text_inSeconds">seconds</string>
 
-    <string name="saved_task_hitler">task1</string>
-    <string name="saved_task_hoe">task2</string>
-    <string name="saved_task_girlsvsboys">task3</string>
-    <string name="saved_task_truthordare">task4</string>
-    <string name="saved_task_wouldyourahter">task5</string>
-    <string name="saved_task_3shots">task6</string>
-    <string name="saved_task_2truths1lie">task7</string>
-    <string name="saved_task_dictionary">task8</string>
-    <string name="saved_task_fthedealer">task9</string>
-    <string name="saved_task_horserace">task10</string>
-    <string name="saved_task_busdriver">task11</string>
-    <string name="saved_task_stack">task12</string>
-    <string name="saved_dice">diceValue</string>
-    <string name="saved_durationDictionary">durationDictionary</string>
+    <string name="saved_task_hitler" translatable="false">task1</string>
+    <string name="saved_task_hoe" translatable="false">task2</string>
+    <string name="saved_task_girlsvsboys" translatable="false">task3</string>
+    <string name="saved_task_truthordare" translatable="false">task4</string>
+    <string name="saved_task_wouldyourahter" translatable="false">task5</string>
+    <string name="saved_task_3shots" translatable="false">task6</string>
+    <string name="saved_task_2truths1lie" translatable="false">task7</string>
+    <string name="saved_task_dictionary" translatable="false">task8</string>
+    <string name="saved_task_fthedealer" translatable="false">task9</string>
+    <string name="saved_task_horserace" translatable="false">task10</string>
+    <string name="saved_task_busdriver" translatable="false">task11</string>
+    <string name="saved_task_stack" translatable="false">task12</string>
+    <string name="saved_dice" translatable="false">diceValue</string>
+    <string name="saved_durationDictionary" translatable="false">durationDictionary</string>
 
 
     <string name="text_task1_settings">1. Hitler</string>
@@ -64,15 +65,15 @@
     <string name="text_addPlayers">Add players</string>
     <string name="text_typePlayerName">Type name here (max 15 char)</string>
     <string name="text_addedPlayers">Players:</string>
-    <string name="text_add">+</string>
+    <string name="text_add" translatable="false">+</string>
     <string name="text_startGame">Start Game!</string>
     <string name="text_minMax">(2–10 players)</string>
 
     <!-- Peli -->
     <string name="text_newGameText">Always drink responsibly!\n\nRemember the real reason you had fun!\n\nGood luck, have fun!</string>
     <string name="text_fail">Fail</string>
-    <string name="text_3">+3</string>
-    <string name="text_X">X</string>
+    <string name="text_3" translatable="false">+3</string>
+    <string name="text_X" translatable="false">X</string>
     <string name="text_mainMenu">Main Menu</string>
     <string name="text_inTurn">Turn: </string>
     <string name="text_throwDice">Throw the Dice!</string>
@@ -81,20 +82,8 @@
     <string name="text_winner2">(Also take 1 sip)</string>
     <string name="text_secondRound">Second round!</string>
 
-    <!-- Hitler
-     Ässä, Vesiputous. 2, Anna 2 huikkaa. 3, Juo 3 huikkaa. 4, Hitler. 5, 123. 6, Naiset juovat 3 huikkaa. 7, Kategoria. 8, Sääntö. 9, Kaikki juovat 3 huikkaa. 10, Miehet juovat 3 huikkaa. 11, Tauko-kortti. 12, Huora. 13, Kuningashörppy.
-    Hitler:
-    Kaikkien on noustava seisomaan ja huudettava hitler. Viimeisenä tämän tehnyt joutuu juomaan 3 huikkaa.
-    123:
-    Kortin nostaja juo yhden huikan, seuraava pelaaja juo 2 huikkaan, sitä seuraava 3 huikkaa jne. kunnes kaikki pelaajat ovat joutuneet kerran juomaan.
-    Sääntö:
-    Saat keksiä peliin yhden uuden säännön.
-    Huora:
-    Kortin nostanut valitsee jonkun pelaajan huoraksi ja antaa hänellä kortin. Aina kun joku juo, hän joutuu juomaan saman verran.
-    Kuningashörppy:
-    Kortin nostanut pelaaja kaataa omasta kaljastaan tuoppiin. Se kuka nostaa viimeisen kuninkaan kaataa myös siihen kaljaa ja sitten juo tuopin tyhjäksi.
-     -->
-    <string name="text_hitlerTitle">Hitler</string>
+
+    <string name="text_hitlerTitle" translatable="false">Hitler</string>
     <string name="text_tapToDraw">Tap card to draw!</string>
     <string name="text_taskDescriptionHitler">Rules:\n\nAce, Waterfall\n2, Give 2 sips\n3, Drink 3 sips\n4, Hitler\n5, 123\n6, Women drink 3 sips\n7, Category\n8, Rule\n9, Everybody drinks 3 sips\n10, Men drink 3 sips\n11, Skip-card\n12, Hoe\n13, Kingdrink!\n\nTap card to draw!</string>
     <string name="text_continueGame">Continue game</string>
@@ -106,21 +95,21 @@
         Probably you since you are still reading this!</string>
     <string name="text_123">123!\n\nThe one who drew the card drinks 1, next one 2, next one 3 etc…</string>
     <string name="text_womenDrink">Women drink!\n\nAll the women drink 3 sips!</string>
-    <string name="text_category">Category\n\nPlayer who drew card tells category and first example. Next player must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
+    <string name="text_category">Category  Player who drew card tells category and first example. Next player must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
     <string name="text_rule">Rule!\n\nMake new rule for the game! Rule stays in place until next rule (or you decide, it\'s your rule anyway)</string>
     <string name="text_everybodyDrink">Everyone drinks!\n\nEveryone takes 3 sips</string>
     <string name="text_menDrink">Men drink!\n\nAll the men drink 3 sips</string>
     <string name="text_skip">Skip-Task!\n\nWohoo! This is the "Skip-Task"-card! Unfortunately it doesn\'t allow you to skip actual tasks, but feel free to skip next few sips you should otherwise take!</string>
-    <string name="text_hoe">Hoe!\n\nMake a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 2 sips now! (That makes it 4 to your hoe ;) )</string>
+    <string name="text_hoe">Hoe!\n\nMake a hoe out of friend! Person you choose, has to drink always when you drink (related to game). To seal the deal, both of you take 1 sip now! (So the hoe already takes 2, have fun!)</string>
     <string name="text_kingdrink">KingDrink\n\nTHE Drink! \nPour few sips of your drink to glass. The player mentioned at the screen does the same and drinks it!</string>
 
     <!-- Huora -->
     <string name="text_huoraTitle">Hoe</string>
-    <string name="text_taskDescriptionHoe">Make a hoe out of friend!\n\nPerson you choose, has to drink always when you drink (related to game).\n\nTo seal the deal, both of you take 2 sips now! (That makes it already 4 to your hoe ;) )</string>
+    <string name="text_taskDescriptionHoe">Make a hoe out of friend!\n\nPerson you choose, has to drink always when you drink (related to game).\n\nTo seal the deal, both of you take 1 sip now! (So the hoe already takes 2, have fun!)</string>
 
     <!-- TytotVsPojat -->
     <string name="text_tytotVsPojatTitle">Girls VS Boys!</string>
-    <string name="text_taskDescriptiontytotVsPojat">Together as group, come up with a challenge and create an epic battle against sexes!\n\nYou may choose if the whole team participates or just one on one or something else.\n\nLosers take shots!\n(Thirsty winners may also take ones)</string>
+    <string name="text_taskDescriptiontytotVsPojat">Together as group, come up with a challenge and create an epic battle against sexes!\n\nYou may choose if the whole team participates or just one on one or something else.\n\nLoser team will get to do a task given by winners!</string>
 
     <!-- Totuus vai tehtävä -->
     <string name="text_TruthOrDareTitle">Thruth or Dare!</string>
@@ -132,7 +121,7 @@
 
     <!-- Would You Rather -->
     <string name="text_WouldYouRatherTitle">Would You Rather?</string>
-    <string name="text_taskDescriptionWouldYouRather">Other players ask "would you rather" question from</string>
+    <string name="text_taskDescriptionWouldYouRather">Other players ask \"would you rather\" question from</string>
     <string name="text_taskDescriptionWouldYouRather2">Also take 2 sips.</string>
 
     <!-- 3 shottia -->
@@ -158,7 +147,7 @@
     <!-- Fuck The Dealer -->
     <string name="text_fTheDealerTitle">Fuck The Dealer!</string>
     <string name="text_taskDescriptionFTheDealer">, take this device to your hands for the duration of this task!\n</string>
-    <string name="text_taskDescriptionFTheDealer2">Touch the card to peek it\n</string>
+    <string name="text_taskDescriptionFTheDealer2">Touch "peek" button to peek the card\n</string>
     <string name="text_taskDescriptionFTheDealer3"> tries to guess the card\n</string>
     <string name="text_taskDescriptionFTheDealer4">After first guess, you have to tell if your card is higher or lower (or if it\'s correct).\n\nIf the first guess is right you have to take 5 sips\n\nSame player takes a second guess\n\nYou show everybody the card\n\nIf the card is right, you take 3 sips, if wrong the one who guessed, takes 3 sips\n\nChange card and repeat to all players</string>
     <string name="text_btPeek">Peek</string>
@@ -166,7 +155,7 @@
 
     <!-- Ravit -->
     <string name="text_horseRaceTitle">Horse Race!</string>
-    <string name="text_taskDescriptionHorseRace">Welcome to THE Track!\n\nPlace your bets everybody and get ready for some track fun!\n\nEveryone places some sips bet to one Ace of their choose respectively.\n\nWhen next card is drawn the ace with same suit as drawn proceeds at track.\n\nAll players whose horse is behind leader has to drink their bet at every turn.\n\nWhen last coming horse reaches step. The card at side is turn and ace with same suit as turned card has to go back one step.\n\nThose whose horse (Ace) crosses the finish line first gets to give their bet x 10 to others!\n\nTap the deck for first card after starting the race and declaring your bet to draw a card and drawn card to proceed after turns!</string>
+    <string name="text_taskDescriptionHorseRace">Welcome to THE Track!\n\nPlace your bets everybody and get ready for some track fun!\n\nEveryone places some sips bet to one horse (ace) of their chose respectively.\n\nWhen next card is drawn the ace with same suit as drawn proceeds at track.\n\nAll players whose horse is behind the leading horse or horses, has to drink their bet at every turn.\n\nWhen (and if) last coming horse reaches step, the card at side is turn and ace with same suit as turned card has to go back one step.\n\nThose whose horse crosses the finish line first gets to give their bet x 10 to others!\n\nTap the deck for first card after starting the race and declaring your bet to draw a card and drawn card to proceed after turns!</string>
     <string name="text_heartsWinner">The Ace of Hearts Wins!\n\nGive your bet x 10!</string>
     <string name="text_spadesWinner">The Ace of Spades Wins!\n\nGive your bet x 10!</string>
     <string name="text_diamondsWinner">The Ace of Diamonds Wins!\n\nGive your bet x 10!</string>
@@ -184,8 +173,8 @@
     <string name="text_penaltyBusdriver">Your total penalty sips:</string>
 
     <!-- Kasa -->
-    <string name="text_stackTitle">Pile!</string>
-    <string name="text_taskDescriptionStack">Make a pile out of you!</string>
+    <string name="text_stackTitle">Stack!</string>
+    <string name="text_taskDescriptionStack">Make a stack on you!</string>
     <string name="text_taskDescriptionStack2">goes to bottom</string>
     <string name="text_taskDesctiptionStack3">In large games not everybody has to go to pile!\n\nBe safe and don\'t be stupid!</string>
 
@@ -194,6 +183,6 @@
     <string name="contentDesc_GameBoard">Gameboard</string>
 
     <!-- Lopetus -->
-    <string name="text_thanks4Playing">Thanks 4-playing!</string>
+    <string name="text_thanks4Playing" translatable="false">Thanks 4-playing!</string>
 
 </resources>

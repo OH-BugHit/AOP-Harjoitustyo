@@ -20,7 +20,13 @@ import com.oh.ready4play.nativetemplate.NativeTemplateStyle;
 import com.oh.ready4play.nativetemplate.TemplateView;
 
 public class MainActivity extends AppCompatActivity {
+    /**
+     * Mainosten lataaja
+     */
     public AdLoader adLoader;
+    /**
+     * Käytetään tässä testimainoksia
+     */
     public static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
     public static MainActivity INSTANCE;
 
@@ -51,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         NativeTemplateStyle styles = new
-                                NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(Color.WHITE)).build(); //Mainoksen tausta (väri)
+                                NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(Color.WHITE)).build(); //Mainoksen tausta(väri)
 
                         //mediumTemplate
                         TemplateView template = findViewById(R.id.my_template);

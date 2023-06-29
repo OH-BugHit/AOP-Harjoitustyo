@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.oh.ready4play.adapterit_ja_itemit.PelaajaAdapteri;
 
@@ -77,7 +78,7 @@ public class UusiPeli extends Fragment {
             }
             if (!taynna) {
                 if (!etLisattavaPelaajaNimi.getText().toString().equals("") && etLisattavaPelaajaNimi.getText().toString().length() < 15) {
-                    Pelaaja pelaaja = new Pelaaja(vapaaNappula(), etLisattavaPelaajaNimi.getText().toString(), valitseNappula(vapaaNappula(), true));
+                    Pelaaja pelaaja = new Pelaaja(vapaaNappula(), etLisattavaPelaajaNimi.getText().toString(), valitseNappula(vapaaNappula()));
                     if (etLisattavaPelaajaNimi.getText().toString().equals("OH")) {
                         pelaaja.pelaajakuva = ResourcesCompat.getDrawable(getResources(),R.drawable.nappula_led_vihrea,null);
                     }
@@ -85,7 +86,7 @@ public class UusiPeli extends Fragment {
                     etLisattavaPelaajaNimi.setText("");
                 } else {
                     System.out.println("Nimi puuttuu");
-                    //TODO: Tee ilmoitus nimen puuttumisesta jos aikaa
+                    Toast.makeText(INSTANCE.getContext(), R.string.text_giveName,Toast.LENGTH_SHORT).show();
                 }
                 recyclerView.setAdapter(new PelaajaAdapteri(itemArrayList));
             } else {btLisaaPelaaja.setEnabled(false);}
@@ -119,28 +120,38 @@ public class UusiPeli extends Fragment {
         return vapaaNappula;
     }
 
+    /**
+     * Palauttaa vapaana olevan nappulan kuvan
+     * @param vapaaNappula Vapaana oleva nappula
+     * @return Palauttaa nappulan kuvan
+     */
     private int seuraavaNappula(int vapaaNappula) {
         switch (vapaaNappula) {
             case 0 -> {return R.drawable.nappula_kulta;}
-            case 1 -> {return R.drawable.nappula_peili;}
+            case 1 -> {return R.drawable.nappula_valkoinen_marmori;}
             case 2 -> {return R.drawable.nappula_jade;}
-            case 3 -> {return R.drawable.nappula_valkoinen_marmori;}
+            case 3 -> {return R.drawable.nappula_punainen_emali;}
             case 4 -> {return R.drawable.nappula_safiiri;}
             case 5 -> {return R.drawable.nappula_ruby;}
             case 6 -> {return R.drawable.nappula_carbon;}
             case 7 -> {return R.drawable.nappula_keltainen_emali;}
-            case 8 -> {return R.drawable.nappula_punainen_emali;}
+            case 8 -> {return R.drawable.nappula_peili;}
             case 9 -> {return R.drawable.nappula_sininen_emali;}
             case 10 -> {return R.drawable.block;}
         }
         return R.drawable.block;
     }
 
-    private Drawable valitseNappula(int vapaaNappula, boolean varaa) {
+    /**
+     * Valitsee nappulan
+     * @param vapaaNappula Saa vapaana olevan nappulan indeksinumeron
+     * @return Palauttaa uudelle pelaajalle vapaan nappulan kuvan
+     */
+    private Drawable valitseNappula(int vapaaNappula) {
         Drawable drawable = ivNappulanKuva.getDrawable();
         switch (vapaaNappula) {
             case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 -> {
-                if (varaa) nappulaKuva[vapaaNappula] = false;
+                nappulaKuva[vapaaNappula] = false;
                 btLisaaPelaaja.setEnabled(true);
             }
             case 10 -> {

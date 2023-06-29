@@ -22,13 +22,23 @@ import java.util.Random;
 
 
 public class Hitler extends Fragment {
-    private View view;
+    /**
+     * Näkymässä näkyvä kortti
+     */
     private ImageView ivKortti;
+    /**
+     * Ohjeistus
+     */
     private TextView tvOhjeet;
+    /**
+     * Näyttää arvotun pelaajan nimen
+     */
     private TextView tvArvottu;
     private final Random random = new Random();
+    /**
+     * Vuorossa olevan pelaajan indeksi
+     */
     private int pelaajaVuorossa;
-    private NativeAd nativeAd;
 
     public Hitler() {
         super(R.layout.fragment_hitler);
@@ -39,7 +49,7 @@ public class Hitler extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        view = inflater.inflate(R.layout.fragment_hitler, container, false);
+        View view = inflater.inflate(R.layout.fragment_hitler, container, false);
 
         pelaajaVuorossa = Peli.vuorossaPelaaja;
         tvArvottu = view.findViewById(R.id.tvArvottuPelaaja_Hitler);
@@ -59,7 +69,6 @@ public class Hitler extends Fragment {
         });
 
         btJatkaPelia.setOnClickListener(e -> {
-
             tvArvottu.setText("");
             tvOhjeet.setText(R.string.text_taskDescriptionHitler);
             Peli.seuraavaVuoro = true;
@@ -73,7 +82,10 @@ public class Hitler extends Fragment {
         return view;
     }
 
-    //TODO: TEE KUVAT KORTEISTA JA ASETA NE TÄNNE!
+    /**
+     * Näytetään kortin tapahtuma (tehtävä)
+     * @param kortti Saa parametrikseen arvotun kortin arvon (1-13)
+     */
     private void kortinTapahtuma(Kortti kortti) {
         switch (kortti.arvo) {
             case 1 -> {
@@ -124,6 +136,10 @@ public class Hitler extends Fragment {
         ivKortti.setImageDrawable(kortti.kuva);
     }
 
+    /**
+     * Arpoo korttipakasta kortin
+     * @return Palauttaa arvotun kortin
+     */
     private Kortti arvoKortti() {
         return Peli.pakka.get(random.nextInt(Peli.pakka.size()));
     }

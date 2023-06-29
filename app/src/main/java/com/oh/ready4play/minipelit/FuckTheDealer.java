@@ -1,10 +1,8 @@
 package com.oh.ready4play.minipelit;
 
 import android.annotation.SuppressLint;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,13 +16,11 @@ import android.widget.TextView;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class FuckTheDealer extends Fragment {
-    ArrayList<Drawable> kortit = new ArrayList<>();
-    ImageView ivKortti;
-    ImageView ivPeitto;
+    private ImageView ivKortti;
+    private ImageView ivPeitto;
     private TextView tvOhje1;
     private TextView tvOhje2;
     private TextView tvOhje3;
@@ -38,7 +34,6 @@ public class FuckTheDealer extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        alustaKortit();
         View view = inflater.inflate(R.layout.fragment_fuck_the_dealer, container, false);
 
         ivKortti = view.findViewById(R.id.ivKortti_FtheDealer);
@@ -132,7 +127,4 @@ public class FuckTheDealer extends Fragment {
         ivKortti.setImageDrawable(Peli.pakka.get(random.nextInt(Peli.pakka.size())).kuva);
     }
 
-    private void alustaKortit() {
-        //TODO: Aseta tänne kaikki kortit
-    }
 }

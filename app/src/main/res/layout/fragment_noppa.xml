@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Noppa">
 
-    <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:id="@+id/ivNoppa"
         android:layout_width="match_parent"
