@@ -4,6 +4,7 @@
     <string name="text_score">Score</string>
 
     <string name="preference_file_key">com.oh.ready4play.PREFERENCE_FILE_KEY</string>
+    <string name="ad_attribution">Ad</string>
 
     <string name="dialog_new_info">Game will not be saved! Proceed?</string>
     <string name="dialog_vahvista">Proceed</string>

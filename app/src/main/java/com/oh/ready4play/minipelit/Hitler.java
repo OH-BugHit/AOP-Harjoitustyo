@@ -2,16 +2,24 @@ package com.oh.ready4play.minipelit;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.nativead.NativeAd;
+import com.google.android.gms.ads.nativead.NativeAdView;
 import com.oh.ready4play.Kortti;
+import com.oh.ready4play.MainActivity;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
@@ -19,11 +27,14 @@ import java.util.Random;
 
 
 public class Hitler extends Fragment {
+    private View view;
     private ImageView ivKortti;
     private TextView tvOhjeet;
     private TextView tvArvottu;
     private final Random random = new Random();
     private int pelaajaVuorossa;
+    private NativeAd nativeAd;
+
     public Hitler() {
         super(R.layout.fragment_hitler);
     }
@@ -33,7 +44,7 @@ public class Hitler extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View view = inflater.inflate(R.layout.fragment_hitler, container, false);
+        view = inflater.inflate(R.layout.fragment_hitler, container, false);
 
         pelaajaVuorossa = Peli.vuorossaPelaaja;
         tvArvottu = view.findViewById(R.id.tvArvottuPelaaja_Hitler);
@@ -50,6 +61,7 @@ public class Hitler extends Fragment {
             Kortti kortti = arvoKortti();
             kortinTapahtuma(kortti);
             btJatkaPelia.setVisibility(View.VISIBLE);
+            MainActivity.INSTANCE.adLoader.loadAd(new AdRequest.Builder().build());
         });
 
         btJatkaPelia.setOnClickListener(e -> {
@@ -68,7 +80,7 @@ public class Hitler extends Fragment {
     private void kortinTapahtuma(Kortti kortti) {
         switch (kortti.arvo) {
             case 1 -> {
-               tvOhjeet.setText(R.string.text_waterfallDesc);
+                tvOhjeet.setText(R.string.text_waterfallDesc);
             }
             case 2 -> {
                 tvOhjeet.setText(R.string.text_give2);
@@ -118,4 +130,5 @@ public class Hitler extends Fragment {
     private Kortti arvoKortti() {
         return Peli.pakka.get(random.nextInt(Peli.pakka.size()));
     }
+
 }

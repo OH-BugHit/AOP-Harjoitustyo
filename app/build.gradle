@@ -32,8 +32,14 @@ android {
 
 dependencies {
 
+    //Mainokset
+    implementation 'com.google.android.gms:play-services-ads:22.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.errorprone:error_prone_annotations:2.16'
+    //Mainokset loppuu
+
     // --Navigation starts--
-    def nav_version = "2.5.3"
+    def nav_version = "2.6.0"
 
     // Java language implementation
     implementation "androidx.navigation:navigation-fragment:$nav_version"
