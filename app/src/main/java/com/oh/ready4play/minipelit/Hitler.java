@@ -2,22 +2,17 @@ package com.oh.ready4play.minipelit;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.google.android.gms.ads.AdLoader;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.gms.ads.nativead.NativeAdView;
 import com.oh.ready4play.Kortti;
 import com.oh.ready4play.MainActivity;
 import com.oh.ready4play.Peli;
@@ -61,10 +56,10 @@ public class Hitler extends Fragment {
             Kortti kortti = arvoKortti();
             kortinTapahtuma(kortti);
             btJatkaPelia.setVisibility(View.VISIBLE);
-            MainActivity.INSTANCE.adLoader.loadAd(new AdRequest.Builder().build());
         });
 
         btJatkaPelia.setOnClickListener(e -> {
+
             tvArvottu.setText("");
             tvOhjeet.setText(R.string.text_taskDescriptionHitler);
             Peli.seuraavaVuoro = true;
@@ -73,6 +68,8 @@ public class Hitler extends Fragment {
                     .setReorderingAllowed(true)
                     .commit();
         });
+
+        MainActivity.INSTANCE.adLoader.loadAd(new AdRequest.Builder().build());
         return view;
     }
 

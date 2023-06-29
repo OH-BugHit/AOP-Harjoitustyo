@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Lataa mainos
-        adLoader = new AdLoader.Builder(MainActivity.this, "ca-app-pub-3940256099942544/2247696110")
+        adLoader = new AdLoader.Builder(MainActivity.this, ADMOB_AD_UNIT_ID)
                 .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
                     @Override
                     public void onNativeAdLoaded(NativeAd nativeAd) {
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
                         NativeTemplateStyle styles = new
                                 NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(Color.WHITE)).build(); //Mainoksen tausta (väri)
+
+                        //mediumTemplate
                         TemplateView template = findViewById(R.id.my_template);
                         template.setStyles(styles);
                         template.setNativeAd(nativeAd);
@@ -67,8 +70,5 @@ public class MainActivity extends AppCompatActivity {
                         // used here to specify individual options settings.
                         .build())
                 .build();
-
-        //Pyydetään mainos
-        // adLoader.loadAd(new AdRequest.Builder().build());
     }
 }
