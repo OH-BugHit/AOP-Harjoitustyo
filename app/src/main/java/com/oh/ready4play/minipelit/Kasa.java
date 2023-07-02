@@ -13,6 +13,11 @@ import android.widget.TextView;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
+/**
+ * Kasa -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Kasa extends Fragment {
 
     public Kasa() {super(R.layout.fragment_kasa);}

@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -19,6 +18,11 @@ import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.oh.ready4play.nativetemplate.NativeTemplateStyle;
 import com.oh.ready4play.nativetemplate.TemplateView;
 
+/**
+ * MainActivity. Sovellus käynnistyy täältä
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class MainActivity extends AppCompatActivity {
     /**
      * Mainosten lataaja
@@ -28,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
      * Käytetään tässä testimainoksia
      */
     public static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
+    /**
+     * Tämä, luotu, käytettävä MainActivity-olio.
+     */
     public static MainActivity INSTANCE;
 
     @Override
@@ -52,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         if (adLoader.isLoading()) {
                             Toast.makeText(MainActivity.this,"Native ads loaded successfully", Toast.LENGTH_SHORT).show();
                         }
+                        //Tuhoaa mainoksen jos sovellus on "tuhottu"
                         if (isDestroyed()) {
                             nativeAd.destroy();
                         }
@@ -60,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                                 NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(Color.WHITE)).build(); //Mainoksen tausta(väri)
 
                         //mediumTemplate
-                        TemplateView template = findViewById(R.id.my_template);
+                        TemplateView template = findViewById(R.id.medium_mainos_template);
                         template.setStyles(styles);
                         template.setNativeAd(nativeAd);
                     }
@@ -74,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 .withNativeAdOptions(new NativeAdOptions.Builder()
                         // Methods in the NativeAdOptions.Builder class can be
                         // used here to specify individual options settings.
+                        // Ei tarvetta tässä
                         .build())
                 .build();
     }

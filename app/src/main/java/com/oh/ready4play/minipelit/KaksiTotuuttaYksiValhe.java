@@ -9,10 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.oh.ready4play.Pelaaja;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
+/**
+ * Kaksi totuutta, yksi valhe -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class KaksiTotuuttaYksiValhe extends Fragment {
 
     public KaksiTotuuttaYksiValhe() {super(R.layout.fragment_kaksi_totuutta_yksi_valhe);}

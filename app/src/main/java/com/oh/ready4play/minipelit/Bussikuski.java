@@ -19,29 +19,96 @@ import com.oh.ready4play.R;
 import java.util.ArrayList;
 import java.util.Random;
 
-
+/**
+ * Bussikuskipeli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Bussikuski extends Fragment {
     private final Random random = new Random();
+    /**
+     * Boolean siirtämään tieto arvauksen onnistuneisuudesta
+     */
     private boolean onnistui;
+    /**
+     * Aloittavan kortin arvo
+     */
     private int aloitusArvo;
+    /**
+     * Edellisen kortin arvo (verrattava kortti)
+     */
     private int edellinenArvo;
+    /**
+     * Uuden kortin arvo
+     */
     private int uusiArvo;
+    /**
+     * Bussikuskipelin taso, jolla ollaan menossa
+     */
     private int tasoMenossa = 1;
+    /**
+     * Juomasakko, joka esitetään lopussa
+     */
     private int sakko = 0;
+    /**
+     * Korttipakka, josta nostetaan kortteja peliin
+     */
     private ArrayList<Kortti> bussiPakka;
-    private ImageView kortti4;
+    /**
+     * 1 tason kortti
+     */
     private ImageView kortti1;
-    private ImageView kortti5;
+    /**
+     * 2 tason kortti
+     */
     private ImageView kortti2;
+    /**
+     * 3 tason kortti
+     */
     private ImageView kortti3;
+    /**
+     * 4 tason kortti
+     */
+    private ImageView kortti4;
+    /**
+     * 5 tason kortti
+     */
+    private ImageView kortti5;
+    /**
+     * Osoitin, joka osoittaa arvattavan kortin
+     */
     private ImageView osoitin;
+    /**
+     * Aloituskortti
+     */
     private ImageView ivAloituskortti;
+    /**
+     * TextView näyttämään ohjeistuksen peliin
+     */
     private TextView tvOheistus;
+    /**
+     * Aloituskortin TexwView ohjetekstin näyttämiseen
+     */
     private TextView tvAloituskortti;
+    /**
+     * Sakon tekstin esittävä TextView
+     */
     private TextView tvSakko;
+    /**
+     * Sakon määrän esittävä TextView
+     */
     private TextView tvSakkoMaara;
+    /**
+     * Painike ylemmän (tai suuremman) arvaamiseen
+     */
     private Button btYlempi;
+    /**
+     * Painike alemman (tai pienemmän) arvaamiseen
+     */
     private Button btAlempi;
+    /**
+     * Painike pelin jatkamiseen
+     */
     private Button btJatkaPelia;
 
 
@@ -128,6 +195,12 @@ public class Bussikuski extends Fragment {
         return view;
     }
 
+    /**
+     * Vuoron jälkeen tehtävät toimenpiteet:
+     * Asetetaan uusi vertailukortti
+     * Siirretään osoitinta
+     * Pelin loppuminen, mikäli peli loppu
+     */
     private void vuoronJalkeen() {
         btAlempi.setEnabled(true);
         btYlempi.setEnabled(true);
@@ -151,6 +224,10 @@ public class Bussikuski extends Fragment {
         }
     }
 
+    /**
+     * Siirtää osoitinta, joka näyttää arvattavan kortin
+     * @param onnistui Siirretään osoitin alkuun jos False, Muuten siirretään eteenpäin pelissä
+     */
     private void siirraOsoitinta(boolean onnistui) {
         if (!onnistui) {
             osoitin.setX((float) (kortti1.getX()+kortti1.getHeight()*0.5));
@@ -196,6 +273,12 @@ public class Bussikuski extends Fragment {
         }
     }
 
+    /**
+     * Metodi testaamaan onko arvaus oikein
+     * @param low0hi1 Arvaus. 0 = Pienempi, 1 = Suurempi
+     * @param nosto kortti joka on arvauksen kohteena
+     * @return palauttaa True jos arvaus on oikein, muuten false.
+     */
     private boolean testaaMenikoOikein(int low0hi1, Kortti nosto) {
         if (low0hi1 == 0) {
             if (nosto.arvo < edellinenArvo) {
@@ -248,6 +331,9 @@ public class Bussikuski extends Fragment {
         }
     }
 
+    /**
+     * Piilottaa kortit alkutilaan
+     */
     private void piilotaKortit() {
         kortti1.setImageResource(R.drawable.tausta);
         kortti2.setImageResource(R.drawable.tausta);
@@ -256,6 +342,9 @@ public class Bussikuski extends Fragment {
         kortti5.setImageResource(R.drawable.tausta);
     }
 
+    /**
+     * Arpoo aloituskortin ja asettaa sen aloituskortiksi
+     */
     private void asetaAloituskortti() {
         Kortti nosto = nostaKortti();
         System.out.println("Aloituskortti: " + nosto.arvo);
@@ -264,15 +353,25 @@ public class Bussikuski extends Fragment {
         ivAloituskortti.setImageDrawable(nosto.kuva);
     }
 
+    /**
+     * Arpoo kortin bussiPakasta
+     * @return palauttaa arvotun kortin
+     */
     private Kortti nostaKortti() {
         Kortti palautus = bussiPakka.remove(random.nextInt(bussiPakka.size()));
         return palautus;
     }
 
+    /**
+     * Luo kopion korttipakasta bussikuskipeliä varten
+     */
     private void alustaKorttipakka() {
         bussiPakka = (ArrayList<Kortti>) Peli.pakka.clone();
     }
 
+    /**
+     * Asettaa pelin näkyvyydet kun peli aloitetaan
+     */
     private void peliNakyviin() {
         tvOheistus.setVisibility(View.INVISIBLE);
         tvAloituskortti.setVisibility(View.VISIBLE);

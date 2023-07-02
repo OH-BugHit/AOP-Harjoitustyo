@@ -12,15 +12,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.nativead.NativeAd;
 import com.oh.ready4play.Kortti;
 import com.oh.ready4play.MainActivity;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
+import com.oh.ready4play.nativetemplate.TemplateView;
 
 import java.util.Random;
 
-
+/**
+ * Hitler -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Hitler extends Fragment {
     /**
      * Näkymässä näkyvä kortti
@@ -50,6 +54,7 @@ public class Hitler extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_hitler, container, false);
+        TemplateView templateView = view.findViewById(R.id.medium_mainos_template);
 
         pelaajaVuorossa = Peli.vuorossaPelaaja;
         tvArvottu = view.findViewById(R.id.tvArvottuPelaaja_Hitler);
@@ -71,6 +76,7 @@ public class Hitler extends Fragment {
         btJatkaPelia.setOnClickListener(e -> {
             tvArvottu.setText("");
             tvOhjeet.setText(R.string.text_taskDescriptionHitler);
+            templateView.destroyNativeAd();
             Peli.seuraavaVuoro = true;
             Peli.fragmentManager.beginTransaction()
                     .remove(this)

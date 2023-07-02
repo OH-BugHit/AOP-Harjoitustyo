@@ -23,20 +23,43 @@ import com.oh.ready4play.adapterit_ja_itemit.PelaajaAdapteri;
 import java.util.ArrayList;
 
 //TODO: Jäänyt bugi. Jos poistaa viimeisen, sen nappula tulee uusiksi. Muuten toimii
+
+/**
+ * Uuden pelin asettamisen näkymä
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class UusiPeli extends Fragment {
 
     @SuppressLint("StaticFieldLeak")
     public static UusiPeli INSTANCE;
+    /**
+     * Pelaajalista joka esitetään recycle viewissä ja josta haetaan pelaajat peliin.
+     */
     public static ArrayList<Pelaaja> itemArrayList = new ArrayList<>();
     /**
      * Taulukko, johon tallennetaan tieto onko nappula varattu
      */
     public static Boolean[] nappulaKuva = new Boolean[10];
-    //Tarkastele tätä ongelmaa
+    /**
+     * Seuraavaksi lisättävän pelaajan nappulan kuva
+     */
     public ImageView ivNappulanKuva;
+    /**
+     * Pelaajien lukumäärä
+     */
     public static int pelaajaMaara = 0;
+    /**
+     * Painike pelaajan lisäämistä varten
+     */
     public Button btLisaaPelaaja;
+    /**
+     * Painike pelin aloittamiseen
+     */
     public Button btAloitaPeli;
+    /**
+     * Boolean kertomaan onko 10 pelaajaa jo valittu
+     */
     public static boolean taynna = false;
 
     public UusiPeli() {

@@ -12,7 +12,11 @@ import android.widget.Button;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
-
+/**
+ * Tytöt vs Pojat -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class TytotVsPojat extends Fragment {
 
 

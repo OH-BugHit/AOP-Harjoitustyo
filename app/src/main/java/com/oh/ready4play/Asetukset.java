@@ -16,10 +16,23 @@ import android.widget.RadioButton;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
-
+/**
+ * Pelin asetusten fragment
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Asetukset extends Fragment {
+    /**
+     * Kytkimet käytössä olevien tehtävien asettamiseen
+     */
     SwitchMaterial[] kytkimet = new SwitchMaterial[12];
+    /**
+     * Noppien valintojen radiobuttonit (samaa grouppia)
+     */
     RadioButton[] nopat = new RadioButton[4];
+    /**
+     * Sanaselityspelin keston asettamista varten EditText
+     */
     EditText etSanariKesto;
 
     public Asetukset() {
@@ -70,8 +83,10 @@ public class Asetukset extends Fragment {
         return view;
     }
 
+    /**
+     * Aiemmin käytettyjen asetusten lataaminen ja asettaminen näkymään
+     */
     private void lataaAsetukset() {
-        //REQUIRE TÄNNE KOKEILU??
         Alkuvalikko.sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         int defalutNoppa = 0;
         int noppa = Alkuvalikko.sharedPref.getInt(getString(R.string.saved_dice), defalutNoppa);
@@ -98,6 +113,11 @@ public class Asetukset extends Fragment {
         etSanariKesto.setText(String.valueOf(Alkuvalikko.sharedPref.getInt(getString(R.string.saved_durationDictionary),defalutSanariKesto)));
     }
 
+    /**
+     * Kytkimen asetuksen lataaminen
+     * @param avain Avainarvo asetuksessa
+     * @return Palauttaa TRUE, jos asetus käytössä (Defaultvalue = True)
+     */
     private boolean lataaKytkin(String avain) {
         boolean taskKaytossa;
         boolean defaultValue = true;
@@ -105,6 +125,9 @@ public class Asetukset extends Fragment {
         return taskKaytossa;
     }
 
+    /**
+     * Asetusten tallentaminen
+     */
     private void tallennaAsetukset() {
         int noppa = 0;
         for (int i = 0; i < nopat.length; i++) {

@@ -8,11 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.oh.ready4play.nativetemplate.TemplateView;
+
 /**
- * poistuu sovelluksesta
+ * Sovelluksesta poistumisen näkymä
+ * @version 1.0
+ * @author Olli Hilke
  */
 public class QuitFragment extends Fragment {
-
 
     public QuitFragment() {
     }

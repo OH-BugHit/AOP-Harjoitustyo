@@ -12,6 +12,11 @@ import android.widget.Button;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
+/**
+ * Huora -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Huora extends Fragment {
 
     public Huora() {super(R.layout.fragment_huora);}

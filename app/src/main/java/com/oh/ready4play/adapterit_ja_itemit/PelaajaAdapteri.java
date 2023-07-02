@@ -18,7 +18,7 @@ import com.oh.ready4play.UusiPeli;
 import java.util.ArrayList;
 
 /**
- * RecycleViewAdapteri Pelaajille
+ * RecycleViewAdapteri Pelaajien esittämiseen Uusipeli näkymässä
  */
 public class PelaajaAdapteri extends RecyclerView.Adapter<PelaajaAdapteri.ViewHolder> {
     public static ArrayList<Pelaaja> pelaajaSetti;

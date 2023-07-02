@@ -7,20 +7,16 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-import androidx.navigation.Navigator;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-
-import com.oh.ready4play.AlkuvalikkoDirections;
 
 /**
  * Alkuvalikko-fragment sisältää alkuvalikon
- * @version 0.1
+ * @version 1.0
+ * @author Olli Hilke
  */
 public class Alkuvalikko extends Fragment {
     protected static SharedPreferences sharedPref;
@@ -32,7 +28,6 @@ public class Alkuvalikko extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        lataaAsetukset();
 
         View view = inflater.inflate(R.layout.fragment_alkuvalikko, container, false);
         Context context = getActivity();
@@ -55,10 +50,6 @@ public class Alkuvalikko extends Fragment {
             Navigation.findNavController(view).navigate(R.id.action_alkuvalikko_to_quitFragment2);
         });
 
-
         return view;
-    }
-
-    private void lataaAsetukset() {
     }
 }

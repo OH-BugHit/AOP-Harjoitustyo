@@ -18,23 +18,76 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Random;
 
+/**
+ * Sanaselitys -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Sanaselitys extends Fragment {
     private final Random random = new Random();
+    /**
+     * Suomenkielinen sanasto, josta sanat arvotaan, kun kieli on suomi
+     */
     ArrayList<String> sanasto = new ArrayList<>();
+    /**
+     * Englanninkielinen sanasto, josta sanat arvotaan, kun kieli on englanti
+     */
     ArrayList<String> glossary = new ArrayList<>();
+    /**
+     * Säie hoitamaan ajanlaskua
+     */
     Thread t1;
+    /**
+     * Sanan ohittamispainike
+     */
     Button btOhita;
+    /**
+     * Painike oikein arvatulle sanalle
+     */
     Button btOikein;
+    /**
+     * TextView näyttämään jäljellä oleva aika
+     */
     private TextView tvAika;
+    /**
+     * TextView näyttämään kerätyt pisteet
+     */
     private TextView tvPistenaytto;
+    /**
+     * TextView esittämään selitettävä sana
+     */
     private TextView tvSana;
+    /**
+     * TextView esittämään tehtävän ohjeistus
+     */
     private TextView tvSanaOhjeistus;
+    /**
+     * TextView esittämään tehtävän ohjeistus
+     */
     private TextView tvSanaOhjeistus2;
+    /**
+     * TextView esittämään tehtävän ohjeistus
+     */
     private TextView tvSanaOhjeistus3;
+    /**
+     * TextView esittämään tehtävän ohjeistus
+     */
     private TextView tvSanaOhjeistus4;
+    /**
+     * TextView näyttämään ohjeistuksessa käytettävissä oleva aika
+     */
     private TextView tvSekuntimaara;
+    /**
+     * Aika, joka kuluu tehtävässä
+     */
     private int aika;
+    /**
+     * Pistemäärä, jota kerätään tehtävässä
+     */
     private double pistemaara = 0;
+    /**
+     * Volatile boolean tehtävän loppumisen seuraamiseksi
+     */
     volatile boolean sanapeliOhi = false;
 
     public Sanaselitys() {super(R.layout.fragment_sanaselitys);}
@@ -46,7 +99,7 @@ public class Sanaselitys extends Fragment {
         View view = inflater.inflate(R.layout.fragment_sanaselitys, container, false);
         aika = Peli.peliasetukset.sanaselitysKesto;
 
-        teeSanaluettelo();
+        alustaSanaluettelot();
 
         tvSekuntimaara = view.findViewById(R.id.tvSekuntimaara_Sanaselitys);
         tvSekuntimaara.setText(String.valueOf(Peli.peliasetukset.sanaselitysKesto));
@@ -111,6 +164,12 @@ public class Sanaselitys extends Fragment {
         return view;
     }
 
+    /**
+     * Metodi toteuttamaan pelin päättyminen ja etenemisen mahdollistaminen
+     * @param btOhita Painike "ohita"
+     * @param btOikein Painike "Oikein"
+     * @param btJatkaPelia Painike "Jatka peliä"
+     */
     private void etenePelissa(Button btOhita, Button btOikein, Button btJatkaPelia) {
         if (sanapeliOhi) {
             btOikein.setVisibility(View.INVISIBLE);
@@ -125,6 +184,9 @@ public class Sanaselitys extends Fragment {
         }
     }
 
+    /**
+     * Peliajan käynnistäminen
+     */
     private void kaynnistaAjastin() {
         t1 = new Thread(() -> {
             while (aika > 0) {
@@ -141,12 +203,18 @@ public class Sanaselitys extends Fragment {
         t1.start();
     }
 
+    /**
+     * Ajan kulumisen päivittäminen
+     */
     private void paivitaAika() {
         aika -= 1;
         String asetaAika =aika + " ";
         tvAika.setText(asetaAika);
     }
 
+    /**
+     * Seuraavan sanana asettaminen
+     */
     private void seuraavaSana() {
         String kieli = Locale.getDefault().getISO3Language();
         System.out.println("Valittu kieli on: " + kieli);
@@ -161,7 +229,11 @@ public class Sanaselitys extends Fragment {
             }
         } else tvSana.setText(R.string.text_blank);
     }
-    private void teeSanaluettelo() {
+
+    /**
+     * Sanaluetteloiden alustaminen
+     */
+    private void alustaSanaluettelot() {
         sanasto.add("Margariini");
         sanasto.add("Tomaatti");
         sanasto.add("Lasi");

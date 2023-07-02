@@ -19,6 +19,11 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * Ravit -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Ravit extends Fragment {
     /**
      * Ravit-peli käyttää normaalia 52 kortin korttipakkaa joka koostuu korteista.

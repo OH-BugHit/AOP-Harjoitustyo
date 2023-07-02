@@ -18,14 +18,43 @@ import com.oh.ready4play.R;
 
 import java.util.Random;
 
+/**
+ * Fuck the Dealer -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class FuckTheDealer extends Fragment {
+    /**
+     * Arvattava kortti
+     */
     private ImageView ivKortti;
+    /**
+     * Kortti, jolla peitetään arvottava kortti
+     */
     private ImageView ivPeitto;
+    /**
+     * TextView ohjeiden esittämiseen
+     */
     private TextView tvOhje1;
+    /**
+     * TextView ohjeiden esittämiseen
+     */
     private TextView tvOhje2;
+    /**
+     * TextView ohjeiden esittämiseen
+     */
     private TextView tvOhje3;
+    /**
+     * TextView ohjeiden esittämiseen
+     */
     private TextView tvOhje4;
+    /**
+     * TextView vuorossaolevan pelaajan näyttämiseen
+     */
     private TextView tvPelaaja;
+    /**
+     * TextView seuraavan pelaajan nimen esittämiseen
+     */
     private TextView tvSeuraavaPelaaja;
     private final Random random = new Random();
     public FuckTheDealer() {super(R.layout.fragment_fuck_the_dealer);}
@@ -112,19 +141,17 @@ public class FuckTheDealer extends Fragment {
         };
 
         btKurkista.setOnTouchListener(kurkista);
-
-
-
         btSeuraavaKortti.setOnClickListener(e -> {
             seuraavaKortti();
         });
 
-
         return view;
     }
 
+    /**
+     * Arpoo seuraavan kortin ja asettaa sen kortiksi.
+     */
     private void seuraavaKortti() {
         ivKortti.setImageDrawable(Peli.pakka.get(random.nextInt(Peli.pakka.size())).kuva);
     }
-
 }

@@ -11,6 +11,8 @@ import java.util.Random;
 
 /**
  * Pelaaja -olio sisältää pelaajan tiedot ja tilanteen
+ * @version 1.0
+ * @author Olli Hilke
  */
 public class Pelaaja {
     /**
@@ -31,11 +33,21 @@ public class Pelaaja {
      */
     public int sijainti;
 
+    /**
+     * Pelaajan imageview
+     */
     public ImageView imageView;
 
+    /**
+     * Kaksitotuutta tehtävän jälkeen tämä arvo asetetaan TRUE
+     * Käytetään näyttämään tehtävän jälkeisten painikkeiden näyttämiseen
+     */
     public boolean kaksiTotuutta = false;
+    /**
+     * Onko saatu bonusaskelia
+     */
     public boolean bonusAskeleet = false;
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
     /**
      * Alustaja pelaajalle
@@ -48,6 +60,11 @@ public class Pelaaja {
         this.pelaajakuva = pelaajaKuva;
     }
 
+    /**
+     * Pelaajan liikuttaminen ruutuun pelilaudalla
+     * @param pelaaja Liikutettava pelaaja
+     * @param uusiRuutu Ruutu, johon pelaaja liikutetaan
+     */
     public static void liikutaPelaajaRuutuun(Pelaaja pelaaja, Ruutu uusiRuutu) {
         pelaaja.sijainti = uusiRuutu.ruudunNumero;
         ConstraintLayout.LayoutParams lp = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);

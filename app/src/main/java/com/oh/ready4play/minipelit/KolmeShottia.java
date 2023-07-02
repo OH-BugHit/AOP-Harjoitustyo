@@ -13,7 +13,11 @@ import android.widget.TextView;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
-
+/**
+ * Kolme Shottia -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class KolmeShottia extends Fragment {
 
     public KolmeShottia() {super(R.layout.fragment_kolme_shottia);}

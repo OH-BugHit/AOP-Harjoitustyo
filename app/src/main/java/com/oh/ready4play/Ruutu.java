@@ -1,5 +1,10 @@
 package com.oh.ready4play;
 
+/**
+ * Peliruutu pelilaudalla
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Ruutu {
     /**
      * Ruutu-luokan alustaja. Alustaja asettaa lisasiirrot = 0 ja pelaajiaRuudussa = 0
@@ -41,5 +46,8 @@ public class Ruutu {
      */
     protected int lisaSiirrot;
 
+    /**
+     * Pelaajien lukumäärä peliruudussa
+     */
     protected int pelaajiaRuudussa;
 }

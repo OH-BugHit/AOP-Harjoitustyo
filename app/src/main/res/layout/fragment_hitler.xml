@@ -49,7 +49,7 @@
         android:layout_marginBottom="80dp"
         android:rotation="-90"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/my_template"
+        app:layout_constraintEnd_toStartOf="@+id/medium_mainos_template"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvOhjeistus_Hitler"
         app:layout_constraintTop_toBottomOf="@+id/divider7"
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@+id/divider7" />
 
     <com.oh.ready4play.nativetemplate.TemplateView
-        android:id="@+id/my_template"
+        android:id="@+id/medium_mainos_template"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"

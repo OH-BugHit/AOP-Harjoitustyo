@@ -2,6 +2,8 @@ package com.oh.ready4play;
 
 /**
  * Luokka sisältää tallennettavat ja ladattavat peliasetukset joita käytetään pelissä.
+ * @version 1.0
+ * @author Olli Hilke
  */
 public class Peliasetukset {
     /**

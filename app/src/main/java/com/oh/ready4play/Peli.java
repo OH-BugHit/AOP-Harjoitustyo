@@ -1,7 +1,6 @@
 package com.oh.ready4play;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,7 +33,15 @@ import com.oh.ready4play.minipelit.WouldYouRather;
 
 import java.util.ArrayList;
 
+/**
+ * Pelin päänäkymä
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Peli extends Fragment {
+    /**
+     * Pelissä käytettävä Noppa-luokan noppa-olio
+     */
     private Noppa noppa;
     /**
      * Käytettävät peliasetukset

@@ -5,9 +5,20 @@ import android.widget.ImageView;
 
 import java.util.Random;
 
+/**
+ * Noppa-luokka
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class Noppa {
     private static final Random random = new Random();
+    /**
+     * Nopan kuvan imageView
+     */
     private final ImageView noppaKuva;
+    /**
+     * Nopan heiton tulos
+     */
     private int heitto;
 
     public Noppa(ImageView noppaKuva) {
@@ -16,7 +27,7 @@ public class Noppa {
 
     /**
      * Heittää nopan ja asettaa nopan kuvan näkyviin
-     * @return Palauttaa heiton arvon (mukaan laskettu asetuksissa määritelty asetus)
+     * @return Palauttaa heiton arvon (mukaan laskettu asetuksissa määritelty lisäys noppaan)
      */
     public int heitaNoppaa() throws InterruptedException {
         noppaKuva.setVisibility(View.VISIBLE);

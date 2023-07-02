@@ -12,7 +12,6 @@ import com.oh.ready4play.R;
 
 public class MinipeliNakyma extends Fragment {
 
-
     public MinipeliNakyma() {
         // Required empty public constructor
     }

@@ -13,7 +13,11 @@ import android.widget.TextView;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
-
+/**
+ * Totuus vai Tehtävä -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class TotuusVaiTehtava extends Fragment {
 
 
