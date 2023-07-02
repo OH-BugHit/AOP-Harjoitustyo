@@ -177,6 +177,8 @@ public class Peli extends Fragment {
 
         //Haetaan pelaajat muuttujaan uuden pelin luonnissa lisätyt pelaatat
         pelaajat = UusiPeli.itemArrayList;
+        //Nollataan ArrayList, jotta pelaajalista tehdään kokonaan uusiksi seuraavaan uuteen peliin. Näin vältetään bugi, jossa listan pituus ei asettunut oikein aloitettaessa uusi peli.
+        UusiPeli.itemArrayList = new ArrayList<>();
 
         TextView tvPaavalikko = view.findViewById(R.id.tvPaavalikko);
         TextView tvLopeta = view.findViewById(R.id.tvLopeta);

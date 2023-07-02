@@ -31,6 +31,7 @@ public class Sanaselitys extends Fragment {
     private TextView tvSanaOhjeistus;
     private TextView tvSanaOhjeistus2;
     private TextView tvSanaOhjeistus3;
+    private TextView tvSanaOhjeistus4;
     private TextView tvSekuntimaara;
     private int aika;
     private double pistemaara = 0;
@@ -52,6 +53,7 @@ public class Sanaselitys extends Fragment {
         tvSanaOhjeistus = view.findViewById(R.id.tvOhjeistus_Sanaselitys);
         tvSanaOhjeistus2 = view.findViewById(R.id.tvOhjeistus2_Sanaselitys);
         tvSanaOhjeistus3 = view.findViewById(R.id.tvOhjeistus3_sanaselitys);
+        tvSanaOhjeistus4 = view.findViewById(R.id.tvOhjeistus4_sanaselitys);
         tvSana = view.findViewById(R.id.tvSana_Sanaselitys);
         tvPistenaytto = view.findViewById(R.id.tvPisteNaytto_Sanaselitys);
         tvPistenaytto.setVisibility(View.INVISIBLE);
@@ -84,6 +86,7 @@ public class Sanaselitys extends Fragment {
             tvSanaOhjeistus.setVisibility(View.INVISIBLE);
             tvSanaOhjeistus2.setVisibility(View.INVISIBLE);
             tvSanaOhjeistus3.setVisibility(View.INVISIBLE);
+            tvSanaOhjeistus4.setVisibility(View.INVISIBLE);
             tvSekuntimaara.setVisibility(View.INVISIBLE);
             tvPistenaytto.setVisibility(View.VISIBLE);
             tvPistenaytto.setText("0");

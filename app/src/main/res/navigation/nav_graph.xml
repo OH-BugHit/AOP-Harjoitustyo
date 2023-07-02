@@ -12,13 +12,25 @@
         tools:layout="@layout/fragment_alkuvalikko" >
         <action
             android:id="@+id/action_alkuvalikko_to_asetukset"
-            app:destination="@id/asetukset" />
+            app:destination="@id/asetukset"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_alkuvalikko_to_uusiPeli"
-            app:destination="@id/uusiPeli" />
+            app:destination="@id/uusiPeli"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_alkuvalikko_to_quitFragment2"
-            app:destination="@id/quitFragment" />
+            app:destination="@id/quitFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/asetukset"
@@ -27,7 +39,11 @@
         tools:layout="@layout/fragment_asetukset" >
         <action
             android:id="@+id/action_asetukset_to_alkuvalikko"
-            app:destination="@id/alkuvalikko" />
+            app:destination="@id/alkuvalikko"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/uusiPeli"
@@ -36,7 +52,11 @@
         tools:layout="@layout/fragment_uusi_peli" >
         <action
             android:id="@+id/action_uusiPeli_to_peli"
-            app:destination="@id/peli" />
+            app:destination="@id/peli"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/peli"
@@ -45,10 +65,18 @@
         tools:layout="@layout/fragment_peli" >
         <action
             android:id="@+id/action_peli_to_alkuvalikko"
-            app:destination="@id/alkuvalikko" />
+            app:destination="@id/alkuvalikko"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_peli_to_quitFragment2"
-            app:destination="@id/quitFragment" />
+            app:destination="@id/quitFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/quitFragment"

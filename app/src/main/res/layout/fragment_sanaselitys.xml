@@ -48,10 +48,11 @@
         android:text="@string/text_taskDescriptionDictionary"
         android:textAlignment="center"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus2_Sanaselitys"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPisteNaytto_Sanaselitys" />
 
     <Button
         android:id="@+id/btOhita_Sanaselitys"
@@ -84,13 +85,15 @@
         android:id="@+id/btAloita_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:background="@drawable/btn_teema_start"
         android:minHeight="48dp"
         android:text="@string/text_start"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus4_sanaselitys"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus_Sanaselitys" />
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus4_sanaselitys" />
 
     <TextView
         android:id="@+id/tvPisteNaytto_Sanaselitys"
@@ -134,6 +137,7 @@
         android:layout_height="wrap_content"
         android:text="@string/text_taskDescriptionDictionary2"
         android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus4_sanaselitys"
         app:layout_constraintEnd_toStartOf="@+id/tvSekuntimaara_Sanaselitys"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
@@ -161,5 +165,18 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvSekuntimaara_Sanaselitys"
         app:layout_constraintTop_toTopOf="@+id/tvOhjeistus2_Sanaselitys" />
+
+    <TextView
+        android:id="@+id/tvOhjeistus4_sanaselitys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_taskDescriptionDictionary3"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/btAloita_Sanaselitys"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus2_Sanaselitys" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
