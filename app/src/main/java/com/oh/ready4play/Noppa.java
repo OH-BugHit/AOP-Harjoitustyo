@@ -66,12 +66,12 @@ public class Noppa {
             case 3 -> noppaKuva.setImageResource(R.drawable.noppa3);
             case 4 -> noppaKuva.setImageResource(R.drawable.noppa4);
             case 5 -> noppaKuva.setImageResource(R.drawable.noppa5);
-            case 6 -> noppaKuva.setImageResource(R.drawable.noppa6);
-            case 7 -> noppaKuva.setImageResource(R.drawable.noppa7);
-            case 8 -> noppaKuva.setImageResource(R.drawable.noppa8);
-            case 9 -> noppaKuva.setImageResource(R.drawable.noppa9);
-            case 10 -> noppaKuva.setImageResource(R.drawable.noppa10);
-            case 11 -> noppaKuva.setImageResource(R.drawable.noppa11);
+            case 6 -> noppaKuva.setImageResource(R.drawable.noppa1);
+            case 7 -> noppaKuva.setImageResource(R.drawable.noppa1);
+            case 8 -> noppaKuva.setImageResource(R.drawable.noppa1);
+            case 9 -> noppaKuva.setImageResource(R.drawable.noppa1);
+            case 10 -> noppaKuva.setImageResource(R.drawable.noppa1);
+            case 11 -> noppaKuva.setImageResource(R.drawable.noppa1);
         }
     }
 }
