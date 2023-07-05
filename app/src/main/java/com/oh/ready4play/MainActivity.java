@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public AdLoader adLoader;
     /**
-     * Käytetään tässä testimainoksia
+     * Sisältää mainostajan tunnuksen.
+     * Tässä harjoitustyössä käytetty testitunnusta
      */
-    public static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
+    private static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
     /**
      * Tämä, luotu, käytettävä MainActivity-olio.
      */
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         MainActivity.INSTANCE = this;
         setContentView(R.layout.activity_main);
-
 
         //Mainokset
         MobileAds.initialize(this, new OnInitializationCompleteListener() {

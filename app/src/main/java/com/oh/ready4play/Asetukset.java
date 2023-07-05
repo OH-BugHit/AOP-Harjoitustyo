@@ -25,19 +25,17 @@ public class Asetukset extends Fragment {
     /**
      * Kytkimet käytössä olevien tehtävien asettamiseen
      */
-    SwitchMaterial[] kytkimet = new SwitchMaterial[12];
+    private final SwitchMaterial[] kytkimet = new SwitchMaterial[12];
     /**
      * Noppien valintojen radiobuttonit (samaa grouppia)
      */
-    RadioButton[] nopat = new RadioButton[4];
+    private final RadioButton[] nopat = new RadioButton[4];
     /**
      * Sanaselityspelin keston asettamista varten EditText
      */
-    EditText etSanariKesto;
+    private EditText etSanariKesto;
 
-    public Asetukset() {
-        // Required empty public constructor
-    }
+    public Asetukset() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

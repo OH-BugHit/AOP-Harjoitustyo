@@ -7,11 +7,11 @@ package com.oh.ready4play;
  */
 public class Sijainti {
     /**
-     * Sijainti x-kordinaatistolla
+     * Sijainti x-koordinaatistolla
      */
     protected float x;
     /**
-     * Sijainti y-kordinaatistolla
+     * Sijainti y-koordinaatistolla
      */
     protected float y;
 }

@@ -42,7 +42,7 @@ public class UusiPeli extends Fragment {
      */
     public static Boolean[] nappulaKuva = new Boolean[10];
     /**
-     * Seuraavaksi lisättävän pelaajan nappulan kuva
+     * Seuraavaksi lisättävän pelaajan nappulan imageView
      */
     public ImageView ivNappulanKuva;
     /**
@@ -69,7 +69,6 @@ public class UusiPeli extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_uusi_peli, container, false);
         INSTANCE = this;
 

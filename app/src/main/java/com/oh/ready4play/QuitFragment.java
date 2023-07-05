@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.oh.ready4play.nativetemplate.TemplateView;
-
 /**
  * Sovelluksesta poistumisen näkymä
  * @version 1.0
@@ -23,25 +21,23 @@ public class QuitFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_quit, container, false);
 
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                quit();
+        Thread t1 = new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
+            quit();
         });
         t1.start();
-
         return view;
     }
 
+    /**
+     * Sovelluksen sammutus
+     */
     private void quit() {
         MainActivity.INSTANCE.finish();
         System.exit(0);

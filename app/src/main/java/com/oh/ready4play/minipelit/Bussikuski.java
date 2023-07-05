@@ -111,7 +111,6 @@ public class Bussikuski extends Fragment {
      */
     private Button btJatkaPelia;
 
-
     public Bussikuski() {super(R.layout.fragment_bussikuski);}
 
     @Override

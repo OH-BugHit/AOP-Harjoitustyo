@@ -50,14 +50,16 @@ public class Peli extends Fragment {
     /**
      * Seuraava vuoro asetetaan true-tilaan minipelissä sen päättyessä.
      */
-    public static volatile boolean seuraavaVuoro = false;
-
-    private static volatile boolean noppaValmis = false;
+    public static boolean seuraavaVuoro = false;
+    /**
+     * Nopan heittoanimaation odotus. True kun heittoanimaatio on ohi.
+     */
+    private static boolean noppaValmis = false;
     /**
      * Tehtävä 11 (epäonnistuessaan) ja 12 siirtävät pelaajaa taaksepäin.
      * Tällä booleanilla toteutetaan taaksepäin siirtämisen pyytäminen, kun noppaa heitetään seuraavan kerran.
      */
-    public static volatile boolean tehtavaFail = false;
+    public static boolean tehtavaFail = false;
     /**
      * Korttipakka, 52 korttia, ei jokereita. Tästä pakasta tehdään kopiota minipeleissä joissa vaaditaan kortin poisto pakasta.
      */
@@ -65,11 +67,11 @@ public class Peli extends Fragment {
     /**
      * Tämän fragmentin näkymä
      */
-    View view;
+    private View view;
     /**
      * Pelinappulat pelilaudalla. (Max 10 pelaajaa)
      */
-    public static ImageView[] ivNappulat = new ImageView[10];
+    private static final ImageView[] ivNappulat = new ImageView[10];
     /**
      * Pelaajat Pelaaja-olioina
      */
@@ -106,7 +108,13 @@ public class Peli extends Fragment {
      * Onko hampurilaisvalikkoa klikattu vai ei
      */
     private boolean hampuriKlikattu = false;
+    /**
+     * Painike hampurilaisvalikossa päävalikkoon siirtymiseen
+     */
     private Button btMainMenu;
+    /**
+     * Painike pelin aloittamiseen
+     */
     private Button btAloita;
     /**
      * Painike nopan heittämiseen
@@ -132,6 +140,9 @@ public class Peli extends Fragment {
      * Vuorossa olevan pelaajan niminäkymä
      */
     private TextView tvVuorossaPelaaja;
+    /**
+     * Tekstikenttä esittämään aloitussanat pelissä
+     */
     private TextView tvAlkuteksti;
     /**
      * Fragment Manager minipelien asettamiseen ja vaihtamiseen
@@ -146,10 +157,7 @@ public class Peli extends Fragment {
      */
     private FragmentContainerView fcvMinipeliNakyma;
 
-    public Peli() {
-        // Required empty public constructor
-    }
-
+    public Peli() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -370,7 +378,6 @@ public class Peli extends Fragment {
         }
     }
 
-
     /**
      * Seuraavan pelaajan vuoron odotus ja asetus kun vuoro voidaan siirtää
      */
@@ -407,7 +414,6 @@ public class Peli extends Fragment {
         Pelaaja.liikutaPelaajaRuutuun(pelaajat.get(edellinenPelaaja),peliRuudut.get(uusiruutu));
     }
 
-
     /**
      * Seuraavan pelivuorossa olevan pelaajan tiedot näkyville
      */
@@ -419,6 +425,7 @@ public class Peli extends Fragment {
 
     /**
      * Vuoron toiminnon suorittaminen (minipelin käynnistys)
+     * Asettaa fcvMinipeliNakyma FragmentContainerViewiin näkyviin minipelin, joka vastaa toimintoa
      * @param toiminto Suoritettava toiminto (vastaa pelilaudan ruudun toimintonumeroa)
      */
     private void suoritaVuoro(int toiminto) {
@@ -514,7 +521,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 3) {
                 if (peliasetukset.tytotVsPojat) {
                     ruutuOk = true;
@@ -522,7 +528,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 4) {
                 if (peliasetukset.totuusVaiTehtava) {
                     ruutuOk = true;
@@ -537,7 +542,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 6) {
                 if (peliasetukset.kolmeShottia) {
                     ruutuOk = true;
@@ -545,7 +549,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 7) {
                 if (peliasetukset.kaksiTotuutta1Valhe) {
                     ruutuOk = true;
@@ -553,7 +556,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 8) {
                 if (peliasetukset.sanaselitys) {
                     ruutuOk = true;
@@ -561,7 +563,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 9) {
                 if (peliasetukset.fuckTheDealer) {
                     ruutuOk = true;
@@ -569,7 +570,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 10) {
                 if (peliasetukset.ravit) {
                     ruutuOk = true;
@@ -577,7 +577,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 11) {
                 if (peliasetukset.bussikuski) {
                     ruutuOk = true;
@@ -585,7 +584,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 12) {
                 if (peliasetukset.kasa) {
                     ruutuOk = true;
@@ -593,7 +591,6 @@ public class Peli extends Fragment {
                     uusiruutu++;
                 }
             }
-
             if (peliRuudut.get(uusiruutu).tehtava == 13) {
                 ruutuOk = true;
             }
@@ -882,7 +879,6 @@ public class Peli extends Fragment {
                     ruutu.tehtava = 10;
                     ruutu.ruudunNumero = 21;
                 }
-                //EI VIELÄ
                 case 22 -> {
                     sijainti.x = laskeX(0.2712);
                     sijainti.y = laskeY(0.1355);
@@ -1215,7 +1211,7 @@ public class Peli extends Fragment {
     }
 
     /**
-     * Extraktoitu metodi tehtävän käytettävyyden lataamiseen
+     * Metodi tehtävän käytettävyyden lataamiseen
      * @param avain avainsana, jolla asetus on tallennettu
      * @return palauttaa FALSE jos tehtävä ei käytössä, muuten TRUE
      */
@@ -1225,5 +1221,4 @@ public class Peli extends Fragment {
         taskKaytossa = Alkuvalikko.sharedPref.getBoolean(avain,defaultValue);
         return taskKaytossa;
     }
-
 }

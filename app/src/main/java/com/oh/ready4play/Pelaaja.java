@@ -1,9 +1,7 @@
 package com.oh.ready4play;
 
 import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -27,17 +25,14 @@ public class Pelaaja {
      * Pelinappulan kuva
      */
     public Drawable pelaajakuva;
-
     /**
      * Pelaajan sijainti pelilaudalla. Peliruudun numero
      */
     public int sijainti;
-
     /**
      * Pelaajan imageview
      */
     public ImageView imageView;
-
     /**
      * Kaksitotuutta tehtävän jälkeen tämä arvo asetetaan TRUE
      * Käytetään näyttämään tehtävän jälkeisten painikkeiden näyttämiseen
@@ -47,8 +42,10 @@ public class Pelaaja {
      * Onko saatu bonusaskelia
      */
     public boolean bonusAskeleet = false;
+    /**
+     * Käytetään satunnaistamaan pelaajan sijainti peliruudussa.
+     */
     private static final Random random = new Random();
-
     /**
      * Alustaja pelaajalle
      * @param pelaajaNimi Pelaajan nimi
@@ -59,7 +56,6 @@ public class Pelaaja {
         this.pelaajanimi = pelaajaNimi;
         this.pelaajakuva = pelaajaKuva;
     }
-
     /**
      * Pelaajan liikuttaminen ruutuun pelilaudalla
      * @param pelaaja Liikutettava pelaaja

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
-
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -21,9 +20,7 @@ import android.widget.Button;
 public class Alkuvalikko extends Fragment {
     protected static SharedPreferences sharedPref;
 
-    public Alkuvalikko() {
-        // Required empty public constructor
-    }
+    public Alkuvalikko() {}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

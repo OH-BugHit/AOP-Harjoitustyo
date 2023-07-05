@@ -13,7 +13,6 @@ public class Ruutu {
         this.lisaSiirrot = 0;
         this.pelaajiaRuudussa = 0;
     }
-
     /**
      * Peliruudun yksilöivä numero.
      */
@@ -22,7 +21,6 @@ public class Ruutu {
      * Peliruudun x/y sijainti. Suhteellinen sijainti
      */
     protected Sijainti sijainti;
-
     /**
      * Ruudun tehtävänumero
      * 0 = Lähtö
@@ -45,7 +43,6 @@ public class Ruutu {
      * Lisäsiirrot tehtävän onnistuessa tai epäonnistuessa.
      */
     protected int lisaSiirrot;
-
     /**
      * Pelaajien lukumäärä peliruudussa
      */

@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * RecycleViewAdapteri Pelaajien esittämiseen Uusipeli näkymässä
  */
 public class PelaajaAdapteri extends RecyclerView.Adapter<PelaajaAdapteri.ViewHolder> {
-    public static ArrayList<Pelaaja> pelaajaSetti;
+    private static ArrayList<Pelaaja> pelaajaSetti;
 
     public PelaajaAdapteri(ArrayList<Pelaaja> pelaajat) {pelaajaSetti = pelaajat;}
 

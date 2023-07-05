@@ -11,6 +11,9 @@ import java.util.Random;
  * @author Olli Hilke
  */
 public class Noppa {
+    /**
+     * Käytetään arpomaan nopan heittoanimaation arvoja ja nopan heiton tulos
+     */
     private static final Random random = new Random();
     /**
      * Nopan kuvan imageView
@@ -44,7 +47,6 @@ public class Noppa {
 
         Thread.sleep(1000);
 
-
         if (Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet) {
             heitto += 3;
             Peli.pelaajat.get(Peli.vuorossaPelaaja).bonusAskeleet = false;
@@ -66,12 +68,12 @@ public class Noppa {
             case 3 -> noppaKuva.setImageResource(R.drawable.noppa3);
             case 4 -> noppaKuva.setImageResource(R.drawable.noppa4);
             case 5 -> noppaKuva.setImageResource(R.drawable.noppa5);
-            case 6 -> noppaKuva.setImageResource(R.drawable.noppa1);
-            case 7 -> noppaKuva.setImageResource(R.drawable.noppa1);
-            case 8 -> noppaKuva.setImageResource(R.drawable.noppa1);
-            case 9 -> noppaKuva.setImageResource(R.drawable.noppa1);
-            case 10 -> noppaKuva.setImageResource(R.drawable.noppa1);
-            case 11 -> noppaKuva.setImageResource(R.drawable.noppa1);
+            case 6 -> noppaKuva.setImageResource(R.drawable.noppa6);
+            case 7 -> noppaKuva.setImageResource(R.drawable.noppa7);
+            case 8 -> noppaKuva.setImageResource(R.drawable.noppa8);
+            case 9 -> noppaKuva.setImageResource(R.drawable.noppa9);
+            case 10 -> noppaKuva.setImageResource(R.drawable.noppa10);
+            case 11 -> noppaKuva.setImageResource(R.drawable.noppa11);
         }
     }
 }

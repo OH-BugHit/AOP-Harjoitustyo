@@ -1,7 +1,6 @@
 package com.oh.ready4play;
 
 import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
 
 /**
  * Pelikortti
