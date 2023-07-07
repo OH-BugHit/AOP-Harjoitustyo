@@ -38,11 +38,11 @@ public class Hitler extends Fragment {
      * Näyttää arvotun pelaajan nimen
      */
     private TextView tvArvottu;
-    private final Random random = new Random();
     /**
-     * Vuorossa olevan pelaajan indeksi
+     * Arpoo pelaajan juomaan Kuningas-drinkin.
+     * Arpoo kortin pakasta peliin
      */
-    private int pelaajaVuorossa;
+    private final Random random = new Random();
 
     public Hitler() {
         super(R.layout.fragment_hitler);
@@ -51,12 +51,10 @@ public class Hitler extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_hitler, container, false);
+
         TemplateView templateView = view.findViewById(R.id.medium_mainos_template);
 
-        pelaajaVuorossa = Peli.vuorossaPelaaja;
         tvArvottu = view.findViewById(R.id.tvArvottuPelaaja_Hitler);
 
         ivKortti = view.findViewById(R.id.ivKortti_Hitler);
@@ -132,8 +130,8 @@ public class Hitler extends Fragment {
             }
             case 13 -> {
                 tvOhjeet.setText(R.string.text_kingdrink);
-                int arvottu = pelaajaVuorossa;
-                while (arvottu == pelaajaVuorossa) {
+                int arvottu = Peli.vuorossaPelaaja;
+                while (arvottu == Peli.vuorossaPelaaja) {
                     arvottu = random.nextInt(Peli.pelaajamaara);
                 }
                 tvArvottu.setText(Peli.pelaajat.get(arvottu).pelaajanimi);
@@ -149,5 +147,4 @@ public class Hitler extends Fragment {
     private Kortti arvoKortti() {
         return Peli.pakka.get(random.nextInt(Peli.pakka.size()));
     }
-
 }

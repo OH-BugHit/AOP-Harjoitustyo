@@ -20,7 +20,6 @@ import com.oh.ready4play.R;
  */
 public class TotuusVaiTehtava extends Fragment {
 
-
     public TotuusVaiTehtava() {super(R.layout.fragment_totuus_vai_tehtava);}
 
     @Override

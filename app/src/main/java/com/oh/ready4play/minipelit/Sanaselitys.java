@@ -24,27 +24,30 @@ import java.util.Random;
  * @author Olli Hilke
  */
 public class Sanaselitys extends Fragment {
+    /**
+     * Arpoo selitettävän sanan
+     */
     private final Random random = new Random();
     /**
      * Suomenkielinen sanasto, josta sanat arvotaan, kun kieli on suomi
      */
-    ArrayList<String> sanasto = new ArrayList<>();
+    private final ArrayList<String> sanasto = new ArrayList<>();
     /**
      * Englanninkielinen sanasto, josta sanat arvotaan, kun kieli on englanti
      */
-    ArrayList<String> glossary = new ArrayList<>();
+    private final ArrayList<String> glossary = new ArrayList<>();
     /**
      * Säie hoitamaan ajanlaskua
      */
-    Thread t1;
+    private Thread t1;
     /**
      * Sanan ohittamispainike
      */
-    Button btOhita;
+    private Button btOhita;
     /**
      * Painike oikein arvatulle sanalle
      */
-    Button btOikein;
+    private Button btOikein;
     /**
      * TextView näyttämään jäljellä oleva aika
      */
@@ -86,16 +89,15 @@ public class Sanaselitys extends Fragment {
      */
     private double pistemaara = 0;
     /**
-     * Volatile boolean tehtävän loppumisen seuraamiseksi
+     *  boolean tehtävän loppumisen seuraamiseksi
      */
-    volatile boolean sanapeliOhi = false;
+    private boolean sanapeliOhi = false;
 
     public Sanaselitys() {super(R.layout.fragment_sanaselitys);}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sanaselitys, container, false);
         aika = Peli.peliasetukset.sanaselitysKesto;
 
@@ -120,7 +122,6 @@ public class Sanaselitys extends Fragment {
 
         btOhita.setVisibility(View.INVISIBLE);
         btOikein.setVisibility(View.INVISIBLE);
-
 
         btOikein.setOnClickListener(e -> {
             pistemaara += 1;
@@ -150,7 +151,6 @@ public class Sanaselitys extends Fragment {
             kaynnistaAjastin();
             seuraavaSana();
         });
-
 
         btJatkaPelia.setOnClickListener(e -> {
             t1.interrupt();
@@ -213,7 +213,7 @@ public class Sanaselitys extends Fragment {
     }
 
     /**
-     * Seuraavan sanana asettaminen
+     * Seuraavan sanan asettaminen
      */
     private void seuraavaSana() {
         String kieli = Locale.getDefault().getISO3Language();

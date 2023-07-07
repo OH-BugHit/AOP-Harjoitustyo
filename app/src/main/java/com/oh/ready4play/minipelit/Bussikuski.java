@@ -25,6 +25,9 @@ import java.util.Random;
  * @author Olli Hilke
  */
 public class Bussikuski extends Fragment {
+    /**
+     *Arpoo korttipakasta kortteja
+     */
     private final Random random = new Random();
     /**
      * Boolean siirtämään tieto arvauksen onnistuneisuudesta
@@ -160,7 +163,6 @@ public class Bussikuski extends Fragment {
         kortti4.setImageResource(R.drawable.tausta);
         kortti5.setImageResource(R.drawable.tausta);
         ivAloituskortti.setImageResource(R.drawable.tausta);
-
 
         btAloita.setOnClickListener(e -> {
             peliNakyviin();

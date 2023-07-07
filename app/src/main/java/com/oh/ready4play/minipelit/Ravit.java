@@ -29,6 +29,9 @@ public class Ravit extends Fragment {
      * Ravit-peli käyttää normaalia 52 kortin korttipakkaa joka koostuu korteista.
      */
     private ArrayList<Kortti> ravipakka;
+    /**
+     * Arpoo kortin (ja poistaa sen pakasta)
+     */
     private final Random random = new Random();
     /**
      * Nappula pelin jatkamiseksi
@@ -74,11 +77,17 @@ public class Ravit extends Fragment {
      * Arvotun kortin ImageView
      */
     private ImageView ivArvottuKortti;
+    /**
+     * Ravipelin taustakuva
+     */
     private ImageView ivTausta;
     /**
      * Ohjeiden ja lopputekstin TextView
      */
     private TextView tvTitle;
+    /**
+     * Näyttää ohjeistuksen peliin alussa
+     */
     private TextView tvOheistus;
     /**
      * Käytetään määrittämään onko taso 1 saavutettu kaikilla ässillä

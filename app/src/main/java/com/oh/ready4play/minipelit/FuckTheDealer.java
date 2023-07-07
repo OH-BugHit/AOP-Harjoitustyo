@@ -56,6 +56,9 @@ public class FuckTheDealer extends Fragment {
      * TextView seuraavan pelaajan nimen esittämiseen
      */
     private TextView tvSeuraavaPelaaja;
+    /**
+     * Arpoo kortin
+     */
     private final Random random = new Random();
     public FuckTheDealer() {super(R.layout.fragment_fuck_the_dealer);}
 
@@ -96,7 +99,6 @@ public class FuckTheDealer extends Fragment {
             asetettavaSeuraavaNimi = Peli.pelaajat.get(Peli.vuorossaPelaaja + 1).pelaajanimi + " ";
             tvSeuraavaPelaaja.setText(asetettavaSeuraavaNimi);
         }
-
 
         btAloita.setOnClickListener(e -> {
             tvOhje1.setVisibility(View.INVISIBLE);
