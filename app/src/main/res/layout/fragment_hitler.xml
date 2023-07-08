@@ -16,6 +16,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/text_hitlerTitle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/medium_mainos_template"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,8 +25,10 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/medium_mainos_template"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle_Hitler" />
 
@@ -33,11 +36,11 @@
         android:id="@+id/btJatkaPelia_Hitler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
         android:background="@drawable/btn_teema_continue"
         android:text="@string/text_continueGame"
         app:layout_constraintBottom_toBottomOf="@+id/tvTitle_Hitler"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/medium_mainos_template"
+        app:layout_constraintStart_toEndOf="@+id/tvTitle_Hitler"
         app:layout_constraintTop_toTopOf="@+id/tvTitle_Hitler" />
 
     <ImageView
@@ -82,7 +85,7 @@
     <com.oh.ready4play.nativetemplate.TemplateView
         android:id="@+id/medium_mainos_template"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:gnt_template_type="@layout/gnt_medium_template_view"
@@ -90,6 +93,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/ivKortti_Hitler"
-        app:layout_constraintTop_toBottomOf="@+id/divider7" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider6"
+        android:layout_width="1dp"
+        android:layout_height="409dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider7"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@
     <string name="preference_file_key" translatable="false">com.oh.ready4play.PREFERENCE_FILE_KEY</string>
     <string name="ad_attribution" translatable="false">Ad</string>
     <string name="text_giveName">Insert name for player</string>
+    <string name="text_tooLongName">Name too long! Max 15 characters.</string>
 
     <string name="dialog_new_info">Game will not be saved! Proceed?</string>
     <string name="dialog_vahvista">Proceed</string>
@@ -88,14 +89,14 @@
     <string name="text_taskDescriptionHitler">Rules:\n\nAce, Waterfall\n2, Give 2 sips\n3, Drink 3 sips\n4, Hitler\n5, 123\n6, Women drink 3 sips\n7, Category\n8, Rule\n9, Everybody drinks 3 sips\n10, Men drink 3 sips\n11, Skip-card\n12, Hoe\n13, Kingdrink!\n\nTap card to draw!</string>
     <string name="text_continueGame">Continue game</string>
 
-    <string name="text_waterfallDesc">Waterfall!\n\nAll players start to drink…</string>
+    <string name="text_waterfallDesc">Waterfall!\n\nAll players start to drink.\nPlayer who draw the card can stop drinking first. Other players may not stop drinking before players before him/her has stopped.</string>
     <string name="text_give2">Give two!\n\nGive 2 sips to someone!</string>
     <string name="text_drink3">Drink three!\n\nDrink 3 sips!</string>
     <string name="text_hitler">Hitler\n\nLast one to stand up and shout "Hitler!", drinks 3 sips.
         Probably you since you are still reading this!</string>
     <string name="text_123">123!\n\nThe one who drew the card drinks 1, next one 2, next one 3 etc…</string>
     <string name="text_womenDrink">Women drink!\n\nAll the women drink 3 sips!</string>
-    <string name="text_category">Category  Player who drew card tells category and first example. Next player must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
+    <string name="text_category">Category!\nPlayer who drew card tells category and first example. Next player must say new instance of that category. Failing to come up with new, results to 3 sips penalty. (Played until someone fails)</string>
     <string name="text_rule">Rule!\n\nMake new rule for the game! Rule stays in place until next rule (or you decide, it\'s your rule anyway)</string>
     <string name="text_everybodyDrink">Everyone drinks!\n\nEveryone takes 3 sips</string>
     <string name="text_menDrink">Men drink!\n\nAll the men drink 3 sips</string>

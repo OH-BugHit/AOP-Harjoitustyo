@@ -13,20 +13,60 @@ public class Peliasetukset {
     /**
      * Sanaselityspelin kesto
      */
-    public int sanaselitysKesto = 60;
+    public int sanaselitysKesto = 90;
+    /**
+     * True jos Hitler tehtävä on käytössä, muuten false
+     */
     boolean hitler = true;
+    /**
+     * True jos Huora tehtävä on käytössä, muuten false
+     */
     boolean huora = true;
+    /**
+     * True jos TytötVsPojat tehtävä on käytössä, muuten false
+     */
     boolean tytotVsPojat = true;
+    /**
+     * True jos TotuusVaiTehtävä tehtävä on käytössä, muuten false
+     */
     boolean totuusVaiTehtava = true;
+    /**
+     * True jos Would You Rather tehtävä on käytössä, muuten false
+     */
     boolean wouldYouRather = true;
+    /**
+     * True jos Kolme Shottia tehtävä on käytössä, muuten false
+     */
     boolean kolmeShottia = true;
+    /**
+     * True jos Kaksi Totuutta Yksi Valhe tehtävä on käytössä, muuten false
+     */
     boolean kaksiTotuutta1Valhe = true;
+    /**
+     * True jos Sanaselitys tehtävä on käytössä, muuten false
+     */
     boolean sanaselitys = true;
+    /**
+     * True jos Fuck The Dealer tehtävä on käytössä, muuten false
+     */
     boolean fuckTheDealer = true;
+    /**
+     * True jos Ravit tehtävä on käytössä, muuten false
+     */
     boolean ravit = true;
+    /**
+     * True jos Bussikuski tehtävä on käytössä, muuten false
+     */
     boolean bussikuski = true;
+    /**
+     * True jos Kasa tehtävä on käytössä, muuten false
+     */
     boolean kasa = true;
 
+    /**
+     * Metodi tarkistaa, onko kaikki pelin tehtävät käytössä
+     * @return Palauttaa True, mikäli kaikki pelin tehtävät ovat käytössä, muuten False
+     */
     public boolean kaikkitrue(){
         return this.hitler && this.huora && this.tytotVsPojat && this.totuusVaiTehtava && this.wouldYouRather && this.kolmeShottia && this.kaksiTotuutta1Valhe && this.sanaselitys && this.fuckTheDealer && this.ravit && this.bussikuski && this.kasa;
     }
@@ -37,6 +77,7 @@ public class Peliasetukset {
     public Peliasetukset () {
     }
 
+    /*
     public int falseLukumaara() {
         int falseLkm = 0;
         if (!this.hitler) {falseLkm ++;}
@@ -53,4 +94,5 @@ public class Peliasetukset {
         if (!this.kasa) {falseLkm ++;}
         return falseLkm;
     }
+     */
 }

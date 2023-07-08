@@ -107,7 +107,7 @@ public class Asetukset extends Fragment {
         kytkimet[10].setChecked(lataaKytkin(getString(R.string.saved_task_busdriver)));
         kytkimet[11].setChecked(lataaKytkin(getString(R.string.saved_task_stack)));
 
-        int defalutSanariKesto = 60;
+        int defalutSanariKesto = 90;
         etSanariKesto.setText(String.valueOf(Alkuvalikko.sharedPref.getInt(getString(R.string.saved_durationDictionary),defalutSanariKesto)));
     }
 

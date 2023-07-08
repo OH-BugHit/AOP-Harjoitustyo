@@ -99,7 +99,7 @@ public class UusiPeli extends Fragment {
                 btAloitaPeli.setEnabled(true);
             }
             if (!taynna) {
-                if (!etLisattavaPelaajaNimi.getText().toString().equals("") && etLisattavaPelaajaNimi.getText().toString().length() < 15) {
+                if (!etLisattavaPelaajaNimi.getText().toString().equals("") && etLisattavaPelaajaNimi.getText().toString().length() < 16) {
                     Pelaaja pelaaja = new Pelaaja(vapaaNappula(), etLisattavaPelaajaNimi.getText().toString(), valitseNappula(vapaaNappula()));
                     if (etLisattavaPelaajaNimi.getText().toString().equals("OH")) {
                         pelaaja.pelaajakuva = ResourcesCompat.getDrawable(getResources(),R.drawable.nappula_led_vihrea,null);
@@ -107,8 +107,11 @@ public class UusiPeli extends Fragment {
                     itemArrayList.add(pelaaja);
                     etLisattavaPelaajaNimi.setText("");
                 } else {
-                    System.out.println("Nimi puuttuu");
+                    if (etLisattavaPelaajaNimi.getText().toString().length()>0) {
+                        Toast.makeText(INSTANCE.getContext(), R.string.text_tooLongName, Toast.LENGTH_SHORT).show();
+                    } else {
                     Toast.makeText(INSTANCE.getContext(), R.string.text_giveName,Toast.LENGTH_SHORT).show();
+                    }
                 }
                 recyclerView.setAdapter(new PelaajaAdapteri(itemArrayList));
             } else {btLisaaPelaaja.setEnabled(false);}

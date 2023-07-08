@@ -41,7 +41,7 @@ public class TemplateView extends FrameLayout {
 
     private int templateType;
     private NativeTemplateStyle styles;
-    private NativeAd nativeAd;
+    public NativeAd nativeAd;
     private NativeAdView nativeAdView;
 
     private TextView primaryView;
@@ -250,7 +250,11 @@ public class TemplateView extends FrameLayout {
      * https://developers.google.com/admob/android/native-unified#destroy_ad
      */
     public void destroyNativeAd() {
-        nativeAd.destroy();
+        if (nativeAd != null) {
+            nativeAd.destroy();
+        } else {
+            System.out.println("NativeAd oli null");
+        }
     }
 
     public String getTemplateTypeName() {
