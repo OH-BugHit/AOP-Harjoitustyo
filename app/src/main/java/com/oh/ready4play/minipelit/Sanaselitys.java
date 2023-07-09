@@ -93,6 +93,9 @@ public class Sanaselitys extends Fragment {
      */
     private boolean sanapeliOhi = false;
 
+    /**
+     * Luokan alustaja. Sisältää Sanaselitys layoutin
+     */
     public Sanaselitys() {super(R.layout.fragment_sanaselitys);}
 
     @Override

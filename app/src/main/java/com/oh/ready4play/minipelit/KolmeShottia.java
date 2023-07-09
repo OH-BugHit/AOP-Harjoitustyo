@@ -19,7 +19,9 @@ import com.oh.ready4play.R;
  * @author Olli Hilke
  */
 public class KolmeShottia extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public KolmeShottia() {super(R.layout.fragment_kolme_shottia);}
 
     @Override

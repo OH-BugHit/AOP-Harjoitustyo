@@ -60,6 +60,9 @@ public class FuckTheDealer extends Fragment {
      * Arpoo kortin
      */
     private final Random random = new Random();
+    /**
+     * Luokan parametriton alustaja
+     */
     public FuckTheDealer() {super(R.layout.fragment_fuck_the_dealer);}
 
     @SuppressLint("ClickableViewAccessibility")

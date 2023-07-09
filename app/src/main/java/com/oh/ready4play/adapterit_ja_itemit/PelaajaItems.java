@@ -8,5 +8,8 @@ import com.oh.ready4play.R;
  * Pelaaja Item
  */
 public class PelaajaItems extends Fragment {
+    /**
+     * Luokan parametriton alustaja
+     */
     public PelaajaItems() {super(R.layout.pelaaja_item);}
 }

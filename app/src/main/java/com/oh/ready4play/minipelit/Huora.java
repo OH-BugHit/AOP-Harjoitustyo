@@ -18,7 +18,9 @@ import com.oh.ready4play.R;
  * @author Olli Hilke
  */
 public class Huora extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public Huora() {super(R.layout.fragment_huora);}
 
     @Override

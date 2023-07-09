@@ -14,7 +14,9 @@ import android.view.ViewGroup;
  * @author Olli Hilke
  */
 public class QuitFragment extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja.
+     */
     public QuitFragment() {
     }
 

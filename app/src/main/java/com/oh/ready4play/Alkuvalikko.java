@@ -18,8 +18,13 @@ import android.widget.Button;
  * @author Olli Hilke
  */
 public class Alkuvalikko extends Fragment {
+    /**
+     * Asetusten tallennukseen
+     */
     protected static SharedPreferences sharedPref;
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public Alkuvalikko() {}
 
     @Override

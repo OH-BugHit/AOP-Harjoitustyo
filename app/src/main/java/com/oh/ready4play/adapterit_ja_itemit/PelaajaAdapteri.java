@@ -62,6 +62,10 @@ public class PelaajaAdapteri extends RecyclerView.Adapter<PelaajaAdapteri.ViewHo
         holder.poistaPelaaja.setOnClickListener(poistaPelaajaListener);
     }
 
+    /**
+     * Returns the total number of items in the data set held by the adapter
+     * @return Palauttaa pelaajasetin koon.
+     */
     @Override
     public int getItemCount() {
         return pelaajaSetti.size();

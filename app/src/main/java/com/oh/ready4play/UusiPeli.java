@@ -30,7 +30,9 @@ import java.util.ArrayList;
  * @author Olli Hilke
  */
 public class UusiPeli extends Fragment {
-
+    /**
+     * UusiPeli luokan käytettävä, luotu esiintymä
+     */
     @SuppressLint("StaticFieldLeak")
     public static UusiPeli INSTANCE;
     /**
@@ -61,7 +63,9 @@ public class UusiPeli extends Fragment {
      * Boolean kertomaan onko 10 pelaajaa jo valittu
      */
     public static boolean taynna = false;
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public UusiPeli() {
         super(R.layout.fragment_uusi_peli);
     }
@@ -120,6 +124,9 @@ public class UusiPeli extends Fragment {
         return view;
     }
 
+    /**
+     * Asettaa nappulaKuva taulukon kaikkiin Boolean olioihin arvoksi True
+     */
     private void alustaNappulaKuvaValitsin() {
         for (int i = 0; i < 10; i++) {
             nappulaKuva[i] = true;

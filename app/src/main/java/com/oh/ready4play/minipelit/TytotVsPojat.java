@@ -18,8 +18,9 @@ import com.oh.ready4play.R;
  * @author Olli Hilke
  */
 public class TytotVsPojat extends Fragment {
-
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public TytotVsPojat() {super(R.layout.fragment_tytot_vs_pojat);}
 
 

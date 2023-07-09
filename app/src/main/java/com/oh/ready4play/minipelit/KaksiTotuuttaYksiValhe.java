@@ -18,7 +18,9 @@ import com.oh.ready4play.R;
  * @author Olli Hilke
  */
 public class KaksiTotuuttaYksiValhe extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public KaksiTotuuttaYksiValhe() {super(R.layout.fragment_kaksi_totuutta_yksi_valhe);}
 
     @Override

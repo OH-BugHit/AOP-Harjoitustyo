@@ -43,7 +43,9 @@ public class Hitler extends Fragment {
      * Arpoo kortin pakasta peliin
      */
     private final Random random = new Random();
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public Hitler() {
         super(R.layout.fragment_hitler);
     }

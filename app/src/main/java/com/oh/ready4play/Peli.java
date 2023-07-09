@@ -157,6 +157,9 @@ public class Peli extends Fragment {
      */
     private FragmentContainerView fcvMinipeliNakyma;
 
+    /**
+     * Luokan parametriton alustaja
+     */
     public Peli() {}
 
     @Override

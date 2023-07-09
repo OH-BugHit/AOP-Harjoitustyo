@@ -137,7 +137,9 @@ public class Ravit extends Fragment {
      * Ruutuässän taso
      */
     private int ruutuSijainti = 0;
-
+    /**
+     * Luokan alustaja. Sisältää Ravit-layoutin
+     */
     public Ravit() {super(R.layout.fragment_ravit);}
 
     @Override

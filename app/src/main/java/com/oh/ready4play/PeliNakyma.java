@@ -14,7 +14,9 @@ import android.view.ViewGroup;
  * @author Olli Hilke
  */
 public class PeliNakyma extends Fragment {
-
+    /**
+     * Luokan alustaja. Sisältää PeliNakyma-layoutin
+     */
     public PeliNakyma() {super(R.layout.fragment_peli_nakyma);}
 
     @Override

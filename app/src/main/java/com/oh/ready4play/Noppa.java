@@ -24,6 +24,10 @@ public class Noppa {
      */
     private int heitto;
 
+    /**
+     * Luokan alustaja luo nopan.
+     * @param noppaKuva ImageView, johon nopan kuva asetetaan
+     */
     public Noppa(ImageView noppaKuva) {
         this.noppaKuva = noppaKuva;
     }
@@ -31,6 +35,7 @@ public class Noppa {
     /**
      * Heittää nopan ja asettaa nopan kuvan näkyviin
      * @return Palauttaa heiton arvon (mukaan laskettu asetuksissa määritelty lisäys noppaan)
+     * @throws InterruptedException Sisältää hidastuksia
      */
     public int heitaNoppaa() throws InterruptedException {
         noppaKuva.setVisibility(View.VISIBLE);

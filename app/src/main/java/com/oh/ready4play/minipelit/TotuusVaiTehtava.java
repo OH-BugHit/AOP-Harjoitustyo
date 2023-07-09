@@ -19,7 +19,9 @@ import com.oh.ready4play.R;
  * @author Olli Hilke
  */
 public class TotuusVaiTehtava extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public TotuusVaiTehtava() {super(R.layout.fragment_totuus_vai_tehtava);}
 
     @Override

@@ -16,7 +16,9 @@ import com.oh.ready4play.R;
  * @author Olli Hilke
  */
 public class MinipeliNakyma extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public MinipeliNakyma() {
     }
 

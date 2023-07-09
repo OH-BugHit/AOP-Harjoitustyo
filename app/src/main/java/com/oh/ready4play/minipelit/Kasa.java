@@ -19,7 +19,9 @@ import com.oh.ready4play.R;
  * @author Olli Hilke
  */
 public class Kasa extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public Kasa() {super(R.layout.fragment_kasa);}
 
     @Override

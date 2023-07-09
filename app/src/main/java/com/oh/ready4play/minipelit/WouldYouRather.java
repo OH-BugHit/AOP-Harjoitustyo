@@ -13,8 +13,15 @@ import android.widget.TextView;
 import com.oh.ready4play.Peli;
 import com.oh.ready4play.R;
 
+/**
+ * Would You Rather -peli
+ * @version 1.0
+ * @author Olli Hilke
+ */
 public class WouldYouRather extends Fragment {
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public WouldYouRather() {super(R.layout.fragment_would_you_rather);}
 
     @Override

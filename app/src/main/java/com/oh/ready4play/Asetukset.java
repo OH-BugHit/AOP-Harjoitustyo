@@ -34,7 +34,9 @@ public class Asetukset extends Fragment {
      * Sanaselityspelin keston asettamista varten EditText
      */
     private EditText etSanariKesto;
-
+    /**
+     * Luokan parametriton alustaja
+     */
     public Asetukset() {}
 
     @Override

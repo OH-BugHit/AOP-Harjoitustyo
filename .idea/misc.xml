@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="JavadocGenerationManager">
-    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/OneDrive - University of Eastern Finland/Kurssit/Android ohjelmoinnin perusteet/Harjoitustyö/Dokumentit/javad" />
+    <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/OneDrive - University of Eastern Finland/Kurssit/Android ohjelmoinnin perusteet/Harjoitustyö/Dokumentit/javadokumentaatio" />
     <option name="OPTION_SCOPE" value="private" />
+    <option name="OTHER_OPTIONS" value="-sourcepath C:/Users/hillo/AppData/Local/Android/Sdk/platforms/android-33/android.jar -encoding utf8 -docencoding utf8 -charset utf8" />
+    <option name="OPTION_INCLUDE_LIBS" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

@@ -114,6 +114,9 @@ public class Bussikuski extends Fragment {
      */
     private Button btJatkaPelia;
 
+    /**
+     * Luokan parametriton alustaja
+     */
     public Bussikuski() {super(R.layout.fragment_bussikuski);}
 
     @Override
@@ -251,6 +254,7 @@ public class Bussikuski extends Fragment {
     /**
      * Suorittaa vuoron
      * @param low0hi1 0 jos arvauksena alempi, 1 jos ylempi.
+     * @return Palauttaa True, jos arvaus on oikein, muuten False
      */
     private boolean suoritaVuoro(int low0hi1) {
         Kortti nosto = nostaKortti();

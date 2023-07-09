@@ -50,6 +50,7 @@ public class Pelaaja {
      * Alustaja pelaajalle
      * @param pelaajaNimi Pelaajan nimi
      * @param pelaajaKuva Pelinappulan kuva
+     * @param nappulaNumero Pelinappulan indeksinumero
      */
     public Pelaaja(int nappulaNumero, String pelaajaNimi, Drawable pelaajaKuva) {
         this.nappulaNumero = nappulaNumero;
