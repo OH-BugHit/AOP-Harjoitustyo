@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ThemedSpinnerAdapter;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.oh.ready4play.Kortti;
@@ -76,14 +78,19 @@ public class Hitler extends Fragment {
         btJatkaPelia.setOnClickListener(e -> {
             tvArvottu.setText("");
             tvOhjeet.setText(R.string.text_taskDescriptionHitler);
-            templateView.destroyNativeAd();
-            Peli.seuraavaVuoro = true;
-            Peli.fragmentManager.beginTransaction()
-                    .remove(this)
-                    .setReorderingAllowed(true)
-                    .commit();
+            if (MainActivity.mainosvalmis) {
+                templateView.destroyNativeAd();
+                MainActivity.mainosvalmis = false;
+                Peli.seuraavaVuoro = true;
+                Peli.fragmentManager.beginTransaction()
+                        .remove(this)
+                        .setReorderingAllowed(true)
+                        .commit();
+            } else {
+                Toast.makeText(MainActivity.INSTANCE,R.string.text_waitForAdToLoad, Toast.LENGTH_SHORT).show();
+            }
         });
-
+        MainActivity.mainosvalmis = false;
         MainActivity.INSTANCE.adLoader.loadAd(new AdRequest.Builder().build());
         return view;
     }

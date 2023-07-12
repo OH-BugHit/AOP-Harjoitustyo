@@ -295,13 +295,13 @@ public class Peli extends Fragment {
         //Vuoron ohitusnappula
         btOhita.setOnClickListener(e -> {
             seuraavaVuoro = true;
-            seuraavanPelaajanVuoro();
             if (toiminto == 11 || toiminto == 12) {
                 if (tehtavaFail){
                     liikutaTakaisin();
                     tehtavaFail = false;
                 }
             }
+            seuraavanPelaajanVuoro();
         });
 
         //Hampurilaisvalikon painaminen
@@ -941,7 +941,7 @@ public class Peli extends Fragment {
                 }
                 case 30 -> {
                     sijainti.x = laskeX(0.6952);
-                    sijainti.y = laskeY(0.1146);
+                    sijainti.y = laskeY(0.1461);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 2;
                     ruutu.ruudunNumero = 30;
@@ -1032,7 +1032,7 @@ public class Peli extends Fragment {
                     ruutu.ruudunNumero = 42;
                 }
                 case 43 -> {
-                    sijainti.x = laskeX(0.3186);
+                    sijainti.x = laskeX(0.4118);
                     sijainti.y = laskeY(0.6280);
                     ruutu.sijainti = sijainti;
                     ruutu.tehtava = 1;

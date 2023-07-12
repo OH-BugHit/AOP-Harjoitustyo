@@ -12,6 +12,8 @@
     <string name="dialog_vahvista">Proceed</string>
     <string name="dialog_peruuta">Continue game</string>
 
+    <string name="text_waitForAdToLoad">Wait for ad to load and try again…</string>
+
     <!-- Alkuvalikko -->
     <string name="text_gametitle" translatable="false">Ready4Play</string>
     <string name="text_newGame">New Game</string>
@@ -128,7 +130,8 @@
     <!-- 3 shottia -->
     <string name="text_3ShotsTitle">Three shots!</string>
     <string name="text_taskDescription3Shots">Pour three shots.\n\nOne contains alcohol, other two doesn\'t.\n\nExample: 1 shot of vodka, two shots of water.</string>
-    <string name="text_taskDescriprion3Shots2"> chooses one blindfolded and drinks it. No smelling it! Just drink ;)</string>
+    <string name="text_taskDescriprion3Shots2"> chooses one blindfolded and drinks it.</string>
+    <string name="text_taskDescription3Shots3">No smelling it! Just drink ;)</string>
 
     <!-- 2 Totuutta 1 Valhe -->
     <string name="text_2Truths1LieTitle">Two Truths One Lie!</string>

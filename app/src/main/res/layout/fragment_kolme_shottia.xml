@@ -64,6 +64,17 @@
         app:layout_constraintTop_toTopOf="@+id/tvPelaajaVuorossa_3Shottia" />
 
     <TextView
+        android:id="@+id/tvOhjeistus_3Shottia3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/text_taskDescription3Shots3"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tvOhjeistus_3Shottia2"
+        app:layout_constraintStart_toStartOf="@+id/tvPelaajaVuorossa_3Shottia"
+        app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus_3Shottia2" />
+
+    <TextView
         android:id="@+id/tvPelaajaVuorossa_3Shottia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

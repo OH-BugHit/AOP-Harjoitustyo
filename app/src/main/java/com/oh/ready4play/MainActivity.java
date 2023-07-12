@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
      * Tämä, luotu, käytettävä MainActivity-olio.
      */
     public static MainActivity INSTANCE;
+    public static boolean mainosvalmis = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,9 +69,11 @@ public class MainActivity extends AppCompatActivity {
                                 NativeTemplateStyle.Builder().withMainBackgroundColor(new ColorDrawable(Color.WHITE)).build(); //Mainoksen tausta(väri)
 
                         //mediumTemplate
+
                         TemplateView template = findViewById(R.id.medium_mainos_template);
                         template.setStyles(styles);
                         template.setNativeAd(nativeAd);
+                        mainosvalmis = true;
                     }
                 })
                 .withAdListener(new AdListener() {
