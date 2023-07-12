@@ -31,9 +31,12 @@ android {
 }
 dependencies {
 
-    //JavaDocia varten. Poista kommentointi luonnin ajaksi ja lisää seuraava commandiksi. Alkuosa sisällyttää androidin ja loppuosa on ääkkösille.
+    // --JavaDoc alkaa--
+    // Poista kommentointi alimmasta luonnin ajaksi ja lisää seuraava commandiksi. Alkuosa sisällyttää androidin ja loppuosa on ääkkösille.
     //-sourcepath C:/Users/hillo/AppData/Local/Android/Sdk/platforms/android-33/android.jar -encoding utf8 -docencoding utf8 -charset utf8
     //implementation files('C:/Users/hillo/AppData/Local/Android/Sdk/platforms/android-33/android.jar')
+    // --JavaDoc päättyy--
+
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
             because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
@@ -43,11 +46,11 @@ dependencies {
         }
     }
 
-    //Mainokset
+    // --Mainokset--
     implementation 'com.google.android.gms:play-services-ads:22.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.errorprone:error_prone_annotations:2.16'
-    //Mainokset loppuu
+    // --Mainokset loppuu--
 
     // --Navigation starts--
     def nav_version = "2.5.3"

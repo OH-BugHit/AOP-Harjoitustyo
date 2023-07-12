@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
      * Tämä, luotu, käytettävä MainActivity-olio.
      */
     public static MainActivity INSTANCE;
+    /**
+     * Muuttuja sisältää tiedon onko mainoksenlataaja valmis suljettavaksi.
+     */
     public static boolean mainosvalmis = false;
 
     @Override
@@ -80,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onAdFailedToLoad(LoadAdError adError) {
                         Toast.makeText(MainActivity.this,"Failed to load native ads",Toast.LENGTH_SHORT).show();
+                        mainosvalmis = true;
                     }
                 })
                 .withNativeAdOptions(new NativeAdOptions.Builder()

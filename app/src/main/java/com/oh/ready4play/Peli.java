@@ -289,7 +289,6 @@ public class Peli extends Fragment {
             });
             t1.start();
         });
-
         //Nopanheittonappula päättyy
 
         //Vuoron ohitusnappula
