@@ -208,7 +208,7 @@ public class Bussikuski extends Fragment {
     private void vuoronJalkeen() {
         btAlempi.setEnabled(true);
         btYlempi.setEnabled(true);
-        edellinenArvo = uusiArvo;
+        if (onnistui) {edellinenArvo = uusiArvo;}
         siirraOsoitinta(onnistui);
         if (tasoMenossa > 5 || sakko > 3) {
             osoitin.setVisibility(View.INVISIBLE);
