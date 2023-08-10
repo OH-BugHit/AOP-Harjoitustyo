@@ -1,22 +1,22 @@
 package com.oh.ready4play;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.Color;    //MAINOSRIVI
+import android.graphics.drawable.ColorDrawable;    //MAINOSRIVI
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.Toast;    //MAINOSRIVI
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdListener;    //MAINOSRIVI
 import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.gms.ads.nativead.NativeAdOptions;
-import com.oh.ready4play.nativetemplate.NativeTemplateStyle;
-import com.oh.ready4play.nativetemplate.TemplateView;
+import com.google.android.gms.ads.LoadAdError;    //MAINOSRIVI
+import com.google.android.gms.ads.MobileAds;    //MAINOSRIVI
+import com.google.android.gms.ads.initialization.InitializationStatus;    //MAINOSRIVI
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;    //MAINOSRIVI
+import com.google.android.gms.ads.nativead.NativeAd;    //MAINOSRIVI
+import com.google.android.gms.ads.nativead.NativeAdOptions;    //MAINOSRIVI
+import com.oh.ready4play.nativetemplate.NativeTemplateStyle;    //MAINOSRIVI
+import com.oh.ready4play.nativetemplate.TemplateView;    //MAINOSRIVI
 
 /**
  * MainActivity. Sovellus käynnistyy täältä
@@ -27,12 +27,13 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Mainosten lataaja
      */
-    public AdLoader adLoader;
+    //public AdLoader adLoader;    //MAINOSRIVI
     /**
+     * POISTA KOMMENTOINTI JA LISÄÄ ADMOB TUNNUKSESI
      * Sisältää mainostajan tunnuksen.
      * Tässä harjoitustyössä käytetty testitunnusta
      */
-    private static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";
+    //private static final String ADMOB_AD_UNIT_ID = "ca-app-pub-3940256099942544/2247696110";    //MAINOSRIVI
     /**
      * Tämä, luotu, käytettävä MainActivity-olio.
      */
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Muuttuja sisältää tiedon onko mainoksenlataaja valmis suljettavaksi.
      */
-    public static boolean mainosvalmis = false;
+    //public static boolean mainosvalmis = false;    //MAINOSRIVI
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.INSTANCE = this;
         setContentView(R.layout.activity_main);
 
+        /*
         //Mainokset
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -92,5 +94,8 @@ public class MainActivity extends AppCompatActivity {
                         // Ei tarvetta tässä
                         .build())
                 .build();
+
+                //Mainokset päättyy
+         */
     }
 }

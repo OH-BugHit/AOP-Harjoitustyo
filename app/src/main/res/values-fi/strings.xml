@@ -74,6 +74,7 @@
     <string name="text_btSkip">Ohita!</string>
     <string name="text_btCorrect">Oikein!</string>
     <string name="text_start">Aloita!</string>
+    <string name="text_random">Arvo pari</string>
     <string name="text_fTheDealerTitle">Fuck The Dealer</string>
     <string name="text_btPeek">Kurkista</string>
     <string name="text_btNextCard">Seuraava kortti</string>
@@ -102,7 +103,7 @@
     <string name="text_taskDescription3Shots">Muut pelaajat kaatavat kolme shottia.\n\nYhdessä shotissa on alkoholia ja kahdessa vettä.</string>
     <string name="text_taskDescriprion3Shots2">valitsee yhden silmät peitettyinä ja juo sen.\n</string>
     <string name="text_taskDescription2Truths1Lie">Mieti elämästäsi kaksi totuutta ja yksi vale ja esitä ne muille totuuksina.\n\nMuut pelaajat voivat kysyä kysymyksiä liittyen väittämiisi.\n\nKun muut pelaajat ovat tyytyväisiä saamiinsa vastauksiin, jokainen yrittää arvata mikä väittämistä on valhe.\n\nVäärästä arvauksesta 5 huikkaa!\n\nJos saat kaikkia pelaajia huijattua, saat kolme ylimääräistä askelta seuraavaan nopanheittoosi!\n\nEnnen seuraavaa heittoasi, sinulla on vuorollasi nähtävillä painikkeet, joilla voit joko lisätä itsellesi +3 tai valita epäonnistuneesi.\n\nPeli voi jatkua kunnes keksit väittämät, mikäli et heti niitä keksi. Painikkeet ovat tarjolla vuoroillasi, kunnes painat jompaa kumpaa niistä.\n\nKuitenkin jokaisella kierroksella ota kolmen huikan sakko, mikäli et ole keksinyt vielä väittämiä!</string>
-    <string name="text_taskDescriptionDictionary">Valitse kumppani tähän tehtävään!\n\nSelitä ruudulla näkyvät sanat ennenkuin aika loppuu.\n</string>
+    <string name="text_taskDescriptionDictionary">Valitse tai arvo painikkeella kumppani tähän tehtävään!\n\nSelitä ruudulla näkyvät sanat ennenkuin aika loppuu.\n</string>
     <string name="text_taskDescriptionDictionary2">Sinulla on aikaa \n</string>
     <string name="text_taskDescriptionDictionary3">Voit selittää viimeisen sanan rauhassa\n\nEt saa käyttää sanaa tai sen osia\n\nVoit ohittaa sanan 0.5 huikan sakkoa vastaan (vähennetään kerätyistä huikista)\n\nOnnea!</string>
     <string name="text_lopputekstiDictionary">Aika loppui!\n\nAnna pisteitäsi vastaava määrä huikkia!</string>

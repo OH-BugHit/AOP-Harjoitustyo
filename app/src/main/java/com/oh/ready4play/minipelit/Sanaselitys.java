@@ -80,6 +80,11 @@ public class Sanaselitys extends Fragment {
      * TextView näyttämään ohjeistuksessa käytettävissä oleva aika
      */
     private TextView tvSekuntimaara;
+
+    /**
+    * TextView näyttämään arvottu pelikaveri
+    */
+    private TextView tvArvottuPari;
     /**
      * Aika, joka kuluu tehtävässä
      */
@@ -116,8 +121,10 @@ public class Sanaselitys extends Fragment {
         tvPistenaytto = view.findViewById(R.id.tvPisteNaytto_Sanaselitys);
         tvPistenaytto.setVisibility(View.INVISIBLE);
         tvAika = view.findViewById(R.id.tvAika_Sanaselitys);
+        tvArvottuPari = view.findViewById(R.id.tvArvottuPari);
 
         Button btAloita = view.findViewById(R.id.btAloita_Sanaselitys);
+        Button btArvoPari = view.findViewById(R.id.btArvo_Sanaselitys);
         btOhita = view.findViewById(R.id.btOhita_Sanaselitys);
         btOikein = view.findViewById(R.id.btOikein_Sanaselitys);
         Button btJatkaPelia = view.findViewById(R.id.btJatkaPelia_Sanaselitys);
@@ -138,7 +145,16 @@ public class Sanaselitys extends Fragment {
             etenePelissa(btOhita, btOikein, btJatkaPelia);
         });
 
+        btArvoPari.setOnClickListener(e -> {
+            int arvottu = Peli.vuorossaPelaaja;
+            while (arvottu == Peli.vuorossaPelaaja) {
+                arvottu = random.nextInt(Peli.pelaajamaara);
+            }
+            tvArvottuPari.setText(Peli.pelaajat.get(arvottu).pelaajanimi);
+        });
+
         btAloita.setOnClickListener(e -> {
+            tvArvottuPari.setVisibility(View.INVISIBLE);
             tvSekuntimaara.setVisibility(View.INVISIBLE);
             tvSanaOhjeistus.setVisibility(View.INVISIBLE);
             tvSanaOhjeistus2.setVisibility(View.INVISIBLE);
@@ -147,6 +163,7 @@ public class Sanaselitys extends Fragment {
             tvSekuntimaara.setVisibility(View.INVISIBLE);
             tvPistenaytto.setVisibility(View.VISIBLE);
             tvPistenaytto.setText("0");
+            btArvoPari.setVisibility(View.INVISIBLE);
             btAloita.setVisibility(View.INVISIBLE);
             btOhita.setVisibility(View.VISIBLE);
             btOikein.setVisibility(View.VISIBLE);

@@ -82,6 +82,21 @@
         app:layout_constraintTop_toTopOf="@+id/btOhita_Sanaselitys" />
 
     <Button
+        android:id="@+id/btArvo_Sanaselitys"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_teema_settings"
+        android:minHeight="48dp"
+        android:text="@string/text_random"
+        app:layout_constraintBottom_toBottomOf="@+id/btAloita_Sanaselitys"
+        app:layout_constraintEnd_toStartOf="@+id/tvArvottuPari"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btAloita_Sanaselitys"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
         android:id="@+id/btAloita_Sanaselitys"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,10 +104,10 @@
         android:background="@drawable/btn_teema_start"
         android:minHeight="48dp"
         android:text="@string/text_start"
-        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus4_sanaselitys"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvArvottuPari"
         app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus4_sanaselitys" />
 
     <TextView
@@ -101,11 +116,12 @@
         android:layout_height="wrap_content"
         android:text="@string/text_score"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvOhjeistus_Sanaselitys"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider13"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/tvAika_Sanaselitys"
@@ -178,5 +194,22 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOhjeistus2_Sanaselitys" />
+
+    <TextView
+        android:id="@+id/tvArvottuPari"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btArvo_Sanaselitys"
+        app:layout_constraintEnd_toStartOf="@+id/btAloita_Sanaselitys"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btArvo_Sanaselitys"
+        app:layout_constraintTop_toTopOf="@+id/btArvo_Sanaselitys" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

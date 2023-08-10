@@ -57,7 +57,7 @@ public class Hitler extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hitler, container, false);
 
-        TemplateView templateView = view.findViewById(R.id.medium_mainos_template);
+        //TemplateView templateView = view.findViewById(R.id.medium_mainos_template);    MAINOSRIVI
 
         tvArvottu = view.findViewById(R.id.tvArvottuPelaaja_Hitler);
 
@@ -78,20 +78,22 @@ public class Hitler extends Fragment {
         btJatkaPelia.setOnClickListener(e -> {
             tvArvottu.setText("");
             tvOhjeet.setText(R.string.text_taskDescriptionHitler);
-            if (MainActivity.mainosvalmis) {
-                templateView.destroyNativeAd();
-                MainActivity.mainosvalmis = false;
+            //if (MainActivity.mainosvalmis) {    MAINOSRIVI
+                //templateView.destroyNativeAd();    MAINOSRIVI
+                //MainActivity.mainosvalmis = false;    MAINOSRIVI
                 Peli.seuraavaVuoro = true;
                 Peli.fragmentManager.beginTransaction()
                         .remove(this)
                         .setReorderingAllowed(true)
                         .commit();
-            } else {
-                Toast.makeText(MainActivity.INSTANCE,R.string.text_waitForAdToLoad, Toast.LENGTH_SHORT).show();
-            }
+            /*} else {    MAINOSRIVI
+                Toast.makeText(MainActivity.INSTANCE,R.string.text_waitForAdToLoad, Toast.LENGTH_SHORT).show();    MAINOSRIVI
+            }    MAINOSRIVI
+
+             */
         });
-        MainActivity.mainosvalmis = false;
-        MainActivity.INSTANCE.adLoader.loadAd(new AdRequest.Builder().build());
+        //MainActivity.mainosvalmis = false;    MAINOSRIVI
+        //MainActivity.INSTANCE.adLoader.loadAd(new AdRequest.Builder().build());    MAINOSRIVI
         return view;
     }
 
