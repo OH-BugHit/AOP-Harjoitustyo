@@ -387,6 +387,7 @@ public class Peli extends Fragment {
             btMainMenu.setVisibility(View.VISIBLE);
             SharedPreferences.Editor editor = Alkuvalikko.sharedPref.edit();
             editor.putBoolean(getString(R.string.saved_Continue), false);
+            Alkuvalikko.jatkaPelia = false;
             editor.apply();
         }
     }
@@ -400,14 +401,13 @@ public class Peli extends Fragment {
                 Thread.onSpinWait();
             }
         }
-        tallennaPeli();
-        testaaTallennus();
         seuraavaVuoro = false;
         if (vuorossaPelaaja == pelaajat.size()-1) {
             vuorossaPelaaja = 0;
         } else {
             vuorossaPelaaja ++;
         }
+        tallennaPeli();
         MainActivity.INSTANCE.runOnUiThread(Peli.this::asetaSeuraava);
     }
 
@@ -646,7 +646,11 @@ public class Peli extends Fragment {
             pelaaja.imageView = ivNappulat[i];
             pelaaja.imageView.setImageDrawable(pelaaja.pelaajakuva);
             pelaaja.imageView.setVisibility(View.VISIBLE);
-            Pelaaja.liikutaPelaajaRuutuun(pelaaja, peliRuudut.get(pelaaja.sijainti));
+            if(Alkuvalikko.jatkaPelia) {
+                Pelaaja.liikutaPelaajaRuutuun(pelaaja, peliRuudut.get(pelaaja.sijainti));
+            } else {
+            Pelaaja.liikutaPelaajaRuutuun(pelaaja, peliRuudut.get(0));
+            }
             i++;
         }
         ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
@@ -1243,16 +1247,10 @@ public class Peli extends Fragment {
     private void tallennaPeli() {
         savePelaajat(pelaajat);
         SharedPreferences.Editor editor = Alkuvalikko.sharedPref.edit();
-        editor.putInt("vuorossaPelaaja", vuorossaPelaaja);
+        editor.putInt("vuorossoPelaaja", vuorossaPelaaja);
         editor.putBoolean("canContinue",true);
         editor.apply();
-    }
-
-    private void testaaTallennus() {
-        boolean ladattu = false;
-        System.out.println("ladattu Oli:" + ladattu);
-        ladattu = Alkuvalikko.sharedPref.getBoolean("canContinue",false);
-        System.out.println("ladattu ON:" + ladattu);
+        Alkuvalikko.jatkaPelia = true;
     }
 
     private void lataaEdellisetPelaajat() {

@@ -45,9 +45,7 @@ public class Alkuvalikko extends Fragment {
         Button btQuit = view.findViewById(R.id.btLopeta_alkuvalikko);
         Button btContinue = view.findViewById(R.id.btJatkaPelia_alkuvalikko);
 
-        System.out.println("ensin se on" + jatkaPelia);
         jatkaPelia = sharedPref.getBoolean("canContinue",false);
-        System.out.println("Tässä vaiheessa se on: " + jatkaPelia);
 
         btContinue.setVisibility(View.INVISIBLE);
         if (jatkaPelia) {

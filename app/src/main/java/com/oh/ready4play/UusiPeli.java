@@ -97,8 +97,8 @@ public class UusiPeli extends Fragment {
         btAloitaPeli.setOnClickListener(e -> {
             SharedPreferences.Editor editor = Alkuvalikko.sharedPref.edit();
             editor.putBoolean(getString(R.string.saved_Continue), false);
-            Alkuvalikko.jatkaPelia = false;
             editor.apply();
+            Alkuvalikko.jatkaPelia = false;
             Navigation.findNavController(view).navigate(R.id.action_uusiPeli_to_peli);
         });
 
