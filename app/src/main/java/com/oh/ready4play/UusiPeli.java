@@ -1,6 +1,7 @@
 package com.oh.ready4play;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
@@ -94,6 +95,10 @@ public class UusiPeli extends Fragment {
 
 
         btAloitaPeli.setOnClickListener(e -> {
+            SharedPreferences.Editor editor = Alkuvalikko.sharedPref.edit();
+            editor.putBoolean(getString(R.string.saved_Continue), false);
+            Alkuvalikko.jatkaPelia = false;
+            editor.apply();
             Navigation.findNavController(view).navigate(R.id.action_uusiPeli_to_peli);
         });
 

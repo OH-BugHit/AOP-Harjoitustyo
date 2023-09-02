@@ -3,6 +3,7 @@ package com.oh.ready4play;
 import android.graphics.Color;    //MAINOSRIVI
 import android.graphics.drawable.ColorDrawable;    //MAINOSRIVI
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.Toast;    //MAINOSRIVI
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ import com.oh.ready4play.nativetemplate.TemplateView;    //MAINOSRIVI
  * @author Olli Hilke
  */
 public class MainActivity extends AppCompatActivity {
+
     /**
      * Mainosten lataaja
      */
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow(). addFlags (WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         MainActivity.INSTANCE = this;
         setContentView(R.layout.activity_main);
 

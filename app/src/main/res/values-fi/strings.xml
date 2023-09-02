@@ -3,7 +3,7 @@
     <string name="text_score">Pisteet</string>
     <string name="text_giveName">Syötä pelaajalle nimi</string>
     <string name="text_tooLongName">Nimi liian pitkä! Maksimipituus 15 merkkiä.</string>
-    <string name="dialog_new_info">Pelin eteneminen menetetään! Jatketaanko?</string>
+    <string name="dialog_new_info">Voit jatkaa peliä päävalikosta. Jatketaanko?</string>
     <string name="dialog_vahvista">Poistu pelistä</string>
     <string name="dialog_peruuta">Jatka peliä</string>
     <string name="text_newGame">Uusi peli</string>

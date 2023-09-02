@@ -2,6 +2,7 @@ package com.oh.ready4play;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -18,6 +19,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.oh.ready4play.minipelit.Bussikuski;
 import com.oh.ready4play.minipelit.FuckTheDealer;
 import com.oh.ready4play.minipelit.Hitler;
@@ -31,6 +35,7 @@ import com.oh.ready4play.minipelit.TotuusVaiTehtava;
 import com.oh.ready4play.minipelit.TytotVsPojat;
 import com.oh.ready4play.minipelit.WouldYouRather;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 /**
@@ -195,6 +200,9 @@ public class Peli extends Fragment {
 
         //Haetaan pelaajat muuttujaan uuden pelin luonnissa lisätyt pelaatat
         pelaajat = UusiPeli.itemArrayList;
+        if (Alkuvalikko.jatkaPelia) {
+            lataaEdellisetPelaajat();
+        }
         //Nollataan ArrayList, jotta pelaajalista tehdään kokonaan uusiksi seuraavaan uuteen peliin. Näin vältetään bugi, jossa listan pituus ei asettunut oikein aloitettaessa uusi peli.
         UusiPeli.itemArrayList = new ArrayList<>();
 
@@ -377,6 +385,9 @@ public class Peli extends Fragment {
             btAloita.setVisibility(View.VISIBLE);
             btAloita.setText(R.string.text_secondRound);
             btMainMenu.setVisibility(View.VISIBLE);
+            SharedPreferences.Editor editor = Alkuvalikko.sharedPref.edit();
+            editor.putBoolean(getString(R.string.saved_Continue), false);
+            editor.apply();
         }
     }
 
@@ -389,6 +400,8 @@ public class Peli extends Fragment {
                 Thread.onSpinWait();
             }
         }
+        tallennaPeli();
+        testaaTallennus();
         seuraavaVuoro = false;
         if (vuorossaPelaaja == pelaajat.size()-1) {
             vuorossaPelaaja = 0;
@@ -624,13 +637,16 @@ public class Peli extends Fragment {
         btHeitaNoppa.setVisibility(View.VISIBLE);
         btOhita.setVisibility(View.VISIBLE);
         vuorossaPelaaja = 0;
+        if (Alkuvalikko.jatkaPelia) {
+            lataaEdellisenPelinVuorotilanne();
+        }
         pelaajamaara = pelaajat.size();
         int i = 0;
         for (Pelaaja pelaaja : pelaajat) {
             pelaaja.imageView = ivNappulat[i];
             pelaaja.imageView.setImageDrawable(pelaaja.pelaajakuva);
             pelaaja.imageView.setVisibility(View.VISIBLE);
-            Pelaaja.liikutaPelaajaRuutuun(pelaaja, peliRuudut.get(0));
+            Pelaaja.liikutaPelaajaRuutuun(pelaaja, peliRuudut.get(pelaaja.sijainti));
             i++;
         }
         ivNappula.setImageDrawable(pelaajat.get(vuorossaPelaaja).pelaajakuva);
@@ -1223,4 +1239,69 @@ public class Peli extends Fragment {
         taskKaytossa = Alkuvalikko.sharedPref.getBoolean(avain,defaultValue);
         return taskKaytossa;
     }
+
+    private void tallennaPeli() {
+        savePelaajat(pelaajat);
+        SharedPreferences.Editor editor = Alkuvalikko.sharedPref.edit();
+        editor.putInt("vuorossaPelaaja", vuorossaPelaaja);
+        editor.putBoolean("canContinue",true);
+        editor.apply();
+    }
+
+    private void testaaTallennus() {
+        boolean ladattu = false;
+        System.out.println("ladattu Oli:" + ladattu);
+        ladattu = Alkuvalikko.sharedPref.getBoolean("canContinue",false);
+        System.out.println("ladattu ON:" + ladattu);
+    }
+
+    private void lataaEdellisetPelaajat() {
+        pelaajat = loadPelaajat();
+        //TODO: Laita pelaajien kuvat oikein asettumaan ladatessa peli. Nyt laitettu kaikille sama jotta toimisi jotenkin.
+        for (Pelaaja pelaaja : pelaajat
+             ) {
+            pelaaja.pelaajakuva = getContext().getDrawable(R.drawable.nappula_kulta);
+        }
+    }
+
+    private void lataaEdellisenPelinVuorotilanne() {
+        vuorossaPelaaja = Alkuvalikko.sharedPref.getInt("vuorossoPelaaja",0);
+    }
+
+    public static void savePelaajat(ArrayList<Pelaaja> customObjects) {
+        SharedPreferences sharedPreferences = Alkuvalikko.sharedPref;
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Type type = new TypeToken<ArrayList<Pelaaja>>() {}.getType();
+
+        Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+        String json = gson.toJson(customObjects);
+
+        editor.putString("pelaajat", json);
+        editor.apply();
+    }
+
+    public static ArrayList<Pelaaja> loadPelaajat() {
+        SharedPreferences sharedPreferences = Alkuvalikko.sharedPref;
+        String json = sharedPreferences.getString("pelaajat", null);
+
+        if (json == null) {
+            return new ArrayList<>(); // Return an empty ArrayList if no data is found.
+        } else {
+            Gson gson = new Gson();
+            Type type = new TypeToken<ArrayList<Pelaaja>>() {}.getType();
+            return gson.fromJson(json, type);
+        }
+    }
+    /*
+    @Override
+    public void onStop() {
+        super.onStop();  // Always call the superclass method first
+        tallennaPeli();
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();  // Always call the superclass method first
+        tallennaPeli();
+    }
+     */
 }

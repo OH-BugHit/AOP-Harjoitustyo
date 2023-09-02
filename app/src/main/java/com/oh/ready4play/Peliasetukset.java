@@ -13,7 +13,7 @@ public class Peliasetukset {
     /**
      * Sanaselityspelin kesto
      */
-    public int sanaselitysKesto = 90;
+    public int sanaselitysKesto = 45;
     /**
      * True jos Hitler tehtävä on käytössä, muuten false
      */

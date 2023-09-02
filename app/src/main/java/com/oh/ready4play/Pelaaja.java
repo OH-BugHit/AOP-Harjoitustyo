@@ -5,6 +5,9 @@ import android.widget.ImageView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.google.gson.annotations.Expose;
+
+import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -12,39 +15,46 @@ import java.util.Random;
  * @version 1.0
  * @author Olli Hilke
  */
-public class Pelaaja {
+public class Pelaaja implements Serializable {
     /**
      * Indeksinumero nappulalle. 0-9
      */
+    @Expose
     public int nappulaNumero;
     /**
      * Pelaajan nimi
      */
+    @Expose
     public String pelaajanimi;
     /**
      * Pelinappulan kuva
      */
     public Drawable pelaajakuva;
     /**
-     * Pelaajan sijainti pelilaudalla. Peliruudun numero
+     * Pelaajan sijainti pelilaudalla. Peliruudun numero. Default 0
      */
-    public int sijainti;
+    @Expose
+    public int sijainti = 0;
     /**
      * Pelaajan imageview
      */
+    @Expose
     public ImageView imageView;
     /**
      * Kaksitotuutta tehtävän jälkeen tämä arvo asetetaan TRUE
      * Käytetään näyttämään tehtävän jälkeisten painikkeiden näyttämiseen
      */
+    @Expose
     public boolean kaksiTotuutta = false;
     /**
      * Onko saatu bonusaskelia
      */
+    @Expose
     public boolean bonusAskeleet = false;
     /**
      * Käytetään satunnaistamaan pelaajan sijainti peliruudussa.
      */
+    @Expose
     private static final Random random = new Random();
     /**
      * Alustaja pelaajalle
@@ -62,7 +72,7 @@ public class Pelaaja {
      * @param pelaaja Liikutettava pelaaja
      * @param uusiRuutu Ruutu, johon pelaaja liikutetaan
      */
-    public static void liikutaPelaajaRuutuun(Pelaaja pelaaja, Ruutu uusiRuutu) {
+    public static void  liikutaPelaajaRuutuun(Pelaaja pelaaja, Ruutu uusiRuutu) {
         pelaaja.sijainti = uusiRuutu.ruudunNumero;
         ConstraintLayout.LayoutParams lp = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
         lp.width = 50;

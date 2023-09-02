@@ -8,7 +8,7 @@
     <string name="text_giveName">Insert name for player</string>
     <string name="text_tooLongName">Name too long! Max 15 characters.</string>
 
-    <string name="dialog_new_info">Game will not be saved! Proceed?</string>
+    <string name="dialog_new_info">You can always continue game from main menu. Proceed?</string>
     <string name="dialog_vahvista">Proceed</string>
     <string name="dialog_peruuta">Continue game</string>
 
@@ -31,6 +31,8 @@
 
     <string name="text_durationDictionary">Duration of the Dictionary:</string>
     <string name="text_inSeconds">seconds</string>
+
+    <string name="saved_Continue" translatable="false">canContinue</string>
 
     <string name="saved_task_hitler" translatable="false">task1</string>
     <string name="saved_task_hoe" translatable="false">task2</string>

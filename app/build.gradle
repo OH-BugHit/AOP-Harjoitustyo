@@ -30,6 +30,9 @@ android {
     }
 }
 dependencies {
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.9'
+    implementation 'com.google.code.gson:gson:2.8.8' //Serialisaatio objektien tallennukseen sharedPref
+
 
     // --JavaDoc alkaa--
     // Poista kommentointi alimmasta luonnin ajaksi ja lisää seuraava commandiksi. Alkuosa sisällyttää androidin ja loppuosa on ääkkösille.

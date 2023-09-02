@@ -22,6 +22,7 @@ public class Alkuvalikko extends Fragment {
      * Asetusten tallennukseen
      */
     protected static SharedPreferences sharedPref;
+    protected static boolean jatkaPelia = false;
     /**
      * Luokan parametriton alustaja
      */
@@ -33,12 +34,29 @@ public class Alkuvalikko extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_alkuvalikko, container, false);
         Context context = getActivity();
+        /*
         sharedPref = context.getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
+         */
+        sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         Button btAloitaPeli = view.findViewById(R.id.btAloitaPeli_alkuvalikko);
         Button btAsetukset = view.findViewById(R.id.btAsetukset_alkuvalikko);
         Button btQuit = view.findViewById(R.id.btLopeta_alkuvalikko);
+        Button btContinue = view.findViewById(R.id.btJatkaPelia_alkuvalikko);
+
+        System.out.println("ensin se on" + jatkaPelia);
+        jatkaPelia = sharedPref.getBoolean("canContinue",false);
+        System.out.println("Tässä vaiheessa se on: " + jatkaPelia);
+
+        btContinue.setVisibility(View.INVISIBLE);
+        if (jatkaPelia) {
+            btContinue.setVisibility(View.VISIBLE);
+        }
+
+        btContinue.setOnClickListener(e -> {
+            Navigation.findNavController(view).navigate(R.id.action_alkuvalikko_to_peli);
+        });
 
         btAloitaPeli.setOnClickListener(e -> {
             Navigation.findNavController(view).navigate(R.id.action_alkuvalikko_to_uusiPeli);
